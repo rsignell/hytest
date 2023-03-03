@@ -123,8 +123,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../environment_set_up/compute.html">
-   Compute Environments
+  <a class="reference internal" href="../../../environment_set_up/clusters.html">
+   Starting a Dask Cluster
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -133,32 +133,15 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-Nebari.html">
-     Quick-Start for Nebari Cloud Environment
+    <a class="reference internal" href="../../../environment_set_up/Start_Dask_Cluster_Nebari.html">
+     Dask cluster on nebari.esipfed.org
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-pangeo.chs.usgs.gov.html">
-     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    <a class="reference internal" href="../../../environment_set_up/Start_Dask_Cluster_Denali.html">
+     Dask Cluster on Denali HPC
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../environment_set_up/OpenOnDemand.html">
-     HPC Server: Open OnDemand
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../environment_set_up/clusters.html">
-   Starting a Dask Cluster
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
   </ul>
  </li>
 </ul>
@@ -172,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../metrics.html">
    Evaluation Metrics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -204,8 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="00_Overview.html">
    Model Evaluation Workflow
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -887,10 +870,10 @@ You can override their function by doing your own cluster configuration if you l
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The &#39;cluster&#39; object can be used to adjust cluster behavior.  i.e. &#39;cluster.adapt(minimum=10)&#39;
 The &#39;client&#39; object can be used to directly interact with the cluster.  i.e. &#39;client.submit(func)&#39; 
 The link to view the client dashboard is:
-&gt;  https://nebari.esipfed.org/gateway/clusters/dev.7aec9d02d2454ca59c32f2c1110a8fde/status
+&gt;  https://nebari.esipfed.org/gateway/clusters/dev.ca919938265d4f65966c38388123653c/status
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/gzt5142/611bac89e816a412a29664dc7733f2603c2bbf4d0bbefc97327014b0caaaac08-20230303-185227-162185-102-pangeo-jbook/lib/python3.9/site-packages/distributed/client.py:1361: VersionMismatchWarning: Mismatched versions found
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/gzt5142/416f3e91a745a10bfa2224dc222d5c5a76a509a4c1b4e17de75c3291619635b9-20230303-202416-341785-103-pangeo-jbook/lib/python3.9/site-packages/distributed/client.py:1361: VersionMismatchWarning: Mismatched versions found
 
 +-------------+----------+-----------+---------+
 | Package     | Client   | Scheduler | Workers |
@@ -957,7 +940,7 @@ We will mak use of <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/gzt5142/611bac89e816a412a29664dc7733f2603c2bbf4d0bbefc97327014b0caaaac08-20230303-185227-162185-102-pangeo-jbook/lib/python3.9/site-packages/dask_gateway/client.py:1014: RuntimeWarning: coroutine &#39;rpc.close_rpc&#39; was never awaited
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/gzt5142/416f3e91a745a10bfa2224dc222d5c5a76a509a4c1b4e17de75c3291619635b9-20230303-202416-341785-103-pangeo-jbook/lib/python3.9/site-packages/dask_gateway/client.py:1014: RuntimeWarning: coroutine &#39;rpc.close_rpc&#39; was never awaited
   self.scheduler_comm.close_rpc()
 </pre></div>
 </div>

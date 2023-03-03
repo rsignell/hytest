@@ -131,7 +131,17 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/Start_Dask_Cluster_Nebari.html">
+     Dask cluster on nebari.esipfed.org
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/Start_Dask_Cluster_Denali.html">
+     Dask Cluster on Denali HPC
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -424,42 +434,42 @@ title="Print to PDF"
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>In broad strokes, the evaluation workflow contains these components:</p>
 <div class="mermaid">
-            flowchart LR
-    classDef thisStep fill:#ff0,stroke:#333,stroke-width:2px;
-        SIM[(Simulated /&lt;br&gt;Modeled)]
-        OBS[(Observed /&lt;br&gt;Reference)]
+                flowchart LR
+        classDef thisStep fill:#ff0,stroke:#333,stroke-width:2px;
+            SIM[(Simulated /&lt;br&gt;Modeled)]
+            OBS[(Observed /&lt;br&gt;Reference)]
 
-    subgraph PreProc [Data Preparation]
-        direction TB
-        SIM_r[[Simulated&lt;br&gt;/&lt;br&gt;Modeled&lt;br&gt;]]
-        OBS_r[[Observed&lt;br&gt;/&lt;br&gt;Reference]]
-    end
-    subgraph Analysis
-        direction LR
-        Metrics[/Metrics/]
-        Domain[/Domain/]
-        Data[(&quot;Data&quot;)]
-        Analysis_r[[&lt;font size=6&gt;Analysis]]
-        Domain --&gt; Analysis_r
-        Data --&gt; Analysis_r
-        Metrics --&gt; Analysis_r
-    end
-    subgraph Viz [Visualization]
-        direction TB
-        Explore
-        Plot
-        Score
-        Explore-.-&gt;Plot-.-&gt;Score
-    end
-    SIM --&gt; SIM_r
-    OBS --&gt; OBS_r
-    SIM_r --&gt; Data
-    OBS_r --&gt; Data
-    Analysis_r --&quot;Metrics&quot;--&gt; Viz
+        subgraph PreProc [Data Preparation]
+            direction TB
+            SIM_r[[Simulated&lt;br&gt;/&lt;br&gt;Modeled&lt;br&gt;]]
+            OBS_r[[Observed&lt;br&gt;/&lt;br&gt;Reference]]
+        end
+        subgraph Analysis
+            direction LR
+            Metrics[/Metrics/]
+            Domain[/Domain/]
+            Data[(&quot;Data&quot;)]
+            Analysis_r[[&lt;font size=6&gt;Analysis]]
+            Domain --&gt; Analysis_r
+            Data --&gt; Analysis_r
+            Metrics --&gt; Analysis_r
+        end
+        subgraph Viz [Visualization]
+            direction TB
+            Explore
+            Plot
+            Score
+            Explore-.-&gt;Plot-.-&gt;Score
+        end
+        SIM --&gt; SIM_r
+        OBS --&gt; OBS_r
+        SIM_r --&gt; Data
+        OBS_r --&gt; Data
+        Analysis_r --&quot;Metrics&quot;--&gt; Viz
 
-    %% change 'Src' to the node name you want to highlight
-    %% Src | PreProc | Analysis | Viz
-    %%class Src thisStep
+        %% change 'Src' to the node name you want to highlight
+        %% Src | PreProc | Analysis | Viz
+        %%class Src thisStep
         </div><p>This can be broken down per variable, as there are different reference
 datasets for variables, as well as aggregation methods.  Examples below will
 emphasize <em>streamflow</em> as an example, comparing historical stream gage readings against the
@@ -469,8 +479,9 @@ which that bit of processing takes place.</p>
 </div>
 <div class="section" id="source-data">
 <h2>Source Data<a class="headerlink" href="#source-data" title="Permalink to this headline">#</a></h2>
-<p>Source datasets include modeled data (<em><a class="reference external" href="https://registry.opendata.aws/nwm-archive/">NWM</a></em>
-or <em>NHM</em>, for example) and a reference dataset
+<p>Source datasets include modeled data
+( <em><a class="reference external" href="https://registry.opendata.aws/nwm-archive/">NWM</a></em> or <em>NHM</em>, for example)
+and a reference dataset
 representing the ‘<em>observed</em>’ values covering the same variable and temporal range.
 For <em>streamflow</em> data, we have actual gage readings.  For other variables, we have other standard
 datasets representing the reference against which the model will be compared.</p>
@@ -502,6 +513,10 @@ for analysis.  Rectifying the data includes measures such as:</p>
 <li><p>Re-Chunking the data to make time-series analysis more efficient</p></li>
 <li><p>Obtaining data from an API and storing it in more efficient format for reuse</p></li>
 </ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>See <span class="xref myst">here</span> for a primer on re-chunking data, and why we choose to do it before analysis.</p>
+</div>
 <p>At this stage, a given variable should be represented as a pair of 2D array of values (one
 for <em>simulated</em>, one for <em>observed</em>).
 One dimension of the array is indexed by some nominal key (‘<em>gage_id</em>’, ‘<em>HUC-12</em> ID’,

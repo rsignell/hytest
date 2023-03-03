@@ -194,6 +194,11 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="01_Data_Prep.html">
+     Model Evaluation :: Data Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="02_Analysis_StdSuite.html">
      Model Evaluation Workflow :: NWM streamflow Analysis
     </a>
@@ -512,8 +517,12 @@ title="Print to PDF"
 <li><p>A set of statistical metrics with which to benchmark.</p></li>
 </ol>
 <p>Finding and loading data is made easier for this particular workflow (the <em>streamflow</em> variable), in that most of it has been
-pre-processed and stored in a cloud-friendly format.  That process is described in the <span class="xref myst">data preparation</span>
+pre-processed and stored in a cloud-friendly format.  That process is described in the <a class="reference internal" href="01_Data_Prep.html"><span class="doc std std-doc">data preparation</span></a>
 notebook. We will proceed here using the already-prepared data for <em>streamflow</em>, which is included in the HyTEST <strong>intake catalog</strong>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Learn more about <code class="docutils literal notranslate"><span class="pre">intake</span></code> <span class="xref myst">here</span></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
@@ -754,7 +763,7 @@ those gages found within this benchmarking domain.</p>
 <li><p>A set of statistical metrics with which to benchmark. <span style="color:red; font-size:large">&lt;&lt;–You are here</span></p></li>
 </ol>
 <p>The code to calculate the various metrics has been standardized
-in <span class="xref std std-doc">model_evaluation/Metrics_StdSuite_v1</span>.
+in <a class="reference internal" href="../../Metrics_StdSuite_v1.html"><span class="doc">NWM ‘Standard Suite (v1)’ Metrics</span></a>.
 You can use these or write your own.  To import and use these standard definitions, run this cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1184,7 +1193,7 @@ We will mak use of <code class="docutils literal notranslate"><span class="pre">
 </div></div></div>
 </div>
 <p>This dataframe/table can be saved to disk as a CSV. It will be used for visualizations in
-<span class="xref std std-doc">model_evaluation/tutorials/nwm_streamflow/03_Visualization</span> .</p>
+<a class="reference internal" href="03_Vizualization.html"><span class="doc">Model Evaluation Workflow :: Visualization</span></a> .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;DScore_streamflow_example.csv&#39;</span><span class="p">)</span> <span class="c1">##&lt;--- change this to a personalized filename</span>

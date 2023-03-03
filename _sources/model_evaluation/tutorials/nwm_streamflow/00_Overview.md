@@ -4,7 +4,7 @@
 
 In broad strokes, the evaluation workflow contains these components:
 
-```{mermaid}
+:::{mermaid}
 flowchart LR
     classDef thisStep fill:#ff0,stroke:#333,stroke-width:2px;
         SIM[(Simulated /<br>Modeled)]
@@ -41,7 +41,8 @@ flowchart LR
     %% change 'Src' to the node name you want to highlight
     %% Src | PreProc | Analysis | Viz
     %%class Src thisStep
-```
+:::
+
 
 This can be broken down per variable, as there are different reference
 datasets for variables, as well as aggregation methods.  Examples below will
@@ -77,7 +78,7 @@ use may depend on where the processing takes place (i.e. if running a notebook o
 `tallgrass`, _on-prem_ data is preferred over S3;  if running on a cloud environment (esip/qhub),
 S3 is preferred.)
 
-## [Data Preparation Notebook](./01_Data_Prep.ipynb)
+## [Data Preparation Notebook](01_Data_Prep.ipynb)
 
 This pre-processing step is needed in order to rectify the data and organize it in preparation
 for analysis.  Rectifying the data includes measures such as:
@@ -96,7 +97,7 @@ for _simulated_, one for _observed_).
 One dimension of the array is indexed by some nominal key ('_gage_id_', '_HUC-12_ ID',
 etc), while the other dimension is indexed by time step.
 
-## [Analysis Notebook](./02_Analysis_NWM.ipynb)
+## [Analysis Notebook](02_Analysis_NWM.ipynb)
 
 The above data organization steps will allow us to extract a time series for a given station
 from each of the _simulated_ and _observed_ datasets, and run a series of statistical metrics

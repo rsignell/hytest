@@ -1,4 +1,4 @@
-# hytest
+# HyTEST
 
 The contents of this repository are organized as follows:
 - [essential_reading](./essential_reading): background reading material on key concepts and packages used in our workflows

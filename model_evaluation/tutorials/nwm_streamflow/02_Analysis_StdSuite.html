@@ -117,17 +117,39 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../environment_set_up/README.html">
-   Environment Setup
+   Compute Environments
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-Nebari.html">
+     Quick-Start for Nebari Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-pangeoCHS.html">
+     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/OpenOnDemand.html">
+     HPC Server: Open OnDemand
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../environment_set_up/clusters.html">
    Starting a Dask Cluster
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -155,8 +177,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../metrics.html">
    Evaluation Metrics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -187,8 +209,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="00_Overview.html">
    Model Evaluation Workflow
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -755,9 +777,9 @@ those gages found within this benchmarking domain.</p>
 <li><p><span style="color:green; font-size:large">A set of statistical metrics with which to benchmark.</span></p></li>
 </ol>
 <p>The code to calculate the various NWM metrics has been standardized in
-<span class="xref std std-doc">model_evaluation/Metrics_StdSuite_v1</span>
+<a class="reference internal" href="../../Metrics_StdSuite_v1.html"><span class="doc">NWM ‘Standard Suite (v1)’ Metrics</span></a>
 with usage examples in
-<span class="xref std std-doc">model_evaluation/tutorials/stats/Usage_StdSuite_v1</span>.
+<a class="reference internal" href="../stats/Usage_StdSuite_v1.html"><span class="doc">NWM ‘Standard Suite (v1)’ Metrics :: Example Usage</span></a>.
 You can use these metrics or write your own.  To import and use these standardized definitions, run this cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1162,7 +1184,7 @@ We will make use of <code class="docutils literal notranslate"><span class="pre"
 <p>5380 rows × 10 columns</p>
 </div></div></div>
 </div>
-<p>This dataframe/table can be saved to disk as a CSV. It will be used for visualizations in <span class="xref myst">other notebooks</span>.</p>
+<p>This dataframe/table can be saved to disk as a CSV. It will be used for visualizations in <a class="reference internal" href="03_Vizualization.html"><span class="doc std std-doc">other notebooks</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;NWM_v2.1_streamflow_example.csv&#39;</span><span class="p">)</span> <span class="c1">##&lt;--- change this to a personalized filename</span>

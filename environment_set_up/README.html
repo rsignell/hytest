@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Environment Setup &#8212; HyTEST Project</title>
+    <title>Compute Environments &#8212; HyTEST Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -117,17 +117,39 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Environment Setup
+   Compute Environments
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="QuickStart-Cloud-Nebari.html">
+     Quick-Start for Nebari Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="QuickStart-Cloud-pangeoCHS.html">
+     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="OpenOnDemand.html">
+     HPC Server: Open OnDemand
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="clusters.html">
    Starting a Dask Cluster
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -155,8 +177,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../model_evaluation/metrics.html">
    Evaluation Metrics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -187,8 +209,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
    Model Evaluation Workflow
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -347,17 +369,12 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Environment Setup
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cloud-environment">
    Cloud Environment
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hpc-environment">
    HPC Environment
   </a>
@@ -371,7 +388,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Environment Setup</h1>
+                <h1>Compute Environments</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -381,17 +398,12 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Environment Setup
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cloud-environment">
    Cloud Environment
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hpc-environment">
    HPC Environment
   </a>
@@ -406,8 +418,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="environment-setup">
-<h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="compute-environments">
+<h1>Compute Environments<a class="headerlink" href="#compute-environments" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">environment_set_up</span></code> directory contains instructional materials and helper scripts to set
 up your computational environment for running HyTEST workflows and scripts in this repository.</p>
 <p>The scripts in this repository are designed to be portable between a cloud environment and
@@ -415,9 +427,8 @@ on-prem HPC resources. We prioritize work in the cloud because anyone can create
 there to run these workflows, but given that a large number of our users work on the USGS HPC
 systems, we have also build out some instructional materials to help set up these workflows
 in those environments as well.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="cloud-environment">
-<h1>Cloud Environment<a class="headerlink" href="#cloud-environment" title="Permalink to this headline">#</a></h1>
+<div class="section" id="cloud-environment">
+<h2>Cloud Environment<a class="headerlink" href="#cloud-environment" title="Permalink to this headline">#</a></h2>
 <p>If you are working in the cloud, we expect you to work in a JupyterHub instance that has
 already been set up. If you are a USGS Water Mission Area (WMA) employee, you have a few
 options for accessing a JupyterHub instance:</p>
@@ -443,8 +454,8 @@ Your can also work with your own deployment of a JupyterHub environment. You wil
 make sure you have a kernel with all of the required packages set up to run these notebooks.</p></li>
 </ol>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="hpc-environment">
-<h1>HPC Environment<a class="headerlink" href="#hpc-environment" title="Permalink to this headline">#</a></h1>
+<div class="section" id="hpc-environment">
+<h2>HPC Environment<a class="headerlink" href="#hpc-environment" title="Permalink to this headline">#</a></h2>
 <p>While we prefer that these notebooks be run on “<em>cloud</em>” infrastructure, we also provide some guidance for running them on USGS’s supercomputers. You will need to access an enviroment which emulates the Jupyter server – where the notebooks will reside and execute – using the HPC hardware. There are many ways to do this. Here are three options, in increasing order of complexity and flexibility:</p>
 <ol class="simple">
 <li><p><a class="reference internal" href="OpenOnDemand.html"><span class="doc std std-doc">Open OnDemand</span></a><br>
@@ -469,6 +480,7 @@ start clusters in these environments:</p>
 <li><p><a class="reference internal" href="Start_Dask_Cluster_Nebari.html"><span class="doc std std-doc">Nebari</span></a></p></li>
 <li><p><span class="xref myst">Pangeo.CHS.usgs.gov</span></p></li>
 </ul>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>

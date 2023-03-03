@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="D-Score Steamflow Analysis Workflow" href="02_Analysis_DScore.html" />
+    <link rel="next" title="Model Evaluation Workflow :: NWM streamflow Analysis" href="02_Analysis_StdSuite.html" />
     <link rel="prev" title="NWM ‘Standard Suite (v1)’ Metrics :: Example Usage" href="../stats/Usage_StdSuite_v1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -193,6 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Analysis_StdSuite.html">
+     Model Evaluation Workflow :: NWM streamflow Analysis
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_Analysis_DScore.html">
      D-Score Steamflow Analysis Workflow
@@ -481,8 +486,8 @@ which that bit of processing takes place.</p>
 <h2>Source Data<a class="headerlink" href="#source-data" title="Permalink to this headline">#</a></h2>
 <p>Source datasets include modeled data
 ( <em><a class="reference external" href="https://registry.opendata.aws/nwm-archive/">NWM</a></em> or <em>NHM</em>, for example)
-and a reference dataset
-representing the ‘<em>observed</em>’ values covering the same variable and temporal range.
+and a reference dataset representing the ‘<em>observed</em>’ values covering the
+same variable and temporal range.
 For <em>streamflow</em> data, we have actual gage readings.  For other variables, we have other standard
 datasets representing the reference against which the model will be compared.</p>
 <p>Source datasets are found in a variety of storage mechanisms.  The main mechanisms that we
@@ -523,7 +528,7 @@ One dimension of the array is indexed by some nominal key (‘<em>gage_id</em>�
 etc), while the other dimension is indexed by time step.</p>
 </div>
 <div class="section" id="analysis-notebook">
-<h2><span class="xref myst">Analysis Notebook</span><a class="headerlink" href="#analysis-notebook" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference internal" href="02_Analysis_StdSuite.html"><span class="doc std std-doc">Analysis Notebook</span></a><a class="headerlink" href="#analysis-notebook" title="Permalink to this headline">#</a></h2>
 <p>The above data organization steps will allow us to extract a time series for a given station
 from each of the <em>simulated</em> and <em>observed</em> datasets, and run a series of statistical metrics
 against these values to evaluate Goodness Of Fit (GOF).  Benchmarking proceeds
@@ -598,10 +603,10 @@ model compares against the reference dataset.</p>
             <p class="prev-next-title">NWM ‘Standard Suite (v1)’ Metrics :: Example Usage</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_Analysis_DScore.html" title="next page">
+    <a class='right-next' id="next-link" href="02_Analysis_StdSuite.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">D-Score Steamflow Analysis Workflow</p>
+        <p class="prev-next-title">Model Evaluation Workflow :: NWM streamflow Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

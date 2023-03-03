@@ -57,8 +57,8 @@ which that bit of processing takes place.
 
 Source datasets include modeled data 
 ( _[NWM](https://registry.opendata.aws/nwm-archive/)_ or _NHM_, for example)
-and a reference dataset
-representing the '_observed_' values covering the same variable and temporal range.
+and a reference dataset representing the '_observed_' values covering the 
+same variable and temporal range.
 For _streamflow_ data, we have actual gage readings.  For other variables, we have other standard
 datasets representing the reference against which the model will be compared.
 
@@ -99,7 +99,7 @@ for _simulated_, one for _observed_).
 One dimension of the array is indexed by some nominal key ('_gage_id_', '_HUC-12_ ID',
 etc), while the other dimension is indexed by time step.
 
-## [Analysis Notebook](02_Analysis_NWM.ipynb)
+## [Analysis Notebook](02_Analysis_StdSuite.ipynb)
 
 The above data organization steps will allow us to extract a time series for a given station
 from each of the _simulated_ and _observed_ datasets, and run a series of statistical metrics

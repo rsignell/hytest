@@ -14,7 +14,7 @@ in those environments as well.
 If you are working in the cloud, we expect you to work in a JupyterHub instance that has 
 already been set up. If you are a USGS Water Mission Area (WMA) employee, you have a few 
 options for accessing a JupyterHub instance:
-1) [pangeo.chs.usgs.gov](QuickStart-Cloud-pangeo.chs.usgs.gov.md)<br>
+1) [pangeo.chs.usgs.gov](QuickStart-Cloud-pangeoCHS.md)<br>
    This JupyterHub instance is currently deployed on a USGS AWS account, and any USGS employee 
    can request access to this space. Once you are added, the url will take you to your own 
    personal JupyterHub space, and files in this space are only visible/accessible to the user 

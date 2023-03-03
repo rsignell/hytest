@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -116,19 +118,48 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-Nebari.html">
-   Quick-Start for Nebari Cloud Environment
+  <a class="reference internal" href="../../../environment_set_up/README.html">
+   Environment Setup
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-pangeo.chs.usgs.gov.html">
-   Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../environment_set_up/compute.html">
+   Compute Environments
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-Nebari.html">
+     Quick-Start for Nebari Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-pangeo.chs.usgs.gov.html">
+     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/OpenOnDemand.html">
+     HPC Server: Open OnDemand
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../environment_set_up/OpenOnDemand.html">
-   HPC Server: Open OnDemand
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../environment_set_up/clusters.html">
+   Starting a Dask Cluster
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -137,12 +168,44 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../metrics.html">
+   Evaluation Metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Metrics_DScore_Suite_v1.html">
+     ‘D-Score Suite (v1)’ Benchmark
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats/Usage_DScore_Suite_v1.html">
+     D-Score Benchmark Usage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Metrics_StdSuite_v1.html">
+     NWM ‘Standard Suite (v1)’ Metrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats/Usage_StdSuite_v1.html">
+     NWM ‘Standard Suite (v1)’ Metrics :: Example Usage
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="00_Overview.html">
    Model Evaluation Workflow
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -702,8 +765,9 @@ those gages found within this benchmarking domain.</p>
 <li><p>The domain over which to benchmark</p></li>
 <li><p>A set of statistical metrics with which to benchmark. <span style="color:red; font-size:large">&lt;&lt;–You are here</span></p></li>
 </ol>
-<p>The code to calculate the various metrics has been standardized <span class="xref myst">here</span>. You can
-use these or write your own.  To import and use these standard definitions, run this cell:</p>
+<p>The code to calculate the various metrics has been standardized
+in <span class="xref std std-doc">model_evaluation/Metrics_StdSuite_v1</span>.
+You can use these or write your own.  To import and use these standard definitions, run this cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> ../../Metrics_DScore_Suite_v1.ipynb
@@ -870,6 +934,10 @@ Name: USGS-01030350, dtype: float64
 <p>Now that we’ve got a benchmark function, and can prove that it works in remote workers
 within the cluster, we can dispatch a fleet of workers to process our data in parallel.
 We will mak use of <code class="docutils literal notranslate"><span class="pre">dask</span></code> to do thisusing a dask ‘<em>bag</em>’.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Read more about task parallelism with Dask and how we are using dask bags <span class="xref myst">here</span></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up a dask bag with the contents beging a list of the cobalt gages</span>
@@ -1127,7 +1195,8 @@ We will mak use of <code class="docutils literal notranslate"><span class="pre">
 <p>5380 rows × 12 columns</p>
 </div></div></div>
 </div>
-<p>This dataframe/table can be saved to disk as a CSV. It will be used for visualizations in <span class="xref myst">other notebooks</span>.</p>
+<p>This dataframe/table can be saved to disk as a CSV. It will be used for visualizations in
+<span class="xref std std-doc">model_evaluation/tutorials/nwm_streamflow/03_Visualization</span> .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;DScore_streamflow_example.csv&#39;</span><span class="p">)</span> <span class="c1">##&lt;--- change this to a personalized filename</span>

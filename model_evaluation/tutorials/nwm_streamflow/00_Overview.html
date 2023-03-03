@@ -50,11 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="D-Score Steamflow Analysis Workflow" href="02_Analysis_DScore.html" />
-    <link rel="prev" title="HPC Server: Open OnDemand" href="../../../environment_set_up/OpenOnDemand.html" />
+    <link rel="prev" title="NWM ‘Standard Suite (v1)’ Metrics :: Example Usage" href="../stats/Usage_StdSuite_v1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,19 +118,48 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-Nebari.html">
-   Quick-Start for Nebari Cloud Environment
+  <a class="reference internal" href="../../../environment_set_up/README.html">
+   Environment Setup
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-pangeo.chs.usgs.gov.html">
-   Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../environment_set_up/compute.html">
+   Compute Environments
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-Nebari.html">
+     Quick-Start for Nebari Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/QuickStart-Cloud-pangeo.chs.usgs.gov.html">
+     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/OpenOnDemand.html">
+     HPC Server: Open OnDemand
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../environment_set_up/OpenOnDemand.html">
-   HPC Server: Open OnDemand
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../environment_set_up/clusters.html">
+   Starting a Dask Cluster
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -137,12 +168,44 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../metrics.html">
+   Evaluation Metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Metrics_DScore_Suite_v1.html">
+     ‘D-Score Suite (v1)’ Benchmark
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats/Usage_DScore_Suite_v1.html">
+     D-Score Benchmark Usage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../Metrics_StdSuite_v1.html">
+     NWM ‘Standard Suite (v1)’ Metrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../stats/Usage_StdSuite_v1.html">
+     NWM ‘Standard Suite (v1)’ Metrics :: Example Usage
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Model Evaluation Workflow
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -387,7 +450,8 @@ title="Print to PDF"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>In broad strokes, the evaluation workflow contains these components:</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<div class="mermaid">
+            flowchart LR
     classDef thisStep fill:#ff0,stroke:#333,stroke-width:2px;
         SIM[(Simulated /&lt;br&gt;Modeled)]
         OBS[(Observed /&lt;br&gt;Reference)]
@@ -420,12 +484,10 @@ title="Print to PDF"
     OBS_r --&gt; Data
     Analysis_r --&quot;Metrics&quot;--&gt; Viz
 
-    %% change &#39;Src&#39; to the node name you want to highlight
+    %% change 'Src' to the node name you want to highlight
     %% Src | PreProc | Analysis | Viz
     %%class Src thisStep
-</pre></div>
-</div>
-<p>This can be broken down per variable, as there are different reference
+        </div><p>This can be broken down per variable, as there are different reference
 datasets for variables, as well as aggregation methods.  Examples below will
 emphasize <em>streamflow</em> as an example, comparing historical stream gage readings against the
 NWM streamflow predictions for those gages.</p>
@@ -541,11 +603,11 @@ model compares against the reference dataset.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../../environment_set_up/OpenOnDemand.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../stats/Usage_StdSuite_v1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">HPC Server: Open OnDemand</p>
+            <p class="prev-next-title">NWM ‘Standard Suite (v1)’ Metrics :: Example Usage</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="02_Analysis_DScore.html" title="next page">

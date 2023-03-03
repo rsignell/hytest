@@ -4,7 +4,7 @@
 
 In broad strokes, the evaluation workflow contains these components:
 
-```mermaid
+```{mermaid}
 flowchart LR
     classDef thisStep fill:#ff0,stroke:#333,stroke-width:2px;
         SIM[(Simulated /<br>Modeled)]

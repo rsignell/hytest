@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Explore Cloud-Optimized CONUS404 Dataset" href="../dataset_access/conus404_explore.html" />
+    <link rel="next" title="Dataset Access" href="../dataset_access/README.html" />
     <link rel="prev" title="Dask cluster on nebari.esipfed.org" href="Start_Dask_Cluster_Nebari.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -172,14 +172,31 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  CONUS DEMOS
+  Dataset Access
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../dataset_access/conus404_explore.html">
-   Explore Cloud-Optimized CONUS404 Dataset
+  <a class="reference internal" href="../dataset_access/README.html">
+   Dataset Access
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataset_access/conus404.html">
+   CONUS 404 Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataset_access/conus404_explore.html">
+     Explore CONUS404 Dataset
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -192,8 +209,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../model_evaluation/metrics.html">
    Evaluation Metrics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -224,8 +241,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
    Streamflow Model Evaluation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -242,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/02_Analysis_DScore.html">
-     Essential Benchmark Components
+     Steamflow Eval :: DScore Analysis
     </a>
    </li>
    <li class="toctree-l2">
@@ -421,7 +438,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">impor</span>
+
 <span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">LocalCluster</span><span class="p">,</span> <span class="n">Client</span>
 
 <span class="c1">## Denali is treated like a very, very, very big PC.  </span>
@@ -435,16 +452,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">impor</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">LocalCluster</span><span class="p">,</span> <span class="n">Client</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">## Denali is treated like a very, very, very big PC.  </span>
-
-<span class="ne">NameError</span>: name &#39;impor&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The &#39;cluster&#39; object can be used to adjust cluster behavior.  i.e. &#39;cluster.adapt(minimum=10)&#39;
+The &#39;client&#39; object can be used to directly interact with the cluster.  i.e. &#39;client.submit(func)&#39; 
+The link to view the client dashboard is:
+&gt;  http://127.0.0.1:8787/status
 </pre></div>
 </div>
 </div>
@@ -485,10 +496,10 @@ title="Print to PDF"
             <p class="prev-next-title">Dask cluster on nebari.esipfed.org</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../dataset_access/conus404_explore.html" title="next page">
+    <a class='right-next' id="next-link" href="../dataset_access/README.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Explore Cloud-Optimized CONUS404 Dataset</p>
+        <p class="prev-next-title">Dataset Access</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

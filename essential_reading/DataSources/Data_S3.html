@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data / Cloud Storage &#8212; HyTEST Project</title>
+    <title>Data/Cloud Storage &#8212; HyTEST Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Data / Cloud Storage
+     Data/Cloud Storage
     </a>
    </li>
    <li class="toctree-l2">
@@ -240,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../dataset_preprocessing/ReChunkingData_Cloud.html">
-     Re-Chunking Data
+     Re-Chunking Larger Datasets
     </a>
    </li>
   </ul>
@@ -259,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../dataset_catalog/subcatalogs/README.html">
-   hytest-catalogs
+   hytest sub-catalogs
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -533,7 +533,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data / Cloud Storage</h1>
+                <h1>Data/Cloud Storage</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -579,7 +579,7 @@ title="Print to PDF"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-cloud-storage">
-<h1>Data / Cloud Storage<a class="headerlink" href="#data-cloud-storage" title="Permalink to this headline">#</a></h1>
+<h1>Data/Cloud Storage<a class="headerlink" href="#data-cloud-storage" title="Permalink to this headline">#</a></h1>
 <p>One of the main storage locations for HyTest data is in ‘<em>The Cloud</em>’. This is sometimes referred to as <strong>‘Object Storage’</strong>.
 The data is kept in data centers operated by Amazon, Microsoft, or similar, which makes it easily available to network-connected devices.
 The main advantage of doing this is that if your compute engine is also in that same data center (or nearby, as is the case with many JupyterHub services),
@@ -653,11 +653,11 @@ fs.info(&#39;s3://noaa-nwm-retrospective-2-1-zarr-pds/index.html&#39;)
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>b&#39;&lt;!DOCTYPE html&gt;\r\n&#39;
-b&#39;\r\n&#39;
-b&#39;&lt;!--\r\n&#39;
-b&#39;Copyright 2014-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.\r\n&#39;
-b&#39;\r\n&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sa">b</span><span class="s1">&#39;&lt;!DOCTYPE html&gt;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+<span class="sa">b</span><span class="s1">&#39;&lt;!--</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+<span class="sa">b</span><span class="s1">&#39;Copyright 2014-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
 <p>However – most of the time, we don’t need such low level access.
@@ -692,8 +692,6 @@ object storage – <strong>not the full dataset</strong>.</p>
 <p>The above example is a very, <em>very</em>, <strong>very</strong> large dataset, which you don’t want to load over the network to your desktop.
 Execute full data read operations only if this notebook is being hosted and run out of the same AWS center where the data lives.</p>
 </div>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
 <p>The good news about some of the larger science-oriented libraries (xarray, dask, pandas, zarr, etc), is that
 they can automatically handle the <code class="docutils literal notranslate"><span class="pre">fsspec</span></code> operations for you <strong>IF YOUR ACCESS IS ANONYMOUS</strong>.
 This is a convenience, but is a special case for read-only data where <code class="docutils literal notranslate"><span class="pre">anon=True</span></code> and <code class="docutils literal notranslate"><span class="pre">requester_pays=False</span></code>.</p>
@@ -703,7 +701,6 @@ and doesn’t work everywhere.</p>
 <p>Because it isn’t universally available, and only applies to anonymous reads, examples in HyTEST will
 always explicitly plumb <code class="docutils literal notranslate"><span class="pre">fsspec</span></code> ‘longhand’ using <code class="docutils literal notranslate"><span class="pre">get_mapper()</span></code>. You may see example code elsewhere
 that takes the shortcut if it is available.</p>
-</div>
 </div>
 <div class="section" id="credentialed-access">
 <h2>Credentialed Access<a class="headerlink" href="#credentialed-access" title="Permalink to this headline">#</a></h2>

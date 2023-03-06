@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Model Evaluation Workflow &#8212; HyTEST Project</title>
+    <title>Streamflow Model Evaluation &#8212; HyTEST Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,13 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Model Evaluation :: Data Preparation" href="01_Data_Prep.html" />
-    <link rel="prev" title="NWM ‘Standard Suite (v1)’ Metrics :: Example Usage" href="../stats/Usage_StdSuite_v1.html" />
+    <link rel="prev" title="Standard Suite (v1) Metrics – Usage Examples" href="../stats/Usage_StdSuite_v1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -185,29 +183,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Metrics_DScore_Suite_v1.html">
-     ‘D-Score Suite (v1)’ Benchmark
+     D-Score Suite (v1) Benchmark
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../stats/Usage_DScore_Suite_v1.html">
-     D-Score Benchmark Usage
+     D-Score Suite (v1) Benchmark – Example Usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Metrics_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics
+     Standard Suite (v1) Metrics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../stats/Usage_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics :: Example Usage
+     Standard Suite (v1) Metrics – Usage Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Model Evaluation Workflow
+   Streamflow Model Evaluation
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -409,7 +407,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Model Evaluation Workflow</h1>
+                <h1>Streamflow Model Evaluation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -460,49 +458,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="model-evaluation-workflow">
-<h1>Model Evaluation Workflow<a class="headerlink" href="#model-evaluation-workflow" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="streamflow-model-evaluation">
+<h1>Streamflow Model Evaluation<a class="headerlink" href="#streamflow-model-evaluation" title="Permalink to this headline">#</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>In broad strokes, the evaluation workflow contains these components:</p>
-<div class="mermaid">
-                flowchart LR
-        classDef thisStep fill:#ff0,stroke:#333,stroke-width:2px;
-            SIM[(Simulated /&lt;br&gt;Modeled)]
-            OBS[(Observed /&lt;br&gt;Reference)]
-
-        subgraph PreProc [Data Preparation]
-            direction TB
-            SIM_r[[Simulated&lt;br&gt;/&lt;br&gt;Modeled&lt;br&gt;]]
-            OBS_r[[Observed&lt;br&gt;/&lt;br&gt;Reference]]
-        end
-        subgraph Analysis
-            direction LR
-            Metrics[/Metrics/]
-            Domain[/Domain/]
-            Data[(&quot;Data&quot;)]
-            Analysis_r[[&lt;font size=6&gt;Analysis]]
-            Domain --&gt; Analysis_r
-            Data --&gt; Analysis_r
-            Metrics --&gt; Analysis_r
-        end
-        subgraph Viz [Visualization]
-            direction TB
-            Explore
-            Plot
-            Score
-            Explore-.-&gt;Plot-.-&gt;Score
-        end
-        SIM --&gt; SIM_r
-        OBS --&gt; OBS_r
-        SIM_r --&gt; Data
-        OBS_r --&gt; Data
-        Analysis_r --&quot;Metrics&quot;--&gt; Viz
-
-        %% change 'Src' to the node name you want to highlight
-        %% Src | PreProc | Analysis | Viz
-        %%class Src thisStep
-        </div><p>This can be broken down per variable, as there are different reference
+<a class="reference internal image-reference" href="../../../_images/Eval_Overview.svg"><img alt="../../../_images/Eval_Overview.svg" src="../../../_images/Eval_Overview.svg" width="600" /></a>
+<p>This can be broken down per variable, as there are different reference
 datasets for variables, as well as aggregation methods.  Examples below will
 emphasize <em>streamflow</em> as an example, comparing historical stream gage readings against the
 NWM streamflow predictions for those gages.</p>
@@ -627,7 +589,7 @@ model compares against the reference dataset.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">NWM ‘Standard Suite (v1)’ Metrics :: Example Usage</p>
+            <p class="prev-next-title">Standard Suite (v1) Metrics – Usage Examples</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="01_Data_Prep.html" title="next page">

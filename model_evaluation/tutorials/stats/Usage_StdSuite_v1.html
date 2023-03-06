@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NWM ‘Standard Suite (v1)’ Metrics :: Example Usage &#8212; HyTEST Project</title>
+    <title>Standard Suite (v1) Metrics – Usage Examples &#8212; HyTEST Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,13 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Model Evaluation Workflow" href="../nwm_streamflow/00_Overview.html" />
-    <link rel="prev" title="NWM ‘Standard Suite (v1)’ Metrics" href="../../Metrics_StdSuite_v1.html" />
+    <link rel="next" title="Streamflow Model Evaluation" href="../nwm_streamflow/00_Overview.html" />
+    <link rel="prev" title="Standard Suite (v1) Metrics" href="../../Metrics_StdSuite_v1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -185,29 +183,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../../Metrics_DScore_Suite_v1.html">
-     ‘D-Score Suite (v1)’ Benchmark
+     D-Score Suite (v1) Benchmark
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Usage_DScore_Suite_v1.html">
-     D-Score Benchmark Usage
+     D-Score Suite (v1) Benchmark – Example Usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Metrics_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics
+     Standard Suite (v1) Metrics
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     NWM ‘Standard Suite (v1)’ Metrics :: Example Usage
+     Standard Suite (v1) Metrics – Usage Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../nwm_streamflow/00_Overview.html">
-   Model Evaluation Workflow
+   Streamflow Model Evaluation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -288,6 +286,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/model_evaluation/tutorials/stats/Usage_StdSuite_v1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -398,7 +425,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>NWM ‘Standard Suite (v1)’ Metrics :: Example Usage</h1>
+                <h1>Standard Suite (v1) Metrics – Usage Examples</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -438,8 +465,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="nwm-standard-suite-v1-metrics-example-usage">
-<h1>NWM ‘Standard Suite (v1)’ Metrics :: Example Usage<a class="headerlink" href="#nwm-standard-suite-v1-metrics-example-usage" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="standard-suite-v1-metrics-usage-examples">
+<h1>Standard Suite (v1) Metrics – Usage Examples<a class="headerlink" href="#standard-suite-v1-metrics-usage-examples" title="Permalink to this headline">#</a></h1>
 <p>This notebook will demonstrate how to call the specific functions defined in the
 <span class="xref std std-doc">model_evaluation/Metrics_StdSuite_v1</span>
 notebook, using a small demonstration dataset.</p>
@@ -710,16 +737,16 @@ If you would like to manipulate these parameters, you may adjust the <code class
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: ""
         },
         kernelOptions: {
-            name: "python3",
+            name: "",
             path: "./model_evaluation/tutorials/stats"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = ''</script>
 
               </div>
               
@@ -732,13 +759,13 @@ If you would like to manipulate these parameters, you may adjust the <code class
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">NWM ‘Standard Suite (v1)’ Metrics</p>
+            <p class="prev-next-title">Standard Suite (v1) Metrics</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../nwm_streamflow/00_Overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Model Evaluation Workflow</p>
+        <p class="prev-next-title">Streamflow Model Evaluation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

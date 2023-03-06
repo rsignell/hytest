@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -185,29 +183,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Metrics_DScore_Suite_v1.html">
-     ‘D-Score Suite (v1)’ Benchmark
+     D-Score Suite (v1) Benchmark
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../stats/Usage_DScore_Suite_v1.html">
-     D-Score Benchmark Usage
+     D-Score Suite (v1) Benchmark – Example Usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../Metrics_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics
+     Standard Suite (v1) Metrics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../stats/Usage_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics :: Example Usage
+     Standard Suite (v1) Metrics – Usage Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="00_Overview.html">
-   Model Evaluation Workflow
+   Streamflow Model Evaluation
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -523,7 +521,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="step-1-load-data">
 <h2>Step 1: Load Data<a class="headerlink" href="#step-1-load-data" title="Permalink to this headline">#</a></h2>
-<a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Data1.svg"><img alt="../../../_images/Eval_Analysis_Data1.svg" src="../../../_images/Eval_Analysis_Data1.svg" width="360" /></a>
+<a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Data.svg"><img alt="../../../_images/Eval_Analysis_Data.svg" src="../../../_images/Eval_Analysis_Data.svg" width="360" /></a>
 <p>Essential Benchmark Components:</p>
 <ol class="simple">
 <li><p><span style="color:green; font-size:large">A set of predictions and matching observations</span></p></li>
@@ -638,7 +636,7 @@ Modeled  :  nwm21-streamflow-usgs-gages-cloud
 </div>
 <div class="section" id="step-2-restrict-to-a-domain">
 <h2>Step 2: Restrict to a Domain<a class="headerlink" href="#step-2-restrict-to-a-domain" title="Permalink to this headline">#</a></h2>
-<a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Domain1.svg"><img alt="../../../_images/Eval_Analysis_Domain1.svg" src="../../../_images/Eval_Analysis_Domain1.svg" width="360" /></a>
+<a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Domain.svg"><img alt="../../../_images/Eval_Analysis_Domain.svg" src="../../../_images/Eval_Analysis_Domain.svg" width="360" /></a>
 <p>Essential Benchmark Components:</p>
 <ol class="simple">
 <li><p>A set of predictions and matching observations,</p></li>
@@ -769,7 +767,7 @@ those gages found within this benchmarking domain.</p>
 </div>
 <div class="section" id="step-3-define-metrics">
 <h2>Step 3: Define Metrics<a class="headerlink" href="#step-3-define-metrics" title="Permalink to this headline">#</a></h2>
-<a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Metrics1.svg"><img alt="../../../_images/Eval_Analysis_Metrics1.svg" src="../../../_images/Eval_Analysis_Metrics1.svg" width="360" /></a>
+<a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Metrics.svg"><img alt="../../../_images/Eval_Analysis_Metrics.svg" src="../../../_images/Eval_Analysis_Metrics.svg" width="360" /></a>
 <p>Essential Benchmark Components:</p>
 <ol class="simple">
 <li><p>A set of predictions and matching observations,</p></li>
@@ -777,9 +775,9 @@ those gages found within this benchmarking domain.</p>
 <li><p><span style="color:green; font-size:large">A set of statistical metrics with which to benchmark.</span></p></li>
 </ol>
 <p>The code to calculate the various NWM metrics has been standardized in
-<a class="reference internal" href="../../Metrics_StdSuite_v1.html"><span class="doc">NWM ‘Standard Suite (v1)’ Metrics</span></a>
+<a class="reference internal" href="../../Metrics_StdSuite_v1.html"><span class="doc">Standard Suite (v1) Metrics</span></a>
 with usage examples in
-<a class="reference internal" href="../stats/Usage_StdSuite_v1.html"><span class="doc">NWM ‘Standard Suite (v1)’ Metrics :: Example Usage</span></a>.
+<a class="reference internal" href="../stats/Usage_StdSuite_v1.html"><span class="doc">Standard Suite (v1) Metrics – Usage Examples</span></a>.
 You can use these metrics or write your own.  To import and use these standardized definitions, run this cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

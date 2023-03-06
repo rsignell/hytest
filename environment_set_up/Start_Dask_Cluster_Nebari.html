@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -185,29 +183,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_evaluation/Metrics_DScore_Suite_v1.html">
-     ‘D-Score Suite (v1)’ Benchmark
+     D-Score Suite (v1) Benchmark
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">
-     D-Score Benchmark Usage
+     D-Score Suite (v1) Benchmark – Example Usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_evaluation/Metrics_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics
+     Standard Suite (v1) Metrics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_evaluation/tutorials/stats/Usage_StdSuite_v1.html">
-     NWM ‘Standard Suite (v1)’ Metrics :: Example Usage
+     Standard Suite (v1) Metrics – Usage Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
-   Model Evaluation Workflow
+   Streamflow Model Evaluation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -383,6 +381,7 @@ title="Print to PDF"
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Unable to import Dask Gateway.  Are you running in a cloud compute environment?</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">raise</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;DASK_DISTRIBUTED__SCHEDULER__WORKER_SATURATION&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span>
 
 <span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
 <span class="n">_options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
@@ -412,18 +411,7 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The &#39;cluster&#39; object can be used to adjust cluster behavior.  i.e. &#39;cluster.adapt(minimum=10)&#39;
 The &#39;client&#39; object can be used to directly interact with the cluster.  i.e. &#39;client.submit(func)&#39; 
 The link to view the client dashboard is:
-&gt;  https://nebari.esipfed.org/gateway/clusters/dev.04b6b432bc174645972dc266962cbf02/status
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/conda/gzt5142/416f3e91a745a10bfa2224dc222d5c5a76a509a4c1b4e17de75c3291619635b9-20230303-202416-341785-103-pangeo-jbook/lib/python3.9/site-packages/distributed/client.py:1361: VersionMismatchWarning: Mismatched versions found
-
-+-------------+----------+-----------+---------+
-| Package     | Client   | Scheduler | Workers |
-+-------------+----------+-----------+---------+
-| dask        | 2023.3.0 | 2023.2.0  | None    |
-| distributed | 2023.3.0 | 2023.2.0  | None    |
-+-------------+----------+-----------+---------+
-  warnings.warn(version_module.VersionMismatchWarning(msg[0][&quot;warning&quot;]))
+&gt;  https://nebari.esipfed.org/gateway/clusters/dev.523ceef8eddd4e57b184373b9f38a5df/status
 </pre></div>
 </div>
 </div>

@@ -138,6 +138,16 @@ const thebe_selector_output = ".output, .cell_output"
      HPC Server: Open OnDemand
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="environment_set_up/JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="environment_set_up/StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -170,16 +180,92 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="essential_reading/ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="essential_reading/DataSources/README.html">
+   Data Sources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="essential_reading/DataSources/Data_APIs.html">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="essential_reading/DataSources/Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="essential_reading/DataSources/Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="essential_reading/Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="dataset_preprocessing/chunk.html">
+   Chunking Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dataset_preprocessing/ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dataset_preprocessing/ReChunkingData_Cloud.html">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Dataset Access
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataset_catalog/subcatalogs/README.html">
+   hytest sub-catalogs
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="dataset_access/README.html">
    CONUS404 Access
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -202,8 +288,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="model_evaluation/metrics.html">
    Evaluation Metrics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -215,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="model_evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">
-     D-Score Suite (v1) Benchmark – Example Usage
+     D-Score Suite (v1) Benchmark – Usage Examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -234,8 +320,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
    Streamflow Model Evaluation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -261,6 +347,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="doc/LICENSE.html">
+   License
+  </a>
  </li>
 </ul>
 

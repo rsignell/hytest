@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D-Score Suite (v1) Benchmark – Example Usage &#8212; HyTEST Project</title>
+    <title>D-Score Suite (v1) Benchmark – Usage Examples &#8212; HyTEST Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -140,6 +140,16 @@ const thebe_selector_output = ".output, .cell_output"
      HPC Server: Open OnDemand
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -172,21 +182,92 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../essential_reading/ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../essential_reading/DataSources/README.html">
+   Data Sources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../essential_reading/DataSources/Data_APIs.html">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../essential_reading/DataSources/Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../essential_reading/DataSources/Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../essential_reading/Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../dataset_preprocessing/chunk.html">
+   Chunking Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../dataset_preprocessing/ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../dataset_preprocessing/ReChunkingData_Cloud.html">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Dataset Access
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../dataset_access/README.html">
-   Dataset Access
+  <a class="reference internal" href="../../../dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dataset_catalog/subcatalogs/README.html">
+   hytest sub-catalogs
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../dataset_access/conus404.html">
-   CONUS 404 Access
+  <a class="reference internal" href="../../../dataset_access/README.html">
+   CONUS404 Access
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -209,8 +290,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../metrics.html">
    Evaluation Metrics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -222,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     D-Score Suite (v1) Benchmark – Example Usage
+     D-Score Suite (v1) Benchmark – Usage Examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -241,8 +322,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../nwm_streamflow/00_Overview.html">
    Streamflow Model Evaluation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -268,6 +349,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../doc/LICENSE.html">
+   License
+  </a>
  </li>
 </ul>
 
@@ -459,7 +557,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>D-Score Suite (v1) Benchmark – Example Usage</h1>
+                <h1>D-Score Suite (v1) Benchmark – Usage Examples</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -499,8 +597,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="d-score-suite-v1-benchmark-example-usage">
-<h1>D-Score Suite (v1) Benchmark – Example Usage<a class="headerlink" href="#d-score-suite-v1-benchmark-example-usage" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="d-score-suite-v1-benchmark-usage-examples">
+<h1>D-Score Suite (v1) Benchmark – Usage Examples<a class="headerlink" href="#d-score-suite-v1-benchmark-usage-examples" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>This notebook adapted from originals by Timothy Hodson and Rich Signell. See that upstream work at:</em></p>
@@ -619,7 +717,7 @@ dataset limits to a single gage (“<code class="docutils literal notranslate"><
 <div class="section" id="import-benchmark-functions">
 <h2>Import Benchmark Functions<a class="headerlink" href="#import-benchmark-functions" title="Permalink to this headline">#</a></h2>
 <p>The metric functions are defined and described in
-<span class="xref std std-doc">model_evaluation/Metrics_DScore_Suite_v1</span>.
+<a class="reference internal" href="../../Metrics_DScore_Suite_v1.html"><span class="doc">D-Score Suite (v1) Benchmark</span></a>.
 They are imported here by running that notebook from within the following cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data/APIs &#8212; HyTEST Project</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data / Cloud Storage" href="Data_S3.html" />
+    <link rel="prev" title="Data Sources" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">HyTEST Project</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    HyTEST
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Environment Set-Up
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../environment_set_up/README.html">
+   Compute Environments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/QuickStart-Cloud-Nebari.html">
+     Quick-Start for Nebari Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/QuickStart-Cloud-pangeoCHS.html">
+     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/OpenOnDemand.html">
+     HPC Server: Open OnDemand
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../environment_set_up/clusters.html">
+   Starting a Dask Cluster
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/Help_AWS_Credentials.html">
+     AWS Credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/Start_Dask_Cluster_Nebari.html">
+     Dask cluster on nebari.esipfed.org
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../environment_set_up/Start_Dask_Cluster_Denali.html">
+     Dask Cluster on Denali HPC
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Data Sources
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../dataset_preprocessing/chunk.html">
+   Chunking Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataset_preprocessing/ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataset_preprocessing/ReChunkingData_Cloud.html">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dataset Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../dataset_catalog/subcatalogs/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../dataset_access/README.html">
+   CONUS404 Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../dataset_access/conus404_explore.html">
+     Explore CONUS404 Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Evaluation Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../model_evaluation/metrics.html">
+   Evaluation Metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/Metrics_DScore_Suite_v1.html">
+     D-Score Suite (v1) Benchmark
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">
+     D-Score Suite (v1) Benchmark – Usage Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/Metrics_StdSuite_v1.html">
+     Standard Suite (v1) Metrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/tutorials/stats/Usage_StdSuite_v1.html">
+     Standard Suite (v1) Metrics – Usage Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
+   Streamflow Model Evaluation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/tutorials/nwm_streamflow/01_Data_Prep.html">
+     Streamflow Eval :: Data Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/tutorials/nwm_streamflow/02_Analysis_StdSuite.html">
+     Streamflow Eval :: StdSuite Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/tutorials/nwm_streamflow/02_Analysis_DScore.html">
+     Steamflow Eval :: DScore Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model_evaluation/tutorials/nwm_streamflow/03_Vizualization.html">
+     Streamflow Eval :: Visualization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../doc/LICENSE.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/essential_reading/DataSources/Data_APIs.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api">
+   <strong>
+    API
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requests">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pygeohydro">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pygeohydro
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nwis">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NWIS
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ftp">
+   <strong>
+    FTP
+   </strong>
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data/APIs</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api">
+   <strong>
+    API
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requests">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pygeohydro">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pygeohydro
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nwis">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NWIS
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ftp">
+   <strong>
+    FTP
+   </strong>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-apis">
+<h1>Data/APIs<a class="headerlink" href="#data-apis" title="Permalink to this headline">#</a></h1>
+<p>Application Programming Interfaces (API) are a common way of accessing and processing
+data over the internet between a distant application and the application (or script)
+you are working on. Another method is File Transfer Protocol calls (FTP), which are
+used to transfer large amounts of data over the internet. As FTPs are not communications
+between applications but just simple data tranfers with no processing capabilities, they
+are being used less and less over time, though some data is still only available over
+the internet in this fashion.</p>
+<div class="section" id="api">
+<h2><strong>API</strong><a class="headerlink" href="#api" title="Permalink to this headline">#</a></h2>
+<p>In Python, there are different ways of getting data with APIs and we will examine two of the more common: using a library such as <code class="docutils literal notranslate"><span class="pre">requests</span></code> to query the API or use a library a developer has created to make interacting with an API easier, such as <code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code>, through different helper functions or improved documentation.</p>
+<div class="section" id="requests">
+<h3><code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#requests" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library is a <a class="reference external" href="https://requests.readthedocs.io/en/latest/">well documented library</a> for issuing <em>get</em> requests.</p>
+<p>A common example in geospatial work is getting data from ArcGIS Feature Service layers and
+creating a <code class="docutils literal notranslate"><span class="pre">geopandas</span> <span class="pre">GeoDataFrame</span></code> from it. The typical process for accomplishing this is
+using a combination of the REST API page, the REST API query page to help build a query
+(if available), and an ArcGIS Online view of the data for help understanding the contents
+of fields. An example is the
+<a class="reference external" href="https://hub.arcgis.com/datasets/CC-NY::wbdhu10-watershed/explore?location=42.219929%2C-73.252807%2C9.00">HUC10 Watershed</a>
+by Columbia County Planning. The dataset can be explored using the included map and an comes
+with an <a class="reference external" href="https://hub.arcgis.com/datasets/CC-NY::wbdhu10-watershed/api">API Explorer</a> to help build the API.</p>
+<p>Putting this all together would look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="c1"># create base url and paylaod</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://services3.arcgis.com/F5762GA30C3SyZFy/arcgis/rest/services/Watershed_Boundary_Dataset/FeatureServer/4/query?&quot;</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;1=1&quot;</span><span class="p">,</span> <span class="c1">#all records that match</span>
+    <span class="s2">&quot;returnGeometry&quot;</span><span class="p">:</span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;outFields&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;outSR&quot;</span><span class="p">:</span><span class="s2">&quot;4326&quot;</span><span class="p">,</span> <span class="c1">#WGS84</span>
+    <span class="s2">&quot;f&quot;</span><span class="p">:</span> <span class="s2">&quot;pjson&quot;</span> <span class="c1">#f=format</span>
+<span class="p">}</span>
+
+<span class="c1"># send request, which will create URL</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="c1"># check that get was successful before creating GeoDataFrame</span>
+<span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span> <span class="c1">#200 == success</span>
+    <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request failed. Status code = </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot to see the geometries</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Some FeatureServers have preformatted data calls that return the data as a GeoJSON without
+having to construct a payload as above.  The request URL has the query parameters built in.
+This can be read directly into a GeoDataFrame.</p>
+<p>A request similar to the above would look like this with a GeoJSON API request using such a service:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://services3.arcgis.com/F5762GA30C3SyZFy/arcgis/rest/services/Watershed_Boundary_Dataset/FeatureServer/4/query?outFields=*&amp;where=1%3D1&amp;f=geojson&quot;</span>
+
+<span class="c1"># create GeoDataFrame</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># plot to see the geometries</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pygeohydro">
+<h3><code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code><a class="headerlink" href="#pygeohydro" title="Permalink to this headline">#</a></h3>
+<p>Libraries like <a class="reference external" href="https://docs.hyriver.io/autoapi/pygeohydro/index.html">pygeohydro</a> provide
+easy ways to format data calls to data services via a customize API.  Libraries such as this
+format the URL behind the scenes.
+The example below is being made to the
+<a class="reference external" href="https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/3">WBD HUC6 Feature Layer</a>
+and is being done using the already known HUC6 ids 020401 and 020402.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygeohydro</span> <span class="kn">import</span> <span class="n">pygeohydro</span>
+
+<span class="c1"># bring in HUC6 boundaries based on known IDs</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">pygeohydro</span><span class="o">.</span><span class="n">WBD</span><span class="p">(</span><span class="s2">&quot;huc6&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">byids</span><span class="p">(</span><span class="s2">&quot;huc6&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;020401&quot;</span><span class="p">,</span> <span class="s2">&quot;020402&quot;</span><span class="p">])</span>
+
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">bysql</span></code> method to send a condition to the <em>where</em> field in the
+<a class="reference external" href="https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/3/query">query</a>. If we
+wanted the HUC6 boundaries found only in the state of Michigan (MI), we would create a
+SQL call with <code class="docutils literal notranslate"><span class="pre">column='value'</span></code> to query the database. (e.g. <code class="docutils literal notranslate"><span class="pre">states='MI'</span></code>). Note the
+single quotes, which SQL uses in this instance.  It will not work with double quotes (” “).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygeohydro</span> <span class="kn">import</span> <span class="n">pygeohydro</span>
+
+<span class="c1"># bring in HUC boundaries found only in Michigan</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">pygeohydro</span><span class="o">.</span><span class="n">WBD</span><span class="p">(</span><span class="s2">&quot;huc6&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">bysql</span><span class="p">(</span><span class="s2">&quot;states=&#39;MI&#39;&quot;</span><span class="p">)</span>
+
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nwis">
+<h3><code class="docutils literal notranslate"><span class="pre">NWIS</span></code><a class="headerlink" href="#nwis" title="Permalink to this headline">#</a></h3>
+<p>This API is a member of the <code class="docutils literal notranslate"><span class="pre">hyriver</span></code> suite (as is <code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code>, above).  It facilitates
+queries to the NWIS service to obtain historical readings for stream gages.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygeohydro</span> <span class="kn">import</span> <span class="n">NWIS</span>
+<span class="n">nwis</span> <span class="o">=</span> <span class="n">NWIS</span><span class="p">()</span>
+<span class="n">DATE_RANGE</span><span class="o">=</span> <span class="p">(</span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2010-12-31&quot;</span><span class="p">)</span>
+
+<span class="c1"># returns data as pandas DataFrame</span>
+<span class="n">as_dastaframe</span> <span class="o">=</span> <span class="n">nwis</span><span class="o">.</span><span class="n">get_streamflow</span><span class="p">(</span><span class="s1">&#39;USGS-13317000&#39;</span><span class="p">,</span> <span class="n">DATE_RANGE</span><span class="p">)</span>
+
+<span class="c1"># returns data as xarray DataSet</span>
+<span class="n">as_xarray</span> <span class="o">=</span> <span class="n">nwis</span><span class="o">.</span><span class="n">get_streamflow</span><span class="p">(</span><span class="s1">&#39;USGS-13317000&#39;</span><span class="p">,</span> <span class="n">DATE_RANGE</span><span class="p">,</span> <span class="n">to_xarray</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ftp">
+<h2><strong>FTP</strong><a class="headerlink" href="#ftp" title="Permalink to this headline">#</a></h2>
+<p>FTP is often the access method for many legacy datasets. An example is bringing in
+data from NOAA’s
+<a class="reference external" href="https://www.ncei.noaa.gov/access/crn/qcdatasets.html">Global Climate Reference Network FTP Server</a>.
+Here, the <code class="docutils literal notranslate"><span class="pre">fsspec</span></code> library is used to create an FTPFileSystem instance locally that speaks to
+the FTP server, read in a text file that contains station data using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, and the data is
+used to create a GeoDataFrame.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">fsspec.implementations.ftp</span> <span class="kn">import</span> <span class="n">FTPFileSystem</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">fs</span> <span class="o">=</span> <span class="n">FTPFileSystem</span><span class="p">(</span><span class="s2">&quot;ftp.ncei.noaa.gov&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/pub/data/uscrn/products/stations.tsv&quot;</span><span class="p">))</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;LONGITUDE&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">]),</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+
+<span class="n">gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Say you just wanted the daily tabular data from a single station, you could use a combination
+of <code class="docutils literal notranslate"><span class="pre">fsspec</span></code> functions, including <code class="docutils literal notranslate"><span class="pre">glob</span></code> to search for files.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fsspec.implementations.ftp</span> <span class="kn">import</span> <span class="n">FTPFileSystem</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">stat_name</span> <span class="o">=</span> <span class="s2">&quot;Avondale&quot;</span>
+
+<span class="c1"># instantiate FTP system</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">FTPFileSystem</span><span class="p">(</span><span class="s2">&quot;ftp.ncei.noaa.gov&quot;</span><span class="p">)</span>
+
+<span class="c1"># get list of all files with Avondale in name</span>
+<span class="n">file_list_glob</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/pub/data/uscrn/products/daily01/**/*</span><span class="si">{</span><span class="n">stat_name</span><span class="si">}</span><span class="s2">*&quot;</span><span class="p">)</span>
+
+<span class="c1"># create dataframe of data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">file_list_glob</span><span class="p">:</span>
+    <span class="n">stat_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">stat_data</span><span class="p">])</span>
+
+<span class="c1"># the data is all crammed into a single column so spread it out</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; +&quot;</span><span class="p">,</span><span class="n">expand</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./essential_reading/DataSources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Data Sources</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Data_S3.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data / Cloud Storage</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

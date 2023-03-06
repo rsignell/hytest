@@ -140,6 +140,16 @@ const thebe_selector_output = ".output, .cell_output"
      HPC Server: Open OnDemand
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -172,21 +182,92 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../essential_reading/ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../essential_reading/DataSources/README.html">
+   Data Sources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_APIs.html">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../essential_reading/Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataset_preprocessing/chunk.html">
+   Chunking Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataset_preprocessing/ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataset_preprocessing/ReChunkingData_Cloud.html">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Dataset Access
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../dataset_access/README.html">
-   Dataset Access
+  <a class="reference internal" href="../dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_catalog/subcatalogs/README.html">
+   hytest-catalogs
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../dataset_access/conus404.html">
-   CONUS 404 Access
+  <a class="reference internal" href="../dataset_access/README.html">
+   CONUS404 Access
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -209,8 +290,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../model_evaluation/metrics.html">
    Evaluation Metrics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -222,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../model_evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">
-     D-Score Suite (v1) Benchmark – Example Usage
+     D-Score Suite (v1) Benchmark – Usage Examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -241,8 +322,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
    Streamflow Model Evaluation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -268,6 +349,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../doc/LICENSE.html">
+   License
+  </a>
  </li>
 </ul>
 
@@ -379,57 +477,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#obtain-access-to-pangeo-chs-usgs-gov-by-following-these-instructions">
-   1) Obtain access to
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pangeo.chs.usgs.gov
-    </span>
-   </code>
-   by following these instructions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clone-this-repository-containing-example-notebooks-into-your-working-space">
-   2) Clone this repository containing example notebooks into your working space
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-a-notebook-and-select-the-pangeo-conda-env-kernel">
-   3) Open a notebook and select the pangeo conda env kernel
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-the-notebook">
-   4) Run the notebook
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -441,40 +494,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#obtain-access-to-pangeo-chs-usgs-gov-by-following-these-instructions">
-   1) Obtain access to
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pangeo.chs.usgs.gov
-    </span>
-   </code>
-   by following these instructions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clone-this-repository-containing-example-notebooks-into-your-working-space">
-   2) Clone this repository containing example notebooks into your working space
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-a-notebook-and-select-the-pangeo-conda-env-kernel">
-   3) Open a notebook and select the pangeo conda env kernel
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-the-notebook">
-   4) Run the notebook
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -485,19 +504,18 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="quick-start-for-pangeo-chs-usgs-gov-cloud-environment">
 <h1>Quick-Start for pangeo.chs.usgs.gov Cloud Environment<a class="headerlink" href="#quick-start-for-pangeo-chs-usgs-gov-cloud-environment" title="Permalink to this headline">#</a></h1>
 <p>This document will help you set up the correct computing environment on the USGS JupyterHub instance deployed at pangeo.chs.usgs.gov. This JupyterHub instance is currently deployed on a USGS AWS account, and any USGS employee can request access to this space. Once you are added, the url will take you to your own personal JupyterHub space, and files in this space are only visible/accessible to the user who created them. You will also have access to a shared set of kernels.</p>
-<div class="section" id="obtain-access-to-pangeo-chs-usgs-gov-by-following-these-instructions">
-<h2>1) Obtain access to <code class="docutils literal notranslate"><span class="pre">pangeo.chs.usgs.gov</span></code> by following <a class="reference external" href="https://support.chs.usgs.gov/display/CHSKB/Pangeo+Framework">these instructions</a><a class="headerlink" href="#obtain-access-to-pangeo-chs-usgs-gov-by-following-these-instructions" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="clone-this-repository-containing-example-notebooks-into-your-working-space">
-<h2>2) Clone this repository containing example notebooks into your working space<a class="headerlink" href="#clone-this-repository-containing-example-notebooks-into-your-working-space" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="open-a-notebook-and-select-the-pangeo-conda-env-kernel">
-<h2>3) Open a notebook and select the pangeo conda env kernel<a class="headerlink" href="#open-a-notebook-and-select-the-pangeo-conda-env-kernel" title="Permalink to this headline">#</a></h2>
-</div>
-<div class="section" id="run-the-notebook">
-<h2>4) Run the notebook<a class="headerlink" href="#run-the-notebook" title="Permalink to this headline">#</a></h2>
-<p>If you want to update the packages in the pangeo kernel, you will need to create a merge request with changes to this <a class="reference external" href="https://code.chs.usgs.gov/usgs-chs/CHS-IaC/baseline/managed-services/pangeo/pangeo-image/-/blob/master/pangeo-notebook/environment.yml">environment.yml</a>. <a class="reference external" href="https://code.chs.usgs.gov/usgs-chs/CHS-IaC/baseline/managed-services/pangeo/pangeo-image/-/merge_requests/45">Here is an example of a successfully merged request</a>. Please note that the update to the environment may take several weeks to go through.</p>
-</div>
+<ol class="simple">
+<li><p>Obtain access to <code class="docutils literal notranslate"><span class="pre">pangeo.chs.usgs.gov</span></code> by following
+<a class="reference external" href="https://support.chs.usgs.gov/display/CHSKB/Pangeo+Framework">these instructions</a></p></li>
+<li><p>Clone this repository containing example notebooks into your working space</p></li>
+<li><p>Open a notebook and select the pangeo conda env kernel</p></li>
+<li><p>Run the notebook</p></li>
+</ol>
+<p>If you want to update the packages in the pangeo kernel, you will need to create a merge request with
+changes to this
+<a class="reference external" href="https://code.chs.usgs.gov/usgs-chs/CHS-IaC/baseline/managed-services/pangeo/pangeo-image/-/blob/master/pangeo-notebook/environment.yml">environment.yml</a>.
+<a class="reference external" href="https://code.chs.usgs.gov/usgs-chs/CHS-IaC/baseline/managed-services/pangeo/pangeo-image/-/merge_requests/45">Here is an example of a successfully merged request</a>.
+Please note that the update to the environment may take several weeks to go through.</p>
 </div>
 
     <script type="text/x-thebe-config">

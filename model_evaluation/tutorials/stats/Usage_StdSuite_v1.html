@@ -140,6 +140,16 @@ const thebe_selector_output = ".output, .cell_output"
      HPC Server: Open OnDemand
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../environment_set_up/StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -172,21 +182,92 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../essential_reading/ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../essential_reading/DataSources/README.html">
+   Data Sources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../essential_reading/DataSources/Data_APIs.html">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../essential_reading/DataSources/Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../essential_reading/DataSources/Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../essential_reading/Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../dataset_preprocessing/chunk.html">
+   Chunking Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../dataset_preprocessing/ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../dataset_preprocessing/ReChunkingData_Cloud.html">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Dataset Access
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../dataset_access/README.html">
-   Dataset Access
+  <a class="reference internal" href="../../../dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../dataset_catalog/subcatalogs/README.html">
+   hytest-catalogs
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../dataset_access/conus404.html">
-   CONUS 404 Access
+  <a class="reference internal" href="../../../dataset_access/README.html">
+   CONUS404 Access
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -209,8 +290,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../metrics.html">
    Evaluation Metrics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -222,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Usage_DScore_Suite_v1.html">
-     D-Score Suite (v1) Benchmark – Example Usage
+     D-Score Suite (v1) Benchmark – Usage Examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -241,8 +322,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../nwm_streamflow/00_Overview.html">
    Streamflow Model Evaluation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -268,6 +349,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../doc/LICENSE.html">
+   License
+  </a>
  </li>
 </ul>
 
@@ -699,7 +797,7 @@ Name: 1104200, dtype: float64
 <h2>Streamflow and FDC plots<a class="headerlink" href="#streamflow-and-fdc-plots" title="Permalink to this headline">#</a></h2>
 <p>In the case of <code class="docutils literal notranslate"><span class="pre">streamflow</span></code>, the NWM standard suite offers a way to plot the Flow Duration Curve when calculating the pBias metrics per Yilmaz et al. This mechanism uses <a class="reference external" href="https://matplotlib.org/">matplotlib</a> to implement the figures.</p>
 <p>Some examples:</p>
-<div class="cell docutils container">
+<div class="cell tag_full-width docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
@@ -713,7 +811,7 @@ Name: 1104200, dtype: float64
 <img alt="../../../_images/Usage_StdSuite_v1_13_0.png" src="../../../_images/Usage_StdSuite_v1_13_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_full-width docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Same fig, but with &quot;segment=&#39;lo&#39;&quot;</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
@@ -727,7 +825,7 @@ Name: 1104200, dtype: float64
 <img alt="../../../_images/Usage_StdSuite_v1_14_0.png" src="../../../_images/Usage_StdSuite_v1_14_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_full-width docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Same fig, but with &quot;segment=&#39;hi&#39;&quot;</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
@@ -745,7 +843,7 @@ Name: 1104200, dtype: float64
 If you would like to manipulate these parameters, you may adjust the <code class="docutils literal notranslate"><span class="pre">ax</span></code> after calling <code class="docutils literal notranslate"><span class="pre">FDCplot()</span></code>
 (see example, next cell). In general, any of the matplotlib parameters can be adjusted after
 <code class="docutils literal notranslate"><span class="pre">FDCplot()</span></code> in order to customize the figure.</p>
-<div class="cell docutils container">
+<div class="cell tag_full-width docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">FDCplot</span><span class="p">(</span><span class="n">sampleData</span><span class="p">[</span><span class="s1">&#39;obs&#39;</span><span class="p">],</span> <span class="n">sampleData</span><span class="p">[</span><span class="s1">&#39;nwm&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="p">,</span> <span class="n">segment</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>

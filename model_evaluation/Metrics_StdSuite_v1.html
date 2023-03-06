@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Standard Suite (v1) Metrics – Usage Examples" href="tutorials/stats/Usage_StdSuite_v1.html" />
-    <link rel="prev" title="D-Score Suite (v1) Benchmark – Example Usage" href="tutorials/stats/Usage_DScore_Suite_v1.html" />
+    <link rel="prev" title="D-Score Suite (v1) Benchmark – Usage Examples" href="tutorials/stats/Usage_DScore_Suite_v1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,6 +142,16 @@ const thebe_selector_output = ".output, .cell_output"
      HPC Server: Open OnDemand
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -174,21 +184,92 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../essential_reading/ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../essential_reading/DataSources/README.html">
+   Data Sources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_APIs.html">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../essential_reading/Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataset_preprocessing/chunk.html">
+   Chunking Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataset_preprocessing/ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataset_preprocessing/ReChunkingData_Cloud.html">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Dataset Access
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../dataset_access/README.html">
-   Dataset Access
+  <a class="reference internal" href="../dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_catalog/subcatalogs/README.html">
+   hytest-catalogs
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../dataset_access/conus404.html">
-   CONUS 404 Access
+  <a class="reference internal" href="../dataset_access/README.html">
+   CONUS404 Access
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -211,8 +292,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="metrics.html">
    Evaluation Metrics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -224,7 +305,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tutorials/stats/Usage_DScore_Suite_v1.html">
-     D-Score Suite (v1) Benchmark – Example Usage
+     D-Score Suite (v1) Benchmark – Usage Examples
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -243,8 +324,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="tutorials/nwm_streamflow/00_Overview.html">
    Streamflow Model Evaluation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -270,6 +351,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../doc/LICENSE.html">
+   License
+  </a>
  </li>
 </ul>
 
@@ -673,16 +771,15 @@ to get access to these functions natively.</p>
 <h2>Metric Definitions<a class="headerlink" href="#metric-definitions" title="Permalink to this headline">#</a></h2>
 <div class="section" id="nash-sutcliffe-efficiency-nse">
 <h3>Nash-Sutcliffe efficiency (NSE)<a class="headerlink" href="#nash-sutcliffe-efficiency-nse" title="Permalink to this headline">#</a></h3>
-<p>Nash, J. E., &amp; Sutcliffe, J. V. (1970). River flow forecasting through conceptual models part I—A discussion of principles. Journal of hydrology, 10(3), 282-290. https://www.sciencedirect.com/science/article/pii/0022169470902556?via%3Dihub</p>
+<p>Nash, J. E., &amp; Sutcliffe, J. V. (1970). River flow forecasting through conceptual models part I—A discussion of principles. Journal of hydrology, 10(3), 282-290.
+<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0022169470902556?via%3Dihub">https://www.sciencedirect.com/science/article/pii/0022169470902556?via%3Dihub</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Used by NSE and others... </span>
 <span class="k">def</span> <span class="nf">MSE</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Mean Square Error --   Compute MSE over all paired values obs (x) and sim (x_hat)</span>
-<span class="sd">        .. math::</span>
-<span class="sd">            \displaystyle\sum_{i=1}^{n}(x_i - \hat{x}_i)^2</span>
-
+<span class="sd">        </span>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    float</span>
@@ -786,7 +883,7 @@ conform to that as canon, with explicit definition of DDOF to ensure compatibili
 </div>
 <div class="section" id="kling-gupta-efficiency-kge">
 <h3>Kling-Gupta efficiency (KGE)<a class="headerlink" href="#kling-gupta-efficiency-kge" title="Permalink to this headline">#</a></h3>
-<p>Gupta, H. V., Kling, H., Yilmaz, K. K., &amp; Martinez, G. F. (2009).  Decomposition of the mean squared error and NSE performance criteria: Implications for improving hydrological modelling. Journal of hydrology, 377(1-2), 80-91. https://www.sciencedirect.com/science/article/pii/S0022169409004843 |</p>
+<p>Gupta, H. V., Kling, H., Yilmaz, K. K., &amp; Martinez, G. F. (2009).  Decomposition of the mean squared error and NSE performance criteria: Implications for improving hydrological modelling. Journal of hydrology, 377(1-2), 80-91. <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0022169409004843">https://www.sciencedirect.com/science/article/pii/S0022169409004843</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">KGE</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -887,8 +984,7 @@ tht the numerator has switched the ordering of <span class="math notranslate noh
 <div class="section" id="pbiasfms">
 <h4>pBiasFMS<a class="headerlink" href="#pbiasfms" title="Permalink to this headline">#</a></h4>
 <p>This is the percent bias of the <strong>slope</strong> of the FDC in the mid-segment part of the curve. See equation A2 of Yilmaz</p>
-<p><span class="math notranslate nohighlight">\(\%BiasFMS = 100 × \cfrac{ [log(QS_{m1}) - log(QS_{m2})] - [log(QO_{m1}) - log(QO_{m2})] }
-                         { [log(QO_{m1}) - log(QO_{m2})] }\)</span></p>
+<p><span class="math notranslate nohighlight">\(\%BiasFMS = 100 × \cfrac{ [log(QS_{m1}) - log(QS_{m2})] - [log(QO_{m1}) - log(QO_{m2})] }{ [log(QO_{m1}) - log(QO_{m2})] }\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pBiasFMS</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -1115,7 +1211,7 @@ See the <a class="reference internal" href="tutorials/stats/Usage_StdSuite_v1.ht
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">D-Score Suite (v1) Benchmark – Example Usage</p>
+            <p class="prev-next-title">D-Score Suite (v1) Benchmark – Usage Examples</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="tutorials/stats/Usage_StdSuite_v1.html" title="next page">

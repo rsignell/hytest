@@ -1,0 +1,2189 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Re-Chunking Data &#8212; HyTEST Project</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="hytest-catalogs" href="../dataset_catalog/README.html" />
+    <link rel="prev" title="Re-Chunking Data" href="ReChunkingData.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">HyTEST Project</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    HyTEST
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Environment Set-Up
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../environment_set_up/README.html">
+   Compute Environments
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/QuickStart-Cloud-Nebari.html">
+     Quick-Start for Nebari Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/QuickStart-Cloud-pangeoCHS.html">
+     Quick-Start for pangeo.chs.usgs.gov Cloud Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/OpenOnDemand.html">
+     HPC Server: Open OnDemand
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/JupyterForward.html">
+     HPC Server :: Jupyter Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/StartScript.html">
+     HPC Server :: Start Script
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../environment_set_up/clusters.html">
+   Starting a Dask Cluster
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html">
+     AWS Credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Nebari.html">
+     Dask cluster on nebari.esipfed.org
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Denali.html">
+     Dask Cluster on Denali HPC
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../essential_reading/ReadingsTutorials.html">
+   Foundations
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../essential_reading/DataSources/README.html">
+   Data Sources
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_APIs.html">
+     Data/APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_S3.html">
+     Data / Cloud Storage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../essential_reading/DataSources/Data_STAC.html">
+     Data/STAC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../essential_reading/Parallel_Dask.html">
+   Parallelism with Dask
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="chunk.html">
+   Chunking Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ReChunkingData.html">
+     Re-Chunking Data
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Re-Chunking Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dataset Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_catalog/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dataset_catalog/subcatalogs/README.html">
+   hytest-catalogs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dataset_access/README.html">
+   CONUS404 Access
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dataset_access/conus404_explore.html">
+     Explore CONUS404 Dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Evaluation Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../model_evaluation/metrics.html">
+   Evaluation Metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/Metrics_DScore_Suite_v1.html">
+     D-Score Suite (v1) Benchmark
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">
+     D-Score Suite (v1) Benchmark – Usage Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/Metrics_StdSuite_v1.html">
+     Standard Suite (v1) Metrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/tutorials/stats/Usage_StdSuite_v1.html">
+     Standard Suite (v1) Metrics – Usage Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/00_Overview.html">
+   Streamflow Model Evaluation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/01_Data_Prep.html">
+     Streamflow Eval :: Data Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/02_Analysis_StdSuite.html">
+     Streamflow Eval :: StdSuite Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/02_Analysis_DScore.html">
+     Steamflow Eval :: DScore Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model_evaluation/tutorials/nwm_streamflow/03_Vizualization.html">
+     Streamflow Eval :: Visualization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Back Matter
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../doc/CONTRIBUTING.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../doc/LICENSE.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/dataset_preprocessing/ReChunkingData_Cloud.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-setup">
+   System Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plumb-data-source">
+   Plumb Data Source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-the-zarr-data">
+   Load the zarr data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spin-up-dask-cluster">
+   Spin up Dask Cluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-sample-data">
+   Read Sample Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#re-chunk-plan">
+   Re-Chunk Plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-output-location">
+   Set up output location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ready-to-rechunk">
+   Ready to rechunk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison">
+     Comparison
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Re-Chunking Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-setup">
+   System Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plumb-data-source">
+   Plumb Data Source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-the-zarr-data">
+   Load the zarr data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spin-up-dask-cluster">
+   Spin up Dask Cluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-sample-data">
+   Read Sample Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#re-chunk-plan">
+   Re-Chunk Plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-output-location">
+   Set up output location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ready-to-rechunk">
+   Ready to rechunk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison">
+     Comparison
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="re-chunking-data">
+<h1>Re-Chunking Data<a class="headerlink" href="#re-chunking-data" title="Permalink to this headline">#</a></h1>
+<p>This notebook extends ideas covered in the <a class="reference internal" href="ReChunkingData.html"><span class="doc std std-doc">basic workflow</span></a>.  This
+notebook will perfrom the same operations, but will work on the <strong>much</strong> larger dataset, and
+involve some parallelization using the dask scheduler.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should run this <strong>only</strong> on a cloud compute node – on ESIP Nebari, for example. We
+will be reading and writing <strong>enormous</strong> amounts of data to S3 buckets. To do that over a
+typical network connection will saturate your bandwidth and take days to complete.</p>
+</div>
+<div class="section" id="system-setup">
+<h2>System Setup<a class="headerlink" href="#system-setup" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Activate logging</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">## Let&#39;s see how big your compute environment is:</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CPUS: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">psutil</span>
+<span class="n">svmem</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Virtual Memory: </span><span class="si">{</span><span class="n">svmem</span><span class="o">.</span><span class="n">total</span><span class="o">/</span><span class="p">(</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Gb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPUS: 8
+Total Virtual Memory: 30.91 Gb
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plumb-data-source">
+<h2>Plumb Data Source<a class="headerlink" href="#plumb-data-source" title="Permalink to this headline">#</a></h2>
+<p>We’re going to look at a particular dataset from the National Water Model Reanalysis Version 2.1.
+The dataset is part of the AWS Open Data Program.  Let’s look at what’s available by just listing
+the S3 bucket holding the NWM data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fsspec</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">,</span> <span class="n">anon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s1">&#39;s3://noaa-nwm-retrospective-2-1-zarr-pds/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;noaa-nwm-retrospective-2-1-zarr-pds/chrtout.zarr&#39;,
+ &#39;noaa-nwm-retrospective-2-1-zarr-pds/gwout.zarr&#39;,
+ &#39;noaa-nwm-retrospective-2-1-zarr-pds/index.html&#39;,
+ &#39;noaa-nwm-retrospective-2-1-zarr-pds/lakeout.zarr&#39;,
+ &#39;noaa-nwm-retrospective-2-1-zarr-pds/ldasout.zarr&#39;,
+ &#39;noaa-nwm-retrospective-2-1-zarr-pds/precip.zarr&#39;,
+ &#39;noaa-nwm-retrospective-2-1-zarr-pds/rtout.zarr&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-the-zarr-data">
+<h2>Load the zarr data<a class="headerlink" href="#load-the-zarr-data" title="Permalink to this headline">#</a></h2>
+<p>The dataset we’ll operate on is the <code class="docutils literal notranslate"><span class="pre">chrtout</span></code> dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load chrtout</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">fileHandle</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="s1">&#39;noaa-nwm-retrospective-2-1-zarr-pds/chrtout.zarr&#39;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="n">fileHandle</span><span class="p">,</span> <span class="n">consolidated</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="spin-up-dask-cluster">
+<h2>Spin up Dask Cluster<a class="headerlink" href="#spin-up-dask-cluster" title="Permalink to this headline">#</a></h2>
+<p>Our rechunking operation will be able to work in parallel. To do that, we will
+spin up a <code class="docutils literal notranslate"><span class="pre">dask</span></code> cluster on the cloud hardware to schedule the various workers.
+Note that this cluster must be configured with a specific user <strong>profile</strong> with
+permissions to write to our eventual output location.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set AWS Credentials</span>
+<span class="kn">import</span> <span class="nn">configparser</span>
+<span class="n">awsconfig</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="n">awsconfig</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/.aws/credentials&#39;</span><span class="p">)</span> <span class="c1"># default location... if yours is elsewhere, change this.</span>
+<span class="p">)</span>
+<span class="n">_profile_nm</span>  <span class="o">=</span> <span class="s1">&#39;osn-renci&#39;</span>
+<span class="n">_endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://renc.osn.xsede.org&#39;</span>
+<span class="c1"># Set environment vars based on parsed awsconfig</span>
+<span class="c1">#os.environ[&#39;AWS_PROFILE&#39;] = _profile_nm</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AWS_ACCESS_KEY_ID&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">awsconfig</span><span class="p">[</span><span class="n">_profile_nm</span><span class="p">][</span><span class="s1">&#39;aws_access_key_id&#39;</span><span class="p">]</span>    
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AWS_SECRET_ACCESS_KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">awsconfig</span><span class="p">[</span><span class="n">_profile_nm</span><span class="p">][</span><span class="s1">&#39;aws_secret_access_key&#39;</span><span class="p">]</span>    
+<span class="c1">## Your profile may require that you specify an endpoint by which  you access S3 object storage</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AWS_S3_ENDPOINT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_endpoint</span>
+<span class="k">try</span><span class="p">:</span> 
+    <span class="k">del</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AWS_PROFILE&#39;</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="c1"># NOTE: This cluster configuration is VERY specific to the JupyterHub cloud environment on ESIP/QHUB</span>
+<span class="kn">from</span> <span class="nn">dask_gateway</span> <span class="kn">import</span> <span class="n">Gateway</span>
+<span class="n">gateway</span> <span class="o">=</span> <span class="n">Gateway</span><span class="p">()</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">cluster_options</span><span class="p">()</span>
+<span class="n">options</span><span class="o">.</span><span class="n">conda_environment</span><span class="o">=</span><span class="s1">&#39;users/users-pangeo&#39;</span>  
+<span class="c1">##                         ^^^^^^ </span>
+<span class="c1">## This conda environment is correct for nebari.esipfed.org</span>
+<span class="c1">## You may need to specify a different conda environment if you are running elsewhere. </span>
+<span class="n">options</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="s1">&#39;Medium Worker&#39;</span>
+<span class="n">options</span><span class="o">.</span><span class="n">environment_vars</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">DASK_DISTRIBUTED__SCHEDULER__WORKER_SATURATION</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span>
+<span class="p">)</span>
+<span class="c1"># pass environment vars to workers</span>
+<span class="c1"># this includes AWS environment vars needed to access requester-pays and private buckets</span>
+<span class="n">options</span><span class="o">.</span><span class="n">environment_vars</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">))</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">gateway</span><span class="o">.</span><span class="n">new_cluster</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">adapt</span><span class="p">(</span><span class="n">minimum</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># get the client for the cluster</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">cluster</span><span class="o">.</span><span class="n">get_client</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">dashboard_link</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://nebari.esipfed.org/gateway/clusters/dev.daae131a1918492895fa580cc36a25bf/status&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-sample-data">
+<h2>Read Sample Data<a class="headerlink" href="#read-sample-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dask</span>
+<span class="k">with</span> <span class="n">dask</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;array.slicing.split_large_chunks&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}):</span>
+    <span class="n">smplData</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">gage_id</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># subset to only those features with a valid gage_id</span>
+    <span class="n">smplData</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;crs&#39;</span><span class="p">)</span> <span class="c1"># Not needed/wanted for this analysis</span>
+<span class="n">smplData</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:     (feature_id: 7994, time: 367439)
+Coordinates:
+    elevation   (feature_id) float32 dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;
+  * feature_id  (feature_id) int32 3109 3923 12932 ... 1170023539 1180000535
+    gage_id     (feature_id) |S15 dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;
+    latitude    (feature_id) float32 dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;
+    longitude   (feature_id) float32 dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;
+    order       (feature_id) int32 dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;
+  * time        (time) datetime64[ns] 1979-02-01T01:00:00 ... 2020-12-31T23:0...
+Data variables:
+    crs         (feature_id) object dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;
+    streamflow  (time, feature_id) float64 dask.array&lt;chunksize=(672, 106), meta=np.ndarray&gt;
+    velocity    (time, feature_id) float64 dask.array&lt;chunksize=(672, 106), meta=np.ndarray&gt;
+Attributes:
+    TITLE:                OUTPUT FROM WRF-Hydro v5.2.0-beta2
+    code_version:         v5.2.0-beta2
+    featureType:          timeSeries
+    model_configuration:  retrospective
+    proj4:                +proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-01ae7f47-281c-4bf7-bfb5-38905fa93502' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-01ae7f47-281c-4bf7-bfb5-38905fa93502' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>feature_id</span>: 7994</li><li><span class='xr-has-index'>time</span>: 367439</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-dd0fe0fb-47aa-4a87-952d-f1e1d5acf730' class='xr-section-summary-in' type='checkbox'  checked><label for='section-dd0fe0fb-47aa-4a87-952d-f1e1d5acf730' class='xr-section-summary' >Coordinates: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>elevation</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;</div><input id='attrs-ff7371dc-27fa-4bd4-a6f7-7a81bb6e4f32' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ff7371dc-27fa-4bd4-a6f7-7a81bb6e4f32' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-105c4882-0ccd-4e16-861a-a3a8f4b17db1' class='xr-var-data-in' type='checkbox'><label for='data-105c4882-0ccd-4e16-861a-a3a8f4b17db1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>feature elevation</dd><dt><span>units :</span></dt><dd>meters</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 31.23 kiB </td>
+                        <td> 31.23 kiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (7994,) </td>
+                        <td> (7994,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 3 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>feature_id</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>3109 3923 ... 1170023539 1180000535</div><input id='attrs-3ee632e2-dde6-4d96-bf0f-499813913d03' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3ee632e2-dde6-4d96-bf0f-499813913d03' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9126bcb0-b9b7-4831-ae1a-c133c2ba858e' class='xr-var-data-in' type='checkbox'><label for='data-9126bcb0-b9b7-4831-ae1a-c133c2ba858e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cf_role :</span></dt><dd>timeseries_id</dd><dt><span>comment :</span></dt><dd>NHDPlusv2 ComIDs within CONUS, arbitrary Reach IDs outside of CONUS</dd><dt><span>long_name :</span></dt><dd>Reach ID</dd></dl></div><div class='xr-var-data'><pre>array([      3109,       3923,      12932, ..., 1170022657, 1170023539,
+       1180000535], dtype=int32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gage_id</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>|S15</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;</div><input id='attrs-4d9289fd-0fa9-4b0a-b1a4-a8f8dc25f2a5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4d9289fd-0fa9-4b0a-b1a4-a8f8dc25f2a5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8f7bd460-26de-4f25-a60a-3827643c4e56' class='xr-var-data-in' type='checkbox'><label for='data-8f7bd460-26de-4f25-a60a-3827643c4e56' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>coordinates :</span></dt><dd>lat lon</dd><dt><span>long_name :</span></dt><dd>NHD Gage Event ID from SOURCE_FEA field in Gages feature class</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 117.10 kiB </td>
+                        <td> 117.10 kiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (7994,) </td>
+                        <td> (7994,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 3 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> |S15 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;</div><input id='attrs-45d57a2a-80f8-4f4c-be01-8b89f91148d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-45d57a2a-80f8-4f4c-be01-8b89f91148d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a0f571e-f5a4-4756-a781-f2b597f7934c' class='xr-var-data-in' type='checkbox'><label for='data-1a0f571e-f5a4-4756-a781-f2b597f7934c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>feature latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 31.23 kiB </td>
+                        <td> 31.23 kiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (7994,) </td>
+                        <td> (7994,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 3 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;</div><input id='attrs-79e5bf5e-022f-4224-9ae7-87e237c4278b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-79e5bf5e-022f-4224-9ae7-87e237c4278b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c528bd06-c862-49ae-8c76-4e88d90da4f5' class='xr-var-data-in' type='checkbox'><label for='data-c528bd06-c862-49ae-8c76-4e88d90da4f5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>feature longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 31.23 kiB </td>
+                        <td> 31.23 kiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (7994,) </td>
+                        <td> (7994,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 3 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>order</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;</div><input id='attrs-2f9dc1cb-14b6-4507-a918-8ba5d34ee87c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2f9dc1cb-14b6-4507-a918-8ba5d34ee87c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e2f39a23-e328-444e-a501-f327adc5d369' class='xr-var-data-in' type='checkbox'><label for='data-e2f39a23-e328-444e-a501-f327adc5d369' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>stream order</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 31.23 kiB </td>
+                        <td> 31.23 kiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (7994,) </td>
+                        <td> (7994,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 3 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> int32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1979-02-01T01:00:00 ... 2020-12-...</div><input id='attrs-c287c01d-db7a-4c29-8b81-ed39df96a13d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c287c01d-db7a-4c29-8b81-ed39df96a13d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6977a230-6707-4b50-9e0c-034fd7f7e995' class='xr-var-data-in' type='checkbox'><label for='data-6977a230-6707-4b50-9e0c-034fd7f7e995' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>valid output time</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1979-02-01T01:00:00.000000000&#x27;, &#x27;1979-02-01T02:00:00.000000000&#x27;,
+       &#x27;1979-02-01T03:00:00.000000000&#x27;, ..., &#x27;2020-12-31T21:00:00.000000000&#x27;,
+       &#x27;2020-12-31T22:00:00.000000000&#x27;, &#x27;2020-12-31T23:00:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c314a150-355f-4e00-b1c6-13e8997102da' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c314a150-355f-4e00-b1c6-13e8997102da' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>crs</span></div><div class='xr-var-dims'>(feature_id)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(7994,), meta=np.ndarray&gt;</div><input id='attrs-fd83cf90-df70-4f4f-9c03-7730a021ff8c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fd83cf90-df70-4f4f-9c03-7730a021ff8c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-affccb84-fa56-47f5-a9a0-a4dcaa1daee3' class='xr-var-data-in' type='checkbox'><label for='data-affccb84-fa56-47f5-a9a0-a4dcaa1daee3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>_CoordinateAxes :</span></dt><dd>latitude longitude</dd><dt><span>esri_pe_string :</span></dt><dd>GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision</dd><dt><span>grid_mapping_name :</span></dt><dd>latitude longitude</dd><dt><span>inverse_flattening :</span></dt><dd>298.2572326660156</dd><dt><span>long_name :</span></dt><dd>CRS definition</dd><dt><span>longitude_of_prime_meridian :</span></dt><dd>0.0</dd><dt><span>semi_major_axis :</span></dt><dd>6378137.0</dd><dt><span>semi_minor_axis :</span></dt><dd>6356752.5</dd><dt><span>spatial_ref :</span></dt><dd>GEOGCS[&quot;GCS_WGS_1984&quot;,DATUM[&quot;D_WGS_1984&quot;,SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision</dd><dt><span>transform_name :</span></dt><dd>latitude longitude</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 62.45 kiB </td>
+                        <td> 62.45 kiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (7994,) </td>
+                        <td> (7994,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 5 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> object numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>streamflow</span></div><div class='xr-var-dims'>(time, feature_id)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(672, 106), meta=np.ndarray&gt;</div><input id='attrs-b79c0475-913f-4ba2-bcce-f9b5e28ea9fe' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b79c0475-913f-4ba2-bcce-f9b5e28ea9fe' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f76c6ea5-4fd7-4e1e-92ec-99782b9b82ba' class='xr-var-data-in' type='checkbox'><label for='data-f76c6ea5-4fd7-4e1e-92ec-99782b9b82ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>River Flow</dd><dt><span>units :</span></dt><dd>m3 s-1</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 21.88 GiB </td>
+                        <td> 1.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (367439, 7994) </td>
+                        <td> (672, 243) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 50871 chunks in 9 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="79" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="29" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="6" x2="29" y2="6" />
+  <line x1="0" y1="12" x2="29" y2="12" />
+  <line x1="0" y1="18" x2="29" y2="18" />
+  <line x1="0" y1="25" x2="29" y2="25" />
+  <line x1="0" y1="31" x2="29" y2="31" />
+  <line x1="0" y1="37" x2="29" y2="37" />
+  <line x1="0" y1="44" x2="29" y2="44" />
+  <line x1="0" y1="50" x2="29" y2="50" />
+  <line x1="0" y1="56" x2="29" y2="56" />
+  <line x1="0" y1="62" x2="29" y2="62" />
+  <line x1="0" y1="69" x2="29" y2="69" />
+  <line x1="0" y1="75" x2="29" y2="75" />
+  <line x1="0" y1="82" x2="29" y2="82" />
+  <line x1="0" y1="88" x2="29" y2="88" />
+  <line x1="0" y1="94" x2="29" y2="94" />
+  <line x1="0" y1="100" x2="29" y2="100" />
+  <line x1="0" y1="107" x2="29" y2="107" />
+  <line x1="0" y1="113" x2="29" y2="113" />
+  <line x1="0" y1="120" x2="29" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="1" y1="0" x2="1" y2="120" />
+  <line x1="3" y1="0" x2="3" y2="120" />
+  <line x1="5" y1="0" x2="5" y2="120" />
+  <line x1="7" y1="0" x2="7" y2="120" />
+  <line x1="9" y1="0" x2="9" y2="120" />
+  <line x1="11" y1="0" x2="11" y2="120" />
+  <line x1="12" y1="0" x2="12" y2="120" />
+  <line x1="14" y1="0" x2="14" y2="120" />
+  <line x1="16" y1="0" x2="16" y2="120" />
+  <line x1="17" y1="0" x2="17" y2="120" />
+  <line x1="18" y1="0" x2="18" y2="120" />
+  <line x1="20" y1="0" x2="20" y2="120" />
+  <line x1="21" y1="0" x2="21" y2="120" />
+  <line x1="22" y1="0" x2="22" y2="120" />
+  <line x1="23" y1="0" x2="23" y2="120" />
+  <line x1="24" y1="0" x2="24" y2="120" />
+  <line x1="25" y1="0" x2="25" y2="120" />
+  <line x1="28" y1="0" x2="28" y2="120" />
+  <line x1="29" y1="0" x2="29" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 29.507916915351085,0.0 29.507916915351085,120.0 0.0,120.0" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="14.753958" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="49.507917" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,49.507917,60.000000)">367439</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>velocity</span></div><div class='xr-var-dims'>(time, feature_id)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(672, 106), meta=np.ndarray&gt;</div><input id='attrs-1cb521d1-c193-4e7c-932b-4ef6109e0fdd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1cb521d1-c193-4e7c-932b-4ef6109e0fdd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-72c63ae2-287c-45a5-9acf-e1397abc8c9a' class='xr-var-data-in' type='checkbox'><label for='data-72c63ae2-287c-45a5-9acf-e1397abc8c9a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>grid_mapping :</span></dt><dd>crs</dd><dt><span>long_name :</span></dt><dd>River Velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 21.88 GiB </td>
+                        <td> 1.25 MiB </td>
+                    </tr>
+
+                    <tr>
+                        <th> Shape </th>
+                        <td> (367439, 7994) </td>
+                        <td> (672, 243) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 50871 chunks in 9 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float64 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="79" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="29" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="6" x2="29" y2="6" />
+  <line x1="0" y1="12" x2="29" y2="12" />
+  <line x1="0" y1="18" x2="29" y2="18" />
+  <line x1="0" y1="25" x2="29" y2="25" />
+  <line x1="0" y1="31" x2="29" y2="31" />
+  <line x1="0" y1="37" x2="29" y2="37" />
+  <line x1="0" y1="44" x2="29" y2="44" />
+  <line x1="0" y1="50" x2="29" y2="50" />
+  <line x1="0" y1="56" x2="29" y2="56" />
+  <line x1="0" y1="62" x2="29" y2="62" />
+  <line x1="0" y1="69" x2="29" y2="69" />
+  <line x1="0" y1="75" x2="29" y2="75" />
+  <line x1="0" y1="82" x2="29" y2="82" />
+  <line x1="0" y1="88" x2="29" y2="88" />
+  <line x1="0" y1="94" x2="29" y2="94" />
+  <line x1="0" y1="100" x2="29" y2="100" />
+  <line x1="0" y1="107" x2="29" y2="107" />
+  <line x1="0" y1="113" x2="29" y2="113" />
+  <line x1="0" y1="120" x2="29" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="1" y1="0" x2="1" y2="120" />
+  <line x1="3" y1="0" x2="3" y2="120" />
+  <line x1="5" y1="0" x2="5" y2="120" />
+  <line x1="7" y1="0" x2="7" y2="120" />
+  <line x1="9" y1="0" x2="9" y2="120" />
+  <line x1="11" y1="0" x2="11" y2="120" />
+  <line x1="12" y1="0" x2="12" y2="120" />
+  <line x1="14" y1="0" x2="14" y2="120" />
+  <line x1="16" y1="0" x2="16" y2="120" />
+  <line x1="17" y1="0" x2="17" y2="120" />
+  <line x1="18" y1="0" x2="18" y2="120" />
+  <line x1="20" y1="0" x2="20" y2="120" />
+  <line x1="21" y1="0" x2="21" y2="120" />
+  <line x1="22" y1="0" x2="22" y2="120" />
+  <line x1="23" y1="0" x2="23" y2="120" />
+  <line x1="24" y1="0" x2="24" y2="120" />
+  <line x1="25" y1="0" x2="25" y2="120" />
+  <line x1="28" y1="0" x2="28" y2="120" />
+  <line x1="29" y1="0" x2="29" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 29.507916915351085,0.0 29.507916915351085,120.0 0.0,120.0" style="fill:#8B4903A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="14.753958" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >7994</text>
+  <text x="49.507917" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,49.507917,60.000000)">367439</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-07b00542-1c94-4e8c-89d8-d9fc86abc096' class='xr-section-summary-in' type='checkbox'  ><label for='section-07b00542-1c94-4e8c-89d8-d9fc86abc096' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>feature_id</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-3893a1fd-c9f6-48fc-80c7-c5f62d23d3ac' class='xr-index-data-in' type='checkbox'/><label for='index-3893a1fd-c9f6-48fc-80c7-c5f62d23d3ac' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Int64Index([      3109,       3923,      12932,      13584,      30580,
+                 66922,      83230,      83454,      87382,     188073,
+            ...
+            1131000010, 1131000686, 1131000917, 1131000968, 1131001153,
+            1131001751, 1150000651, 1170022657, 1170023539, 1180000535],
+           dtype=&#x27;int64&#x27;, name=&#x27;feature_id&#x27;, length=7994))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-01e2853b-ced1-4c7a-b0eb-8198352c1bdd' class='xr-index-data-in' type='checkbox'/><label for='index-01e2853b-ced1-4c7a-b0eb-8198352c1bdd' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1979-02-01 01:00:00&#x27;, &#x27;1979-02-01 02:00:00&#x27;,
+               &#x27;1979-02-01 03:00:00&#x27;, &#x27;1979-02-01 04:00:00&#x27;,
+               &#x27;1979-02-01 05:00:00&#x27;, &#x27;1979-02-01 06:00:00&#x27;,
+               &#x27;1979-02-01 07:00:00&#x27;, &#x27;1979-02-01 08:00:00&#x27;,
+               &#x27;1979-02-01 09:00:00&#x27;, &#x27;1979-02-01 10:00:00&#x27;,
+               ...
+               &#x27;2020-12-31 14:00:00&#x27;, &#x27;2020-12-31 15:00:00&#x27;,
+               &#x27;2020-12-31 16:00:00&#x27;, &#x27;2020-12-31 17:00:00&#x27;,
+               &#x27;2020-12-31 18:00:00&#x27;, &#x27;2020-12-31 19:00:00&#x27;,
+               &#x27;2020-12-31 20:00:00&#x27;, &#x27;2020-12-31 21:00:00&#x27;,
+               &#x27;2020-12-31 22:00:00&#x27;, &#x27;2020-12-31 23:00:00&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=367439, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6274136a-794d-48e0-b08f-5a94ff9b906b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6274136a-794d-48e0-b08f-5a94ff9b906b' class='xr-section-summary' >Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>TITLE :</span></dt><dd>OUTPUT FROM WRF-Hydro v5.2.0-beta2</dd><dt><span>code_version :</span></dt><dd>v5.2.0-beta2</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>model_configuration :</span></dt><dd>retrospective</dd><dt><span>proj4 :</span></dt><dd>+proj=lcc +units=m +a=6370000.0 +b=6370000.0 +lat_1=30.0 +lat_2=60.0 +lat_0=40.0 +lon_0=-97.0 +x_0=0 +y_0=0 +k_0=1.0 +nadgrids=@</dd></dl></div></li></ul></div></div></div></div>
+</div>
+</div>
+<div class="section" id="re-chunk-plan">
+<h2>Re-Chunk Plan<a class="headerlink" href="#re-chunk-plan" title="Permalink to this headline">#</a></h2>
+<p>We will configure a new chunking plan which will favor time-series analysis.
+Using the dimensions of the data:</p>
+<ul class="simple">
+<li><p>367439 time steps</p></li>
+<li><p>7994 feature IDs</p></li>
+</ul>
+<p>We can write the new plan as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The new chunking plan:</span>
+<span class="n">chunk_plan</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;streamflow&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">367439</span><span class="p">,</span> <span class="s1">&#39;feature_id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="c1"># all time records in one chunk for each feature_id</span>
+    <span class="s1">&#39;velocity&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">367439</span><span class="p">,</span> <span class="s1">&#39;feature_id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7994</span><span class="p">,),</span>
+    <span class="s1">&#39;gage_id&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7994</span><span class="p">,),</span>
+    <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7994</span><span class="p">,),</span>
+    <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7994</span><span class="p">,),</span>    
+    <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7994</span><span class="p">,),</span>    
+    <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">367439</span><span class="p">,),</span> <span class="c1"># all time coordinates in one chunk</span>
+    <span class="s1">&#39;feature_id&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">7994</span><span class="p">,)</span> <span class="c1"># all feature_id coordinates in one chunk</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manually reset the chunking metadata in prep for re-chunking</span>
+<span class="n">smplData</span> <span class="o">=</span> <span class="n">smplData</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;feature_id&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="mi">367439</span><span class="p">})</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">smplData</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+    <span class="n">smplData</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">encoding</span><span class="p">[</span><span class="s1">&#39;chunks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="set-up-output-location">
+<h2>Set up output location<a class="headerlink" href="#set-up-output-location" title="Permalink to this headline">#</a></h2>
+<p>With this plan, we can ask <code class="docutils literal notranslate"><span class="pre">rechunker</span></code> to re-write the data using the prescribed chunking pattern.</p>
+<p>Unlike with the smaller dataset, we need to write this very large dataset to an object store in the datacenter: an S3 ‘bucket’.  So we need to set that up so that <code class="docutils literal notranslate"><span class="pre">rechunker</span></code> will have a suitable place to write data. This new data will be a complete copy of the original, just re-organized a bit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># with anon=False, we force the use of the environment variable &#39;AWS_PROFILE&#39;, set above.</span>
+<span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getuser</span>
+<span class="n">uname</span><span class="o">=</span><span class="n">getuser</span><span class="p">()</span>
+
+<span class="n">fsw</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">,</span> <span class="n">anon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default_fill_cache</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_instance_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                                 <span class="n">client_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;endpoint_url&#39;</span><span class="p">:</span> <span class="n">_endpoint</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">workspace</span> <span class="o">=</span> <span class="s1">&#39;s3://rsignellbucket2/&#39;</span>
+<span class="n">testDir</span> <span class="o">=</span> <span class="n">workspace</span> <span class="o">+</span> <span class="s2">&quot;testing/&quot;</span>
+<span class="n">myDir</span> <span class="o">=</span> <span class="n">testDir</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">uname</span><span class="si">}</span><span class="s1">_ReChunkTutorial/&#39;</span>
+<span class="n">fsw</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">testDir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:aiobotocore.credentials:Found credentials in environment variables.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;rsignellbucket2/testing/02_kerchunk.ipynb&#39;,
+ &#39;rsignellbucket2/testing/ATL08_20181014084920_02400109_003_01.h5&#39;,
+ &#39;rsignellbucket2/testing/cluster_conf.py&#39;,
+ &#39;rsignellbucket2/testing/cog&#39;,
+ &#39;rsignellbucket2/testing/combine_files_tpBiasCorr.csh&#39;,
+ &#39;rsignellbucket2/testing/foo.json&#39;,
+ &#39;rsignellbucket2/testing/gzt5142&#39;,
+ &#39;rsignellbucket2/testing/gzt5142_ReChunkTutorial&#39;,
+ &#39;rsignellbucket2/testing/ortho_2021_10_7_sageLot_noalpha_clip_cog.tif&#39;,
+ &#39;rsignellbucket2/testing/time&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fsw</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">myDir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;rechunked.zarr&#39;</span><span class="p">,</span> <span class="s1">&#39;staging.zarr&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">fsw</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">myDir</span> <span class="o">+</span> <span class="n">f</span><span class="p">):</span>
+        <span class="n">fsw</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="n">myDir</span> <span class="o">+</span> <span class="n">f</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">staging</span> <span class="o">=</span> <span class="n">fsw</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="n">myDir</span> <span class="o">+</span> <span class="s1">&#39;staging.zarr&#39;</span><span class="p">)</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="n">fsw</span><span class="o">.</span><span class="n">get_mapper</span><span class="p">(</span><span class="n">myDir</span> <span class="o">+</span> <span class="s1">&#39;rechunked.zarr&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ready-to-rechunk">
+<h2>Ready to rechunk<a class="headerlink" href="#ready-to-rechunk" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rechunker</span>
+<span class="c1">## Recall that merely invoking rechunker does not do any work... just sorts out </span>
+<span class="c1">## the rechunking plan and writes metadata.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">rechunker</span><span class="o">.</span><span class="n">rechunk</span><span class="p">(</span>
+    <span class="n">smplData</span><span class="p">,</span>
+    <span class="n">chunk_plan</span><span class="p">,</span>
+    <span class="s2">&quot;2GB&quot;</span><span class="p">,</span>
+    <span class="n">outfile</span><span class="p">,</span> 
+    <span class="n">temp_store</span><span class="o">=</span><span class="n">staging</span> 
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ReadOnlyError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">rechunker</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">## Recall that merely invoking rechunker does not do any work... just sorts out </span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">## the rechunking plan and writes metadata.</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">result</span> <span class="o">=</span> <span class="n">rechunker</span><span class="o">.</span><span class="n">rechunk</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">smplData</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">chunk_plan</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="s2">&quot;2GB&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">outfile</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">temp_store</span><span class="o">=</span><span class="n">staging</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/rechunker/api.py:302,</span> in <span class="ni">rechunk</span><span class="nt">(source, target_chunks, max_mem, target_store, target_options, temp_store, temp_options, executor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="n">executor</span> <span class="o">=</span> <span class="n">_get_executor</span><span class="p">(</span><span class="n">executor</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">302</span> <span class="n">copy_spec</span><span class="p">,</span> <span class="n">intermediate</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">_setup_rechunk</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">target_chunks</span><span class="o">=</span><span class="n">target_chunks</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="n">max_mem</span><span class="o">=</span><span class="n">max_mem</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">target_store</span><span class="o">=</span><span class="n">target_store</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="n">target_options</span><span class="o">=</span><span class="n">target_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">temp_store</span><span class="o">=</span><span class="n">temp_store</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">temp_options</span><span class="o">=</span><span class="n">temp_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="n">plan</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">prepare_plan</span><span class="p">(</span><span class="n">copy_spec</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="k">return</span> <span class="n">Rechunked</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">plan</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">intermediate</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/rechunker/api.py:376,</span> in <span class="ni">_setup_rechunk</span><span class="nt">(source, target_chunks, max_mem, target_store, target_options, temp_store, temp_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="n">attrs</span> <span class="o">=</span> <span class="n">_encode_zarr_attributes</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="k">if</span> <span class="n">temp_store</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">376</span>     <span class="n">temp_group</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">temp_store</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>     <span class="n">temp_group</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/hierarchy.py:1355,</span> in <span class="ni">group</span><span class="nt">(store, overwrite, chunk_store, cache_attrs, synchronizer, path, zarr_version)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1352</span>     <span class="n">requires_init</span> <span class="o">=</span> <span class="n">overwrite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">contains_group</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1354</span> <span class="k">if</span> <span class="n">requires_init</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1355</span>     <span class="n">init_group</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span> <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span>                <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1358</span> <span class="k">return</span> <span class="n">Group</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>              <span class="n">cache_attrs</span><span class="o">=</span><span class="n">cache_attrs</span><span class="p">,</span> <span class="n">synchronizer</span><span class="o">=</span><span class="n">synchronizer</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1360</span>              <span class="n">zarr_version</span><span class="o">=</span><span class="n">zarr_version</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/storage.py:643,</span> in <span class="ni">init_group</span><span class="nt">(store, overwrite, path, chunk_store)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span>     <span class="n">store</span><span class="p">[</span><span class="s1">&#39;zarr.json&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">_metadata_class</span><span class="o">.</span><span class="n">encode_hierarchy_metadata</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="c1"># initialise metadata</span>
+<span class="ne">--&gt; </span><span class="mi">643</span> <span class="n">_init_group_metadata</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="n">store</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>                      <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span> <span class="k">if</span> <span class="n">store_version</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span>     <span class="c1"># TODO: Should initializing a v3 group also create a corresponding</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="c1">#       empty folder under data/root/? I think probably not until there</span>
+<span class="g g-Whitespace">    </span><span class="mi">649</span>     <span class="c1">#       is actual data written there.</span>
+<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="k">pass</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/storage.py:706,</span> in <span class="ni">_init_group_metadata</span><span class="nt">(store, overwrite, path, chunk_store)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span> <span class="n">key</span> <span class="o">=</span> <span class="n">_prefix_to_group_key</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">_path_to_prefix</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="s1">&#39;_metadata_class&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">706</span>     <span class="n">store</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">_metadata_class</span><span class="o">.</span><span class="n">encode_group_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>     <span class="n">store</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">encode_group_metadata</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/storage.py:1398,</span> in <span class="ni">FSStore.__setitem__</span><span class="nt">(self, key, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1396</span> <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1397</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1398</span>         <span class="k">raise</span> <span class="n">ReadOnlyError</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1399</span>     <span class="n">key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1400</span>     <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dir_path</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">ReadOnlyError</span>: object is read-only
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">progress</span><span class="p">,</span> <span class="n">performance_report</span>
+
+<span class="k">with</span> <span class="n">performance_report</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;dask-report.html&quot;</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">retries</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">progress</span><span class="p">,</span> <span class="n">performance_report</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">performance_report</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;dask-report.html&quot;</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">retries</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  
+
+<span class="ne">NameError</span>: name &#39;result&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zarr</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">consolidate_metadata</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">PathNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">zarr</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">_</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">consolidate_metadata</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/convenience.py:1235,</span> in <span class="ni">consolidate_metadata</span><span class="nt">(store, metadata_key, path)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1227</span> <span class="n">out</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">   </span><span class="mi">1228</span>     <span class="s1">&#39;zarr_consolidated_format&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1229</span>     <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1232</span>     <span class="p">}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1233</span> <span class="p">}</span>
+<span class="g g-Whitespace">   </span><span class="mi">1234</span> <span class="n">store</span><span class="p">[</span><span class="n">metadata_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">json_dumps</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1235</span> <span class="k">return</span> <span class="n">open_consolidated</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">metadata_key</span><span class="o">=</span><span class="n">metadata_key</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/convenience.py:1303,</span> in <span class="ni">open_consolidated</span><span class="nt">(store, metadata_key, mode, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span> <span class="c1"># pass through</span>
+<span class="g g-Whitespace">   </span><span class="mi">1302</span> <span class="n">chunk_store</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;chunk_store&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">store</span>
+<span class="ne">-&gt; </span><span class="mi">1303</span> <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="n">meta_store</span><span class="p">,</span> <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/convenience.py:122,</span> in <span class="ni">open</span><span class="nt">(store, mode, zarr_version, path, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">return</span> <span class="n">open_group</span><span class="p">(</span><span class="n">_store</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="k">raise</span> <span class="n">PathNotFoundError</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="ne">PathNotFoundError</span>: nothing found at path &#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
+<p>Let’s read in the resulting re-chunked dataset to see how it looks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reChunkedData</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+<span class="n">reChunkedData</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">PathNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">reChunkedData</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">reChunkedData</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/xarray/backends/zarr.py:829,</span> in <span class="ni">open_zarr</span><span class="nt">(store, group, synchronizer, chunks, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, consolidated, overwrite_encoded_chunks, chunk_store, storage_options, decode_timedelta, use_cftime, zarr_version, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span>         <span class="s2">&quot;open_zarr() got unexpected keyword arguments &quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">819</span> <span class="n">backend_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="s2">&quot;synchronizer&quot;</span><span class="p">:</span> <span class="n">synchronizer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="s2">&quot;consolidated&quot;</span><span class="p">:</span> <span class="n">consolidated</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">826</span>     <span class="s2">&quot;zarr_version&quot;</span><span class="p">:</span> <span class="n">zarr_version</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">827</span> <span class="p">}</span>
+<span class="ne">--&gt; </span><span class="mi">829</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">830</span>     <span class="n">filename_or_obj</span><span class="o">=</span><span class="n">store</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">831</span>     <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">832</span>     <span class="n">decode_cf</span><span class="o">=</span><span class="n">decode_cf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">833</span>     <span class="n">mask_and_scale</span><span class="o">=</span><span class="n">mask_and_scale</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">834</span>     <span class="n">decode_times</span><span class="o">=</span><span class="n">decode_times</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span>     <span class="n">concat_characters</span><span class="o">=</span><span class="n">concat_characters</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">836</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span>     <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;zarr&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">838</span>     <span class="n">chunks</span><span class="o">=</span><span class="n">chunks</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">839</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">840</span>     <span class="n">backend_kwargs</span><span class="o">=</span><span class="n">backend_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">841</span>     <span class="n">decode_timedelta</span><span class="o">=</span><span class="n">decode_timedelta</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">842</span>     <span class="n">use_cftime</span><span class="o">=</span><span class="n">use_cftime</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">843</span>     <span class="n">zarr_version</span><span class="o">=</span><span class="n">zarr_version</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span> <span class="k">return</span> <span class="n">ds</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/xarray/backends/api.py:526,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span>     <span class="n">decode_cf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="n">overwrite_encoded_chunks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;overwrite_encoded_chunks&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">526</span> <span class="n">backend_ds</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="o">**</span><span class="n">decoders</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">_dataset_from_backend_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span>     <span class="n">backend_ds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span> <span class="k">return</span> <span class="n">ds</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/xarray/backends/zarr.py:891,</span> in <span class="ni">ZarrBackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, synchronizer, consolidated, chunk_store, storage_options, stacklevel, zarr_version)</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span> <span class="k">def</span> <span class="nf">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">873</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>     <span class="n">zarr_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span>     <span class="n">filename_or_obj</span> <span class="o">=</span> <span class="n">_normalize_path</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">891</span>     <span class="n">store</span> <span class="o">=</span> <span class="n">ZarrStore</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span>         <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>         <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>         <span class="n">synchronizer</span><span class="o">=</span><span class="n">synchronizer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span>         <span class="n">consolidated</span><span class="o">=</span><span class="n">consolidated</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>         <span class="n">consolidate_on_close</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span>         <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>         <span class="n">zarr_version</span><span class="o">=</span><span class="n">zarr_version</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">904</span>     <span class="n">store_entrypoint</span> <span class="o">=</span> <span class="n">StoreBackendEntrypoint</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">905</span>     <span class="k">with</span> <span class="n">close_on_error</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/xarray/backends/zarr.py:405,</span> in <span class="ni">ZarrStore.open_group</span><span class="nt">(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version)</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="k">if</span> <span class="n">consolidated</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">405</span>         <span class="n">zarr_group</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_consolidated</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/convenience.py:1303,</span> in <span class="ni">open_consolidated</span><span class="nt">(store, metadata_key, mode, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1301</span> <span class="c1"># pass through</span>
+<span class="g g-Whitespace">   </span><span class="mi">1302</span> <span class="n">chunk_store</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;chunk_store&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">store</span>
+<span class="ne">-&gt; </span><span class="mi">1303</span> <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="n">meta_store</span><span class="p">,</span> <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /home/conda/gzt5142/267fcae1bebb4612046db0273f49e240db8d395a432a7eb17d4a4dc8415a560e-20230306-135407-716724-111-pangeo-jbook/lib/python3.9/site-packages/zarr/convenience.py:122,</span> in <span class="ni">open</span><span class="nt">(store, mode, zarr_version, path, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">return</span> <span class="n">open_group</span><span class="p">(</span><span class="n">_store</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="k">raise</span> <span class="n">PathNotFoundError</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="ne">PathNotFoundError</span>: nothing found at path &#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="comparison">
+<h3>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Before:</span>
+<span class="n">sampleData</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">feature_id</span><span class="o">=</span><span class="mi">1343034</span><span class="p">)</span>
+<span class="c1"># Note: three chunks needed to service a single feature_id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Before:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sampleData</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">feature_id</span><span class="o">=</span><span class="mi">1343034</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Note: three chunks needed to service a single feature_id</span>
+
+<span class="ne">NameError</span>: name &#39;sampleData&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## After:</span>
+<span class="n">reChunkedData</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">feature_id</span><span class="o">=</span><span class="mi">1343034</span><span class="p">)</span> 
+<span class="c1"># All data for the specified feature_id is in a single chunk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## After:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">reChunkedData</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">feature_id</span><span class="o">=</span><span class="mi">1343034</span><span class="p">)</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># All data for the specified feature_id is in a single chunk</span>
+
+<span class="ne">NameError</span>: name &#39;reChunkedData&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cluster</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./dataset_preprocessing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="ReChunkingData.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Re-Chunking Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../dataset_catalog/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">hytest-catalogs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

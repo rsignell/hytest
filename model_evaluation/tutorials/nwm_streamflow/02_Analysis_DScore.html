@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D-Score Steamflow Analysis Workflow &#8212; HyTEST Project</title>
+    <title>Essential Benchmark Components &#8212; HyTEST Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Model Evaluation Workflow :: Visualization" href="03_Vizualization.html" />
-    <link rel="prev" title="Model Evaluation Workflow :: NWM streamflow Analysis" href="02_Analysis_StdSuite.html" />
+    <link rel="next" title="Streamflow Eval :: Visualization" href="03_Vizualization.html" />
+    <link rel="prev" title="Streamflow Eval :: StdSuite Analysis" href="02_Analysis_StdSuite.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -215,22 +215,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01_Data_Prep.html">
-     Model Evaluation :: Data Preparation
+     Streamflow Eval :: Data Preparation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_Analysis_StdSuite.html">
-     Model Evaluation Workflow :: NWM streamflow Analysis
+     Streamflow Eval :: StdSuite Analysis
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     D-Score Steamflow Analysis Workflow
+     Essential Benchmark Components
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_Vizualization.html">
-     Model Evaluation Workflow :: Visualization
+     Streamflow Eval :: Visualization
     </a>
    </li>
   </ul>
@@ -396,37 +396,37 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#essential-benchmark-components">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Essential Benchmark Components
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-0-load-libraries-and-configure-python-computing-environment">
    Step 0: Load libraries and configure Python computing environment
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-1-load-data">
    Step 1: Load Data
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-2-restrict-to-a-domain">
    Step 2: Restrict to a Domain
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-3-define-metrics">
    Step 3: Define Metrics
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#execute-the-analysis">
    Execute the Analysis
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assemble-the-results">
    Assemble the results
   </a>
@@ -440,7 +440,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>D-Score Steamflow Analysis Workflow</h1>
+                <h1>Essential Benchmark Components</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -450,37 +450,37 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#essential-benchmark-components">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Essential Benchmark Components
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-0-load-libraries-and-configure-python-computing-environment">
    Step 0: Load libraries and configure Python computing environment
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-1-load-data">
    Step 1: Load Data
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-2-restrict-to-a-domain">
    Step 2: Restrict to a Domain
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-3-define-metrics">
    Step 3: Define Metrics
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#execute-the-analysis">
    Execute the Analysis
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assemble-the-results">
    Assemble the results
   </a>
@@ -495,8 +495,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="d-score-steamflow-analysis-workflow">
-<h1>D-Score Steamflow Analysis Workflow<a class="headerlink" href="#d-score-steamflow-analysis-workflow" title="Permalink to this headline">#</a></h1>
+  <p>Steamflow Eval :: DScore Analysis</p>
 <a class="reference internal image-reference" href="../../../_images/Eval_Analysis.svg"><img alt="../../../_images/Eval_Analysis.svg" src="../../../_images/Eval_Analysis.svg" width="600" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -507,7 +506,7 @@ title="Print to PDF"
 </ul>
 </div>
 <div class="section" id="essential-benchmark-components">
-<h2>Essential Benchmark Components<a class="headerlink" href="#essential-benchmark-components" title="Permalink to this headline">#</a></h2>
+<h1>Essential Benchmark Components<a class="headerlink" href="#essential-benchmark-components" title="Permalink to this headline">#</a></h1>
 <p>This benchmark notebook will present a workflow which follows a canonical model for Essential Benchmark Components:</p>
 <ol class="simple">
 <li><p>A set of predictions and matching observations;</p></li>
@@ -517,7 +516,7 @@ title="Print to PDF"
 <p>Let’s get started.</p>
 </div>
 <div class="section" id="step-0-load-libraries-and-configure-python-computing-environment">
-<h2>Step 0: Load libraries and configure Python computing environment<a class="headerlink" href="#step-0-load-libraries-and-configure-python-computing-environment" title="Permalink to this headline">#</a></h2>
+<h1>Step 0: Load libraries and configure Python computing environment<a class="headerlink" href="#step-0-load-libraries-and-configure-python-computing-environment" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -528,7 +527,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="section" id="step-1-load-data">
-<h2>Step 1: Load Data<a class="headerlink" href="#step-1-load-data" title="Permalink to this headline">#</a></h2>
+<h1>Step 1: Load Data<a class="headerlink" href="#step-1-load-data" title="Permalink to this headline">#</a></h1>
 <a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Data.svg"><img alt="../../../_images/Eval_Analysis_Data.svg" src="../../../_images/Eval_Analysis_Data.svg" width="360" /></a>
 <p>Essential Benchmark Components:</p>
 <ol class="simple">
@@ -643,7 +642,7 @@ Modeled  :  nwm21-streamflow-usgs-gages-cloud
 </div>
 </div>
 <div class="section" id="step-2-restrict-to-a-domain">
-<h2>Step 2: Restrict to a Domain<a class="headerlink" href="#step-2-restrict-to-a-domain" title="Permalink to this headline">#</a></h2>
+<h1>Step 2: Restrict to a Domain<a class="headerlink" href="#step-2-restrict-to-a-domain" title="Permalink to this headline">#</a></h1>
 <a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Domain.svg"><img alt="../../../_images/Eval_Analysis_Domain.svg" src="../../../_images/Eval_Analysis_Domain.svg" width="360" /></a>
 <p>Essential Benchmark Components:</p>
 <ol class="simple">
@@ -774,7 +773,7 @@ those gages found within this benchmarking domain.</p>
 <p>So now we have a domain dataset representing the stream gages (unique <code class="docutils literal notranslate"><span class="pre">site_no</span></code> values) identifying the locations making up the spatial domain of this benchmark. While we have good meta-data for these gages (lat/lon location, HUC8 code, etc), we really will only use the list of <code class="docutils literal notranslate"><span class="pre">site_no</span></code> values to select locations out of the raw data.</p>
 </div>
 <div class="section" id="step-3-define-metrics">
-<h2>Step 3: Define Metrics<a class="headerlink" href="#step-3-define-metrics" title="Permalink to this headline">#</a></h2>
+<h1>Step 3: Define Metrics<a class="headerlink" href="#step-3-define-metrics" title="Permalink to this headline">#</a></h1>
 <a class="reference internal image-reference" href="../../../_images/Eval_Analysis_Metrics.svg"><img alt="../../../_images/Eval_Analysis_Metrics.svg" src="../../../_images/Eval_Analysis_Metrics.svg" width="360" /></a>
 <p>Essential Benchmark Components:</p>
 <ol class="simple">
@@ -862,7 +861,7 @@ Name: USGS-01030350, dtype: float64
 </div>
 </div>
 <div class="section" id="execute-the-analysis">
-<h2>Execute the Analysis<a class="headerlink" href="#execute-the-analysis" title="Permalink to this headline">#</a></h2>
+<h1>Execute the Analysis<a class="headerlink" href="#execute-the-analysis" title="Permalink to this headline">#</a></h1>
 <p>We will be doing a lot of work in paralallel, using workers within a ‘cluster’.<br />
 The details of cluster configuration are handled for us by ‘helper’ notebooks, below.
 You can override their function by doing your own cluster configuration if you like.</p>
@@ -982,7 +981,7 @@ We will mak use of <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="section" id="assemble-the-results">
-<h2>Assemble the results<a class="headerlink" href="#assemble-the-results" title="Permalink to this headline">#</a></h2>
+<h1>Assemble the results<a class="headerlink" href="#assemble-the-results" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">bag</span></code> now contains a collection of return values (one per call to <code class="docutils literal notranslate"><span class="pre">compute_benchmark()</span></code>).  We can massage that into a table/dataframe for easier processing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1213,12 +1212,11 @@ We will mak use of <code class="docutils literal notranslate"><span class="pre">
 </div></div></div>
 </div>
 <p>This dataframe/table can be saved to disk as a CSV. It will be used for visualizations in
-<a class="reference internal" href="03_Vizualization.html"><span class="doc">Model Evaluation Workflow :: Visualization</span></a> .</p>
+<a class="reference internal" href="03_Vizualization.html"><span class="doc">Streamflow Eval :: Visualization</span></a> .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;DScore_streamflow_example.csv&#39;</span><span class="p">)</span> <span class="c1">##&lt;--- change this to a personalized filename</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1255,13 +1253,13 @@ We will mak use of <code class="docutils literal notranslate"><span class="pre">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Model Evaluation Workflow :: NWM streamflow Analysis</p>
+            <p class="prev-next-title">Streamflow Eval :: StdSuite Analysis</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="03_Vizualization.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Model Evaluation Workflow :: Visualization</p>
+        <p class="prev-next-title">Streamflow Eval :: Visualization</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

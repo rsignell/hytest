@@ -215,22 +215,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="tutorials/nwm_streamflow/01_Data_Prep.html">
-     Model Evaluation :: Data Preparation
+     Streamflow Eval :: Data Preparation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tutorials/nwm_streamflow/02_Analysis_StdSuite.html">
-     Model Evaluation Workflow :: NWM streamflow Analysis
+     Streamflow Eval :: StdSuite Analysis
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tutorials/nwm_streamflow/02_Analysis_DScore.html">
-     D-Score Steamflow Analysis Workflow
+     Essential Benchmark Components
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="tutorials/nwm_streamflow/03_Vizualization.html">
-     Model Evaluation Workflow :: Visualization
+     Streamflow Eval :: Visualization
     </a>
    </li>
   </ul>
@@ -396,54 +396,45 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   D-Score Suite (v1) Benchmark
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-metrics">
+   The Metrics:
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-metrics">
-     The Metrics:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-squared-error">
-     Mean Squared Error
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#percent-bias">
-     Percent Bias
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bias-variance-decomposition">
-     Bias &amp; Variance Decomposition
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bias-distribution-sequence-decomposition">
-     Bias-Distribution-Sequence Decomposition
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-squared-error">
+   Mean Squared Error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#percent-bias">
+   Percent Bias
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bias-variance-decomposition">
+   Bias &amp; Variance Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bias-distribution-sequence-decomposition">
+   Bias-Distribution-Sequence Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#seasonal-decomposition">
    Seasonal Decomposition
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantile-decomposition">
-     Quantile Decomposition
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scorecard-visualizations">
-     ScoreCard Visualizations
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantile-decomposition">
+   Quantile Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scorecard-visualizations">
+   ScoreCard Visualizations
+  </a>
  </li>
 </ul>
 
@@ -464,54 +455,45 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   D-Score Suite (v1) Benchmark
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-metrics">
+   The Metrics:
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-metrics">
-     The Metrics:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-squared-error">
-     Mean Squared Error
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#percent-bias">
-     Percent Bias
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bias-variance-decomposition">
-     Bias &amp; Variance Decomposition
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bias-distribution-sequence-decomposition">
-     Bias-Distribution-Sequence Decomposition
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-squared-error">
+   Mean Squared Error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#percent-bias">
+   Percent Bias
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bias-variance-decomposition">
+   Bias &amp; Variance Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bias-distribution-sequence-decomposition">
+   Bias-Distribution-Sequence Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#seasonal-decomposition">
    Seasonal Decomposition
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantile-decomposition">
-     Quantile Decomposition
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scorecard-visualizations">
-     ScoreCard Visualizations
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantile-decomposition">
+   Quantile Decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scorecard-visualizations">
+   ScoreCard Visualizations
+  </a>
  </li>
 </ul>
 
@@ -711,9 +693,8 @@ as a function definition.  This notebook can be sourced into analysis notebooks 
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="seasonal-decomposition">
-<h1>Seasonal Decomposition<a class="headerlink" href="#seasonal-decomposition" title="Permalink to this headline">#</a></h1>
+<div class="section" id="seasonal-decomposition">
+<h2>Seasonal Decomposition<a class="headerlink" href="#seasonal-decomposition" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">seasonal_mse</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">sim</span><span class="p">):</span>
@@ -747,6 +728,7 @@ as a function definition.  This notebook can be sourced into analysis notebooks 
 
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">winter</span><span class="p">,</span> <span class="n">spring</span><span class="p">,</span> <span class="n">summer</span><span class="p">,</span> <span class="n">fall</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;winter&#39;</span><span class="p">,</span> <span class="s1">&#39;spring&#39;</span><span class="p">,</span> <span class="s1">&#39;summer&#39;</span><span class="p">,</span> <span class="s1">&#39;fall&#39;</span><span class="p">])</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

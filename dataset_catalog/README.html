@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>hytest-catalogs &#8212; HyTEST Project</title>
+    <title>HyTEST Data Catalog (Intake) &#8212; HyTEST Project</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="hytest sub-catalogs" href="subcatalogs/README.html" />
-    <link rel="prev" title="Re-Chunking Larger Datasets" href="../dataset_preprocessing/tutorials/rechunking/ReChunkingData_Cloud.html" />
+    <link rel="next" title="HyTEST Intake Sub-Catalogs" href="subcatalogs/README.html" />
+    <link rel="prev" title="Parallelism with Dask" href="../essential_reading/Parallel_Dask.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -158,19 +158,21 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Environment Set-Up</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environment_set_up/README.html">Compute Environments</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-Nebari.html">Quick-Start for Nebari Cloud Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-pangeoCHS.html">Quick-Start for pangeo.chs.usgs.gov Cloud Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/OpenOnDemand.html">HPC Server: Open OnDemand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/JupyterForward.html">HPC Server :: Jupyter Forward</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/StartScript.html">HPC Server :: Start Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-General.html">QuickStart - General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-pangeoCHS.html">Cloud: pangeo.chs.usgs.gov Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-Nebari.html">Cloud: Nebari Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/OpenOnDemand.html">HPC Server: Open OnDemand Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/JupyterForward.html">HPC Server: Jupyter Forward Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/StartScript.html">HPC Server: Start Script Quick-Start</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environment_set_up/clusters.html">Starting a Cluster</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html">AWS Credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Nebari.html">Dask cluster on nebari.esipfed.org</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_PangeoCHS.html">Dask cluster on pangeo.chs.usgs.gov</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Denali.html">Dask Cluster on Denali HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Tallgrass.html">Dask Cluster on Tallgrass HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html">AWS Credentials</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environment_set_up/clusters.html">Starting a Dask Cluster</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Nebari.html">nebari.esipfed.org Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_PangeoCHS.html">pangeo.chs.usgs.gov Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Denali.html">Denali HPC Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Tallgrass.html">Tallgrass HPC Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Desktop.html">Local Desktop Dask Cluster</a></li>
 </ul>
 </li>
 </ul>
@@ -178,42 +180,39 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../essential_reading/README.html">Essential Reading</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../essential_reading/ReadingsTutorials.html">Foundations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../essential_reading/Demoing_Commonly_Used_Libraries.html">Demo code for key libraries</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../essential_reading/DataSources/README.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../essential_reading/DataSources/Data_APIs.html">Data/APIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../essential_reading/DataSources/Data_S3.html">Data/Cloud Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../essential_reading/DataSources/Data_STAC.html">Data/STAC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../essential_reading/Parallel_Dask.html">Parallelism with Dask</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dataset Access</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">HyTEST Data Catalog (Intake)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="subcatalogs/README.html">HyTEST Intake Sub-Catalogs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_access/README.html">CONUS404 Access</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_explore.html">Explore CONUS404 Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_temporal_aggregation.html">CONUS404 Temporal Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_spatial_aggregation.html">CONUS404 Spatial Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_regrid.html">CONUS404 Regridding (Curvilinear =&gt; Rectilinear)</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dataset Preprocessing</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_preprocessing/chunk.html">Chunking Data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_preprocessing/chunk.html">Chunking Data</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dataset_preprocessing/tutorials/rechunking/ReChunkingData.html">Re-Chunking Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dataset_preprocessing/tutorials/rechunking/ReChunkingData_Cloud.html">Re-Chunking Larger Datasets</a></li>
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dataset Access</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">hytest-catalogs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="subcatalogs/README.html">hytest sub-catalogs</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_access/README.html">CONUS404 Access</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_explore.html">Explore CONUS404 Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_temporal_aggregation.html">CONUS404 temporal aggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_spatial_aggregation.html">CONUS404 Spatial Aggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_regrid.html">CONUS404 Regridding CurvilinearCONUS404  =&gt; Rectilinear</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Evaluation Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Evaluation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/README.html">Evaluation folder</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../evaluation/metrics.html">Evaluation Metrics</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../evaluation/Metrics_DScore_Suite_v1.html">D-Score Suite (v1) Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">D-Score Suite (v1) Benchmark – Usage Examples</a></li>
@@ -384,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>hytest-catalogs</h1>
+    <h1>HyTEST Data Catalog (Intake)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,9 +406,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hytest-catalogs">
-<h1>hytest-catalogs<a class="headerlink" href="#hytest-catalogs" title="Permalink to this headline">#</a></h1>
-<p>This directory holds the <code class="docutils literal notranslate"><span class="pre">hytest_intake_catalog.yml</span></code>. This catalog is structured to be compatible with the Python intake package and facilitates reading the data into the other notebooks contained in this repository. The intake catalog is stored as a yaml file, which should also be easy to parse using other programming languages, even if there is no equivalent to the intake package in that programming language. Example usage of this catalog is shown below.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="hytest-data-catalog-intake">
+<h1>HyTEST Data Catalog (Intake)<a class="headerlink" href="#hytest-data-catalog-intake" title="Permalink to this headline">#</a></h1>
+<p>This section describes how to use HyTEST’s <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">intake catalog</a>. Intake catalogs help reduce or remove the burden of handling different file formats and storage locations, making it easier to read data into your workflow. Our catalog facilitates this access for HyTEST’s key data offerings and is used to read the data into the notebooks contained in this repository. While intake catalogs are Python-centric, they stored as a yaml file, which should also be easy to parse using other programming languages, even if there is no equivalent package in that programming language. Example usage of this catalog is shown below.</p>
 <p>Please note that this catalog is a temporary solution for reading data into our workflows. By the end of 2023, we hope to replace this catalog by a <a class="reference external" href="https://stacspec.org/en">STAC</a>. We plan to update all notebooks to read from our STAC at that time, as well.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/hytest-org/hytest/main/dataset_catalog/hytest_intake_catalog.yml&#39;</span>
@@ -418,16 +417,19 @@ document.write(`
 </pre></div>
 </div>
 <p>produces a list of datasets, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;conus404-40year-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-2017-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-2017-cloud&#39;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;conus404-drb-eval-tutorial-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nhm-v1.0-daymet-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nhm-v1.1-c404-bc-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nhm-v1.1-gridmet-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;conus404-catalog&#39;</span><span class="p">,</span>
  <span class="s1">&#39;nwis-streamflow-usgs-gages-onprem&#39;</span><span class="p">,</span>
  <span class="s1">&#39;nwis-streamflow-usgs-gages-cloud&#39;</span><span class="p">,</span>
  <span class="s1">&#39;nwm21-streamflow-usgs-gages-onprem&#39;</span><span class="p">,</span>
  <span class="s1">&#39;nwm21-streamflow-usgs-gages-cloud&#39;</span><span class="p">,</span>
  <span class="s1">&#39;nwm21-streamflow-cloud&#39;</span><span class="p">,</span>
  <span class="s1">&#39;nwm21-scores&#39;</span><span class="p">,</span>
- <span class="s1">&#39;lcmap-cloud&#39;</span><span class="p">]</span>
+ <span class="s1">&#39;lcmap-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;rechunking-tutorial-cloud&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The characteristics of indivdual datasets can be explored:</p>
@@ -452,21 +454,18 @@ document.write(`
 <span class="w">    </span><span class="nt">catalog_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/hytest-org/hytest/main/dataset_catalog</span>
 </pre></div>
 </div>
-<p>and xarray-type datasets can be loaded with <code class="docutils literal notranslate"><span class="pre">to_dask()</span></code>, while panda-type datasets can be loaded with <code class="docutils literal notranslate"><span class="pre">.read()</span></code>:</p>
+<p>Once you have identified the dataset you would like to work with, xarray-type datasets can be loaded with <code class="docutils literal notranslate"><span class="pre">to_dask()</span></code>, while panda-type datasets can be loaded with <code class="docutils literal notranslate"><span class="pre">.read()</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;lcmap-cloud&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;nwm21-scores&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
 <section id="demos">
 <h2>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">#</a></h2>
-<p>Demos for working with the data catalogs can be found in the <a class="reference external" href="https://github.com/hytest-org/hytest/tree/main/dataset_catalog/demos">demos</a> folder.</p>
+<p>Demos for working with the data catalogs can be found in the <a class="reference external" href="https://github.com/hytest-org/hytest/tree/main/dataset_catalog/demos">demos</a> folder of our repository.</p>
 </section>
 <section id="subcatalogs">
 <h2>Subcatalogs<a class="headerlink" href="#subcatalogs" title="Permalink to this headline">#</a></h2>
-<p>HyTEST will generate a number of <code class="docutils literal notranslate"><span class="pre">intake</span></code> catalogs for a variety of use cases (tutorials, demos, workflows, etc.)
-which can be found in the “hytest/dataset_catalog/subcatalogs” folder and called in by using the <code class="docutils literal notranslate"><span class="pre">intake</span></code> example
-above. An example of calling these catalogs in can be found in the “Nested_catalogs_and_datasets.ipynb” notebook in
-the ‘demos’ folder.</p>
+<p>The main HyTEST intake catalog includes the use of sub-catalogs. A sub-catalog may contain a set of datasets for a particular use case (like a specific tutorial) or groupings of related datasets. For example, the CONUS404 datasets (at different time steps and storage locations) are stored in their own sub-catalog. An example of calling these catalogs in can be found <a class="reference internal" href="subcatalogs/README.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -501,12 +500,12 @@ the ‘demos’ folder.</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../dataset_preprocessing/tutorials/rechunking/ReChunkingData_Cloud.html"
+       href="../essential_reading/Parallel_Dask.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Re-Chunking Larger Datasets</p>
+        <p class="prev-next-title">Parallelism with Dask</p>
       </div>
     </a>
     <a class="right-next"
@@ -514,7 +513,7 @@ the ‘demos’ folder.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">hytest sub-catalogs</p>
+        <p class="prev-next-title">HyTEST Intake Sub-Catalogs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chunking Data" href="../dataset_preprocessing/chunk.html" />
-    <link rel="prev" title="Data/STAC" href="DataSources/Data_STAC.html" />
+    <link rel="next" title="HyTEST Data Catalog (Intake)" href="../dataset_catalog/README.html" />
+    <link rel="prev" title="Data/Cloud Storage" href="DataSources/Data_S3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -158,19 +158,21 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Environment Set-Up</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environment_set_up/README.html">Compute Environments</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-Nebari.html">Quick-Start for Nebari Cloud Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-pangeoCHS.html">Quick-Start for pangeo.chs.usgs.gov Cloud Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/OpenOnDemand.html">HPC Server: Open OnDemand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/JupyterForward.html">HPC Server :: Jupyter Forward</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/StartScript.html">HPC Server :: Start Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-General.html">QuickStart - General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-pangeoCHS.html">Cloud: pangeo.chs.usgs.gov Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/QuickStart-Cloud-Nebari.html">Cloud: Nebari Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/OpenOnDemand.html">HPC Server: Open OnDemand Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/JupyterForward.html">HPC Server: Jupyter Forward Quick-Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/StartScript.html">HPC Server: Start Script Quick-Start</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environment_set_up/clusters.html">Starting a Cluster</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html">AWS Credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Nebari.html">Dask cluster on nebari.esipfed.org</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_PangeoCHS.html">Dask cluster on pangeo.chs.usgs.gov</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Denali.html">Dask Cluster on Denali HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Tallgrass.html">Dask Cluster on Tallgrass HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html">AWS Credentials</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environment_set_up/clusters.html">Starting a Dask Cluster</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Nebari.html">nebari.esipfed.org Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_PangeoCHS.html">pangeo.chs.usgs.gov Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Denali.html">Denali HPC Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Tallgrass.html">Tallgrass HPC Dask Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment_set_up/Start_Dask_Cluster_Desktop.html">Local Desktop Dask Cluster</a></li>
 </ul>
 </li>
 </ul>
@@ -178,42 +180,39 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="README.html">Essential Reading</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="ReadingsTutorials.html">Foundations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Demoing_Commonly_Used_Libraries.html">Demo code for key libraries</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="DataSources/README.html">Data Sources</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="DataSources/Data_APIs.html">Data/APIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="DataSources/Data_S3.html">Data/Cloud Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="DataSources/Data_STAC.html">Data/STAC</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Parallelism with Dask</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dataset Access</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_catalog/README.html">HyTEST Data Catalog (Intake)</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_catalog/subcatalogs/README.html">HyTEST Intake Sub-Catalogs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_access/README.html">CONUS404 Access</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_explore.html">Explore CONUS404 Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_temporal_aggregation.html">CONUS404 Temporal Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_spatial_aggregation.html">CONUS404 Spatial Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_regrid.html">CONUS404 Regridding (Curvilinear =&gt; Rectilinear)</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dataset Preprocessing</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_preprocessing/chunk.html">Chunking Data</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_preprocessing/chunk.html">Chunking Data</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dataset_preprocessing/tutorials/rechunking/ReChunkingData.html">Re-Chunking Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dataset_preprocessing/tutorials/rechunking/ReChunkingData_Cloud.html">Re-Chunking Larger Datasets</a></li>
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Dataset Access</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Evaluation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_catalog/README.html">hytest-catalogs</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_catalog/subcatalogs/README.html">hytest sub-catalogs</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dataset_access/README.html">CONUS404 Access</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_explore.html">Explore CONUS404 Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_temporal_aggregation.html">CONUS404 temporal aggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_spatial_aggregation.html">CONUS404 Spatial Aggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dataset_access/conus404_regrid.html">CONUS404 Regridding CurvilinearCONUS404  =&gt; Rectilinear</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Evaluation Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/README.html">Evaluation folder</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../evaluation/metrics.html">Evaluation Metrics</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../evaluation/Metrics_DScore_Suite_v1.html">D-Score Suite (v1) Benchmark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../evaluation/tutorials/stats/Usage_DScore_Suite_v1.html">D-Score Suite (v1) Benchmark – Usage Examples</a></li>
@@ -557,7 +556,7 @@ Because these threads do not depend on one another, they can operate in parallel
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 124 ms, sys: 29.6 ms, total: 153 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 141 ms, sys: 3.38 ms, total: 145 ms
 Wall time: 10 s
 </pre></div>
 </div>
@@ -575,8 +574,8 @@ Wall time: 10 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 130 ms, sys: 53.7 ms, total: 183 ms
-Wall time: 2.23 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 140 ms, sys: 50.1 ms, total: 190 ms
+Wall time: 2.22 s
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
@@ -633,20 +632,20 @@ Wall time: 2.23 s
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="DataSources/Data_STAC.html"
+       href="DataSources/Data_S3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data/STAC</p>
+        <p class="prev-next-title">Data/Cloud Storage</p>
       </div>
     </a>
     <a class="right-next"
-       href="../dataset_preprocessing/chunk.html"
+       href="../dataset_catalog/README.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chunking Data</p>
+        <p class="prev-next-title">HyTEST Data Catalog (Intake)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

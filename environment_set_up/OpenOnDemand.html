@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Environment Set-Up</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Compute Environments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="QuickStart-General.html">QuickStart - General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QuickStart-General.html">General QuickStart</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QuickStart-Cloud-pangeoCHS.html">Cloud: pangeo.chs.usgs.gov Quick-Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QuickStart-Cloud-Nebari.html">Cloud: Nebari Quick-Start</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">HPC Server: Open OnDemand Quick-Start</a></li>
@@ -402,10 +402,11 @@ to use (no configuration needed on your part), and provides reasonable compute r
 host:</p>
 <ul class="simple">
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">https://tallgrass-denali-ondemand.cr.usgs.gov/pun/sys/dashboard/</span></code> in your web browser.
-Note that you must be on the VPN to access this host.</p></li>
-<li><p>Launch the HyTEST Jupyter Server app.</p></li>
-<li><p>Fill in the form to customize the allocation in which the Jupyter Server will execute.</p></li>
+Note that you must be on the VPN to access this host. You will be prompted to log in to the server, and you should use your AD username and password here.</p></li>
+<li><p>Launch the HyTEST Jupyter Server app under the Interactive Apps dropdown menu.</p></li>
+<li><p>Fill in the form to customize the allocation in which the Jupyter Server will execute. You may want to consider adding the git and/or aws modules if you plan to use them during your session. You will just need to type <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">git</span></code> and/or <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">aws</span></code> in the <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">loads</span></code> section.</p></li>
 <li><p>Submit</p></li>
+<li><p>Once your server is ready, a <code class="docutils literal notranslate"><span class="pre">Connect</span> <span class="pre">to</span> <span class="pre">Jupyter</span></code> button will appear that you can click to start your session.</p></li>
 </ul>
 <p>The Jupyter Server will run in an allocation on <code class="docutils literal notranslate"><span class="pre">tallgrass</span></code>. This server will have access to your home
 directory/folder on that host, which is where your notebooks will reside.</p>

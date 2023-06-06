@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -404,14 +404,19 @@ document.write(`
 </pre></div>
 </div>
 <p>produces a list of datasets and sub-catalogs in the main HyTEST data catalog, for example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;conus404-hourly-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-hourly-cloud&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-daily-diagnostic-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-daily-diagnostic-cloud&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-daily-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-daily-cloud&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-monthly-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-monthly-cloud&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;conus404-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;conus404-drb-eval-tutorial-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nhm-v1.0-daymet-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nhm-v1.1-c404-bc-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nhm-v1.1-gridmet-catalog&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nwis-streamflow-usgs-gages-onprem&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nwis-streamflow-usgs-gages-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nwm21-streamflow-usgs-gages-onprem&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nwm21-streamflow-usgs-gages-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nwm21-streamflow-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;nwm21-scores&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;lcmap-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;rechunking-tutorial-cloud&#39;</span><span class="p">]</span>
 
 </pre></div>
 </div>
@@ -426,31 +431,34 @@ document.write(`
  <span class="s1">&#39;conus404-hourly-osn&#39;</span><span class="p">,</span>
  <span class="s1">&#39;conus404-daily-diagnostic-onprem&#39;</span><span class="p">,</span>
  <span class="s1">&#39;conus404-daily-diagnostic-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;conus404-daily-diagnostic-osn&#39;</span><span class="p">,</span>
  <span class="s1">&#39;conus404-daily-onprem&#39;</span><span class="p">,</span>
  <span class="s1">&#39;conus404-daily-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;conus404-daily-osn&#39;</span><span class="p">,</span>
  <span class="s1">&#39;conus404-monthly-onprem&#39;</span><span class="p">,</span>
- <span class="s1">&#39;conus404-monthly-cloud&#39;</span><span class="p">]</span>
+ <span class="s1">&#39;conus404-monthly-cloud&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;conus404-monthly-osn&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The characteristics of indivdual datasets can be explored:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;conus404-hourly-cloud&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;conus404-hourly-osn&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>producing</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">conus404-hourly-cloud</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">conus404-hourly-osn</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">args</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">consolidated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">storage_options</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">requester_pays</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">urlpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://nhgf-development/conus404/conus404_hourly_202209.zarr</span>
+<span class="w">      </span><span class="nt">anon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">endpoint_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://renc.osn.xsede.org</span>
+<span class="w">      </span><span class="nt">requester_pays</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">urlpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://rsignellbucket2/hytest/conus404/conus404_hourly_202302.zarr</span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CONUS404</span><span class="nv"> </span><span class="s">Hydro</span><span class="nv"> </span><span class="s">Variable</span><span class="nv"> </span><span class="s">subset,</span><span class="nv"> </span><span class="s">40</span><span class="nv"> </span><span class="s">years</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">hourly</span><span class="nv"> </span><span class="s">values.</span><span class="nv"> </span><span class="s">These</span><span class="nv"> </span><span class="s">files</span>
 <span class="w">    </span><span class="s">were</span><span class="nv"> </span><span class="s">created</span><span class="nv"> </span><span class="s">wrfout</span><span class="nv"> </span><span class="s">model</span><span class="nv"> </span><span class="s">output</span><span class="nv"> </span><span class="s">files</span><span class="nv"> </span><span class="s">(see</span><span class="nv"> </span><span class="s">ScienceBase</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">release</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">more</span>
 <span class="w">    </span><span class="s">details:</span><span class="nv"> </span><span class="s">https://www.sciencebase.gov/catalog/item/6372cd09d34ed907bf6c6ab1).</span><span class="nv"> </span><span class="s">This</span>
 <span class="w">    </span><span class="s">dataset</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">stored</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">AWS</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">cloud</span><span class="nv"> </span><span class="s">storage</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">requester-pays</span><span class="nv"> </span><span class="s">bucket.</span><span class="nv"> </span><span class="s">You</span><span class="nv"> </span><span class="s">can</span>
-<span class="w">    </span><span class="s">work</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">workflow</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">running</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">us-west-2</span><span class="nv"> </span><span class="s">region,</span>
-<span class="w">    </span><span class="s">but</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">charged</span><span class="nv"> </span><span class="s">according</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">AWS</span><span class="nv"> </span><span class="s">S3</span><span class="nv"> </span><span class="s">pricing</span><span class="nv"> </span><span class="s">(https://aws.amazon.com/s3/pricing/)</span>
-<span class="w">    </span><span class="s">to</span><span class="nv"> </span><span class="s">read</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">into</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">workflow</span><span class="nv"> </span><span class="s">running</span><span class="nv"> </span><span class="s">outside</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">cloud</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">different</span>
-<span class="w">    </span><span class="s">AWS</span><span class="nv"> </span><span class="s">cloud</span><span class="nv"> </span><span class="s">region.&#39;</span>
+<span class="w">    </span><span class="s">work</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">any</span><span class="nv"> </span><span class="s">environment</span><span class="nv"> </span><span class="s">(there</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">egress</span><span class="nv"> </span><span class="s">fees).&#39;</span>
 <span class="w">  </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intake_xarray.xzarr.ZarrSource</span>
 <span class="w">  </span><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">catalog_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/hytest-org/hytest/main/dataset_catalog/subcatalogs</span>
@@ -484,7 +492,10 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../README.html"
@@ -504,7 +515,10 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -514,7 +528,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -544,7 +558,7 @@ By The Jupyter Book community
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -553,8 +567,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

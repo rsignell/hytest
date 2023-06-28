@@ -419,7 +419,7 @@ and select an option which resembles your compute environment.</p>
 </ul>
 <section id="virtual-environment">
 <h2>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">#</a></h2>
-<p>We definitely recommend <code class="docutils literal notranslate"><span class="pre">conda</span></code> (or its functional equivalent, <code class="docutils literal notranslate"><span class="pre">mamba</span></code>)
+<p>We recommend <code class="docutils literal notranslate"><span class="pre">conda</span></code> (or its functional equivalent, <code class="docutils literal notranslate"><span class="pre">mamba</span></code>)
 as the environment configuration tool.  The software stack we use is
 defined in
 <a class="reference external" href="https://raw.githubusercontent.com/hytest-org/hytest/main/environment_set_up/HyTEST.yml">this environment file</a>.</p>
@@ -427,6 +427,7 @@ defined in
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>conda env create -f ./HyTEST.yml
 </pre></div>
 </div>
+<p>You will then need to select the <code class="docutils literal notranslate"><span class="pre">hytest</span></code> environment as your kernel when you try to run the notebook.</p>
 <p>While is is possible to run most of these workflows on a desktop system,
 they have been developed to run on a Linux variant.  This will affect which
 versions and which architectures of the various software packages are
@@ -434,7 +435,8 @@ installed.</p>
 </section>
 <section id="jupyter-server">
 <h2>Jupyter Server<a class="headerlink" href="#jupyter-server" title="Permalink to this headline">#</a></h2>
-<p>The Jupyter server is the harder problem to solve – primarily because
+<p>If you are working in an environment that already has a pathway to run Jupyter notebooks, you will not need to worry about this section. You will simply launch the Jupyter notebook in whatever way you know how.</p>
+<p>If you do need to set up your own Jupyter server, this is a harder problem to solve – primarily because
 there are so many variables and options to consider when setting it up.
 The Pangeo docs cover a few of the options, and the <a class="reference external" href="https://jupyter.org/">Jupyter</a>
 docs also give some help for setting up. These deployments, generally,

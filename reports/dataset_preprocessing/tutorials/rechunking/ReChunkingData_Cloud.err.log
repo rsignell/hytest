@@ -28,7 +28,7 @@ result = rechunker.rechunk(
 ------------------
 
 ----- stderr -----
-/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/xarray/conventions.py:205: SerializationWarning: variable None has data in the form of a dask array with dtype=object, which means it is being loaded into memory to determine a data type that can be safely stored on disk. To avoid this, coerce this variable to a fixed-size dtype with astype() before saving it.
+/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/xarray/conventions.py:205: SerializationWarning: variable None has data in the form of a dask array with dtype=object, which means it is being loaded into memory to determine a data type that can be safely stored on disk. To avoid this, coerce this variable to a fixed-size dtype with astype() before saving it.
   warnings.warn(
 ------------------
 
@@ -46,7 +46,7 @@ Cell [0;32mIn[12], line 4[0m
 [1;32m      9[0m [43m    [49m[43mtemp_store[49m[38;5;241;43m=[39;49m[43mstaging[49m[43m,[49m[43m [49m
 [1;32m     10[0m [43m)[49m
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/rechunker/api.py:297[0m, in [0;36mrechunk[0;34m(source, target_chunks, max_mem, target_store, target_options, temp_store, temp_options, executor)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/rechunker/api.py:297[0m, in [0;36mrechunk[0;34m(source, target_chunks, max_mem, target_store, target_options, temp_store, temp_options, executor)[0m
 [1;32m    294[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(executor, [38;5;28mstr[39m):
 [1;32m    295[0m     executor [38;5;241m=[39m _get_executor(executor)
 [0;32m--> 297[0m copy_spec, intermediate, target [38;5;241m=[39m [43m_setup_rechunk[49m[43m([49m
@@ -61,7 +61,7 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    306[0m plan [38;5;241m=[39m executor[38;5;241m.[39mprepare_plan(copy_spec)
 [1;32m    307[0m [38;5;28;01mreturn[39;00m Rechunked(executor, plan, source, intermediate, target)
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/rechunker/api.py:445[0m, in [0;36m_setup_rechunk[0;34m(source, target_chunks, max_mem, target_store, target_options, temp_store, temp_options)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/rechunker/api.py:445[0m, in [0;36m_setup_rechunk[0;34m(source, target_chunks, max_mem, target_store, target_options, temp_store, temp_options)[0m
 [1;32m    442[0m variable_attrs [38;5;241m=[39m _encode_zarr_attributes(variable[38;5;241m.[39mattrs)
 [1;32m    443[0m variable_attrs[DIMENSION_KEY] [38;5;241m=[39m encode_zarr_attr_value(variable[38;5;241m.[39mdims)
 [0;32m--> 445[0m copy_spec [38;5;241m=[39m [43m_setup_array_rechunk[49m[43m([49m
@@ -77,7 +77,7 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    455[0m copy_spec[38;5;241m.[39mwrite[38;5;241m.[39marray[38;5;241m.[39mattrs[38;5;241m.[39mupdate(variable_attrs)  [38;5;66;03m# type: ignore[39;00m
 [1;32m    456[0m copy_specs[38;5;241m.[39mappend(copy_spec)
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/rechunker/api.py:566[0m, in [0;36m_setup_array_rechunk[0;34m(source_array, target_chunks, max_mem, target_store_or_group, target_options, temp_store_or_group, temp_options, name)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/rechunker/api.py:566[0m, in [0;36m_setup_array_rechunk[0;34m(source_array, target_chunks, max_mem, target_store_or_group, target_options, temp_store_or_group, temp_options, name)[0m
 [1;32m    563[0m int_chunks [38;5;241m=[39m [38;5;28mtuple[39m([38;5;28mint[39m(x) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m int_chunks)
 [1;32m    564[0m write_chunks [38;5;241m=[39m [38;5;28mtuple[39m([38;5;28mint[39m(x) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m write_chunks)
 [0;32m--> 566[0m target_array [38;5;241m=[39m [43m_zarr_empty[49m[43m([49m
@@ -91,7 +91,7 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    574[0m [38;5;28;01mtry[39;00m:
 [1;32m    575[0m     target_array[38;5;241m.[39mattrs[38;5;241m.[39mupdate(source_array[38;5;241m.[39mattrs)
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/rechunker/api.py:147[0m, in [0;36m_zarr_empty[0;34m(shape, store_or_group, chunks, dtype, name, **kwargs)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/rechunker/api.py:147[0m, in [0;36m_zarr_empty[0;34m(shape, store_or_group, chunks, dtype, name, **kwargs)[0m
 [1;32m    145[0m [38;5;28;01mif[39;00m name [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
 [1;32m    146[0m     [38;5;28;01massert[39;00m [38;5;28misinstance[39m(store_or_group, zarr[38;5;241m.[39mhierarchy[38;5;241m.[39mGroup)
 [0;32m--> 147[0m     [38;5;28;01mreturn[39;00m [43mstore_or_group[49m[38;5;241;43m.[39;49m[43mempty[49m[43m([49m
@@ -102,24 +102,24 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    152[0m         shape, chunks[38;5;241m=[39mchunks, dtype[38;5;241m=[39mdtype, store[38;5;241m=[39mstore_or_group, [38;5;241m*[39m[38;5;241m*[39mkwargs
 [1;32m    153[0m     )
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/hierarchy.py:1072[0m, in [0;36mGroup.empty[0;34m(self, name, **kwargs)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/hierarchy.py:1072[0m, in [0;36mGroup.empty[0;34m(self, name, **kwargs)[0m
 [1;32m   1069[0m [38;5;28;01mdef[39;00m [38;5;21mempty[39m([38;5;28mself[39m, name, [38;5;241m*[39m[38;5;241m*[39mkwargs):
 [1;32m   1070[0m [38;5;250m    [39m[38;5;124;03m"""Create an array. Keyword arguments as per[39;00m
 [1;32m   1071[0m [38;5;124;03m    :func:`zarr.creation.empty`."""[39;00m
 [0;32m-> 1072[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_write_op[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_empty_nosync[49m[43m,[49m[43m [49m[43mname[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/hierarchy.py:827[0m, in [0;36mGroup._write_op[0;34m(self, f, *args, **kwargs)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/hierarchy.py:827[0m, in [0;36mGroup._write_op[0;34m(self, f, *args, **kwargs)[0m
 [1;32m    824[0m     lock [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_synchronizer[group_meta_key]
 [1;32m    826[0m [38;5;28;01mwith[39;00m lock:
 [0;32m--> 827[0m     [38;5;28;01mreturn[39;00m [43mf[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/hierarchy.py:1078[0m, in [0;36mGroup._empty_nosync[0;34m(self, name, **kwargs)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/hierarchy.py:1078[0m, in [0;36mGroup._empty_nosync[0;34m(self, name, **kwargs)[0m
 [1;32m   1076[0m kwargs[38;5;241m.[39msetdefault([38;5;124m'[39m[38;5;124msynchronizer[39m[38;5;124m'[39m, [38;5;28mself[39m[38;5;241m.[39m_synchronizer)
 [1;32m   1077[0m kwargs[38;5;241m.[39msetdefault([38;5;124m'[39m[38;5;124mcache_attrs[39m[38;5;124m'[39m, [38;5;28mself[39m[38;5;241m.[39mattrs[38;5;241m.[39mcache)
 [0;32m-> 1078[0m [38;5;28;01mreturn[39;00m [43mempty[49m[43m([49m[43mstore[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_store[49m[43m,[49m[43m [49m[43mpath[49m[38;5;241;43m=[39;49m[43mpath[49m[43m,[49m[43m [49m[43mchunk_store[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_chunk_store[49m[43m,[49m
 [1;32m   1079[0m [43m             [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/creation.py:258[0m, in [0;36mempty[0;34m(shape, **kwargs)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/creation.py:258[0m, in [0;36mempty[0;34m(shape, **kwargs)[0m
 [1;32m    246[0m [38;5;28;01mdef[39;00m [38;5;21mempty[39m(shape, [38;5;241m*[39m[38;5;241m*[39mkwargs):
 [1;32m    247[0m [38;5;250m    [39m[38;5;124;03m"""Create an empty array.[39;00m
 [1;32m    248[0m 
@@ -129,7 +129,7 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    257[0m [38;5;124;03m    """[39;00m
 [0;32m--> 258[0m     [38;5;28;01mreturn[39;00m [43mcreate[49m[43m([49m[43mshape[49m[38;5;241;43m=[39;49m[43mshape[49m[43m,[49m[43m [49m[43mfill_value[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/creation.py:169[0m, in [0;36mcreate[0;34m(shape, chunks, dtype, compressor, fill_value, order, store, synchronizer, overwrite, path, chunk_store, filters, cache_metadata, cache_attrs, read_only, object_codec, dimension_separator, write_empty_chunks, zarr_version, meta_array, **kwargs)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/creation.py:169[0m, in [0;36mcreate[0;34m(shape, chunks, dtype, compressor, fill_value, order, store, synchronizer, overwrite, path, chunk_store, filters, cache_metadata, cache_attrs, read_only, object_codec, dimension_separator, write_empty_chunks, zarr_version, meta_array, **kwargs)[0m
 [1;32m    166[0m     path [38;5;241m=[39m [38;5;124m'[39m[38;5;124m/[39m[38;5;124m'[39m
 [1;32m    168[0m [38;5;66;03m# initialize array metadata[39;00m
 [0;32m--> 169[0m [43minit_array[49m[43m([49m[43mstore[49m[43m,[49m[43m [49m[43mshape[49m[38;5;241;43m=[39;49m[43mshape[49m[43m,[49m[43m [49m[43mchunks[49m[38;5;241;43m=[39;49m[43mchunks[49m[43m,[49m[43m [49m[43mdtype[49m[38;5;241;43m=[39;49m[43mdtype[49m[43m,[49m[43m [49m[43mcompressor[49m[38;5;241;43m=[39;49m[43mcompressor[49m[43m,[49m
@@ -141,7 +141,7 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    176[0m           cache_metadata[38;5;241m=[39mcache_metadata, cache_attrs[38;5;241m=[39mcache_attrs, read_only[38;5;241m=[39mread_only,
 [1;32m    177[0m           write_empty_chunks[38;5;241m=[39mwrite_empty_chunks, meta_array[38;5;241m=[39mmeta_array)
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/storage.py:426[0m, in [0;36minit_array[0;34m(store, shape, chunks, dtype, compressor, fill_value, order, overwrite, path, chunk_store, filters, object_codec, dimension_separator)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/storage.py:426[0m, in [0;36minit_array[0;34m(store, shape, chunks, dtype, compressor, fill_value, order, overwrite, path, chunk_store, filters, object_codec, dimension_separator)[0m
 [1;32m    423[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m compressor:
 [1;32m    424[0m     [38;5;66;03m# compatibility with legacy tests using compressor=[][39;00m
 [1;32m    425[0m     compressor [38;5;241m=[39m [38;5;28;01mNone[39;00m
@@ -152,7 +152,7 @@ File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e
 [1;32m    430[0m [43m                     [49m[43mobject_codec[49m[38;5;241;43m=[39;49m[43mobject_codec[49m[43m,[49m
 [1;32m    431[0m [43m                     [49m[43mdimension_separator[49m[38;5;241;43m=[39;49m[43mdimension_separator[49m[43m)[49m
 
-File [0;32m/home/conda/users/82d08ac5660990df618fbe5040c1dbbb785c9d7e29eaf47f7e09d93d653ee764-20230628-201746-939865-211-pangeo/lib/python3.10/site-packages/zarr/storage.py:485[0m, in [0;36m_init_array_metadata[0;34m(store, shape, chunks, dtype, compressor, fill_value, order, overwrite, path, chunk_store, filters, object_codec, dimension_separator)[0m
+File [0;32m/home/conda/users/f901d422723c57c968c25d5920adcc77edf23dabde181788903dc71ba91c054f-20230628-205336-011688-212-pangeo/lib/python3.10/site-packages/zarr/storage.py:485[0m, in [0;36m_init_array_metadata[0;34m(store, shape, chunks, dtype, compressor, fill_value, order, overwrite, path, chunk_store, filters, object_codec, dimension_separator)[0m
 [1;32m    483[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m overwrite:
 [1;32m    484[0m     [38;5;28;01mif[39;00m contains_array(store, path):
 [0;32m--> 485[0m         [38;5;28;01mraise[39;00m ContainsArrayError(path)

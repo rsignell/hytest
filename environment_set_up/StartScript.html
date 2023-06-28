@@ -399,16 +399,18 @@ document.write(`
 <h1>HPC Server: Start Script Quick-Start<a class="headerlink" href="#hpc-server-start-script-quick-start" title="Permalink to this headline">#</a></h1>
 <p>Use this option if you would like more control over the allocation request and the environment in
 which the jupyter server runs. This option requires that you log into the HPC host to run a custom
-script.  Copy <a class="reference download internal" download="" href="../_downloads/18da692517bdcb499ad9638aeab068b2/jupter-start.sh"><span class="xref download myst">this example</span></a> and edit to your liking.</p>
+script.  Copy <a class="reference download internal" download="" href="../_downloads/883fd3093878a944f84270a6bb75459f/jupyter-start.sh"><span class="xref download myst">this example</span></a> and edit to your liking.</p>
 <p>Launching in this way will start your custom jupyter server and plumb the port forwarding necessary
 to make it available to your desktop web browser.</p>
 <ol class="arabic simple">
-<li><p>Log in to your HPC host</p></li>
-<li><p>Execute the <a class="reference download internal" download="" href="../_downloads/18da692517bdcb499ad9638aeab068b2/jupter-start.sh"><span class="xref download myst">jupyter-start.sh</span></a> script</p></li>
-<li><p>Follow its instructions</p></li>
+<li><p>Open a terminal window and log in to your HPC host. If you do not know how to do this, you can consult the <a class="reference external" href="https://hpcportal.cr.usgs.gov/hpc-user-docs/guides/connecting/ssh.html">HPC User Docs</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">Clone</a> the <a class="reference external" href="https://github.com/hytest-org/hytest">hytest repository</a> into the directory you want to work in.</p></li>
+<li><p>Request a compute node with a command like <code class="docutils literal notranslate"><span class="pre">salloc</span> <span class="pre">-A</span> <span class="pre">impd</span> <span class="pre">-t</span> <span class="pre">1:00:00</span> <span class="pre">-N</span> <span class="pre">1</span> <span class="pre">srun</span> <span class="pre">--pty</span> <span class="pre">bash</span></code>. If you are not in the <code class="docutils literal notranslate"><span class="pre">impd</span></code> group, you will need to replace <code class="docutils literal notranslate"><span class="pre">impd</span></code> with a group you are a part of. You may also need to update the number of hours you want to have access to the compute node (in this example, we are requesting 1 hour).</p></li>
+<li><p>Navigate into the environment_set_up directory (<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">environment_set_up/</span></code>) and execute the <a class="reference download internal" download="" href="../_downloads/883fd3093878a944f84270a6bb75459f/jupyter-start.sh"><span class="xref download myst">jupyter-start.sh</span></a> script (<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">jupyter-start.sh</span></code>).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">jupyter-start.sh</span></code> script will direct you on how to start port forwarding (that’s the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command that you are directed to run from a new terminal on your desktop). You will want to open a new terminal window on your local computer an run this command. You will need to log in with your AD username and password. The cursor will hang after entering your password. This is expected - you can minimize this window and move on to the next step.</p></li>
+<li><p>The output of the script will also provide the URL where your PC’s browser will find the jupter server. You can open one of these urls in your browser.</p></li>
 </ol>
-<p>The <code class="docutils literal notranslate"><span class="pre">jupyter-start.sh</span></code> script will direct you on how to start port forwarding (that’s the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command to run
-from your PC’s command prompt) and will provide the URL where your PC’s browser will find the jupter server.</p>
+<p>Now you are set up with a Jupyter server connected to the HPC you logged in to.</p>
 <p>This option can be useful if you want to build your own conda environment, rather than using the provided
 HyTEST environment. The <a class="reference external" href="https://pangeo.io/setup_guides/hpc.html">Pangeo docs</a> are a good place to start
 if you would like to set up your own environment using this start script.  The central HyTEST environment

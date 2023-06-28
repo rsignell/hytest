@@ -416,7 +416,7 @@ needed on the HPC host, but still permits relatively easy access to that hardwar
 Server.</p>
 <section id="configure-your-hpc-account-to-access-the-hytest-conda-environment">
 <h2>1) Configure your HPC account to access the HyTEST <a class="reference external" href="https://www.anaconda.org">conda</a> environment :<a class="headerlink" href="#configure-your-hpc-account-to-access-the-hytest-conda-environment" title="Permalink to this headline">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* log in to either HPC host ( `denali` or `tallgrass` )
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Open a terminal window and log in to your HPC host. If you do not know how to do this, you can consult the [HPC User Docs](https://hpcportal.cr.usgs.gov/hpc-user-docs/guides/connecting/ssh.html).
 * Edit your `.bashrc` file to include these two lines at the bottom:
   ```bash
   module use --append /caldera/projects/usgs/water/impd/hytest/modules
@@ -440,7 +440,7 @@ HPC-based jupyter servers easy.</p>
   You can request anaconda from IT, or you can download the installer from [anaconda.com](https://www.anaconda.com/)
   to install it in user space (i.e. admin is not required).
 * Add `jupyter-forward` to your PC:&lt;br&gt;
-  Launch an `Anaconda Shell` from your Start menu, then execute:
+  Launch an `Anaconda Prompt` from your Start menu, then execute:
   ```text
   &gt; conda install -c conda-forge jupyter-forward
   ```
@@ -455,14 +455,15 @@ just need to have that enviroment active when you attempt to launch the command 
 <p>With all of that set up, you are now ready to launch a session on the HPC using
 <code class="docutils literal notranslate"><span class="pre">jupyter-forward</span></code> on your PC. Do this every time you would like to run notebooks
 housed on the HPC host.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Launch an `Anaconda Shell` from your start menu
-* Run `jupyter-forward denali`
-* NOTE: This command will run the jupter server on the **login node** of Denali.
-  This is OK if your workload is light (i.e. for tutorials).  If you will be doing
-  heavier processing:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Launch an `Anaconda Prompt` from your start menu on your local computer
+* Run the following command to connect compute node. If you are not in the `impd` group, you will need to replace `impd` with a group you are a part of. You may also need to update the number of hours you want to have access to the compute node (in this example, we are requesting 1 hour).:
 </pre></div>
 </div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  jupyter-forward --launch-command &quot;srun -A acctname -N 1 -t 02:00:00&quot;  denali
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  jupyter-forward --launch-command &quot;srun -A impd -N 1 -t 01:00:00&quot;  denali
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Log in with your AD username and password.
+* The output of the script will also provide the URL where your PC&#39;s browser will find the jupter server. You can open one of these urls in your browser.
 </pre></div>
 </div>
 </section>

@@ -55,7 +55,7 @@ File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f42
 
     [0;31m[... skipping hidden 1 frame][0m
 
-File [0;32m/tmp/ipykernel_1027/3952966515.py:25[0m
+File [0;32m/tmp/ipykernel_627/3952966515.py:25[0m
 [1;32m     23[0m         _env_to_add[_e] [38;5;241m=[39m os[38;5;241m.[39menviron[_e]
 [1;32m     24[0m _options[38;5;241m.[39menvironment_vars [38;5;241m=[39m _env_to_add    
 [0;32m---> 25[0m cluster [38;5;241m=[39m [43mgateway[49m[38;5;241;43m.[39;49m[43mnew_cluster[49m[43m([49m[43m_options[49m[43m)[49m          [38;5;66;03m##<< create cluster via the dask gateway[39;00m

@@ -1,0 +1,74 @@
+Traceback (most recent call last):
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/conda/users/envs/users-pangeo/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+print(f'netcdf file size is {fs_write.size(outfile) / 1048576} MB')
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[35], line 1[0m
+[0;32m----> 1[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m'[39m[38;5;124mnetcdf file size is [39m[38;5;132;01m{[39;00m[43mfs_write[49m[38;5;241;43m.[39;49m[43msize[49m[43m([49m[43moutfile[49m[43m)[49m[38;5;250m [39m[38;5;241m/[39m[38;5;250m [39m[38;5;241m1048576[39m[38;5;132;01m}[39;00m[38;5;124m MB[39m[38;5;124m'[39m)
+
+File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f428dced45bfcda53-20230724-112151-738794-223-pangeo/lib/python3.10/site-packages/fsspec/asyn.py:115[0m, in [0;36msync_wrapper.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    112[0m [38;5;129m@functools[39m[38;5;241m.[39mwraps(func)
+[1;32m    113[0m [38;5;28;01mdef[39;00m [38;5;21mwrapper[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    114[0m     [38;5;28mself[39m [38;5;241m=[39m obj [38;5;129;01mor[39;00m args[[38;5;241m0[39m]
+[0;32m--> 115[0m     [38;5;28;01mreturn[39;00m [43msync[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mloop[49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f428dced45bfcda53-20230724-112151-738794-223-pangeo/lib/python3.10/site-packages/fsspec/asyn.py:100[0m, in [0;36msync[0;34m(loop, func, timeout, *args, **kwargs)[0m
+[1;32m     98[0m     [38;5;28;01mraise[39;00m FSTimeoutError [38;5;28;01mfrom[39;00m [38;5;21;01mreturn_result[39;00m
+[1;32m     99[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
+[0;32m--> 100[0m     [38;5;28;01mraise[39;00m return_result
+[1;32m    101[0m [38;5;28;01melse[39;00m:
+[1;32m    102[0m     [38;5;28;01mreturn[39;00m return_result
+
+File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f428dced45bfcda53-20230724-112151-738794-223-pangeo/lib/python3.10/site-packages/fsspec/asyn.py:55[0m, in [0;36m_runner[0;34m(event, coro, result, timeout)[0m
+[1;32m     53[0m     coro [38;5;241m=[39m asyncio[38;5;241m.[39mwait_for(coro, timeout[38;5;241m=[39mtimeout)
+[1;32m     54[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 55[0m     result[[38;5;241m0[39m] [38;5;241m=[39m [38;5;28;01mawait[39;00m coro
+[1;32m     56[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+[1;32m     57[0m     result[[38;5;241m0[39m] [38;5;241m=[39m ex
+
+File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f428dced45bfcda53-20230724-112151-738794-223-pangeo/lib/python3.10/site-packages/fsspec/asyn.py:579[0m, in [0;36mAsyncFileSystem._size[0;34m(self, path)[0m
+[1;32m    578[0m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m [38;5;21m_size[39m([38;5;28mself[39m, path):
+[0;32m--> 579[0m     [38;5;28;01mreturn[39;00m ([38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_info(path))[38;5;241m.[39mget([38;5;124m"[39m[38;5;124msize[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+
+File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f428dced45bfcda53-20230724-112151-738794-223-pangeo/lib/python3.10/site-packages/s3fs/core.py:1229[0m, in [0;36mS3FileSystem._info[0;34m(self, path, bucket, key, refresh, version_id)[0m
+[1;32m   1227[0m version_id [38;5;241m=[39m _coalesce_version_id(path_version_id, version_id)
+[1;32m   1228[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m refresh:
+[0;32m-> 1229[0m     out [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_ls_from_cache[49m[43m([49m[43mpath[49m[43m)[49m
+[1;32m   1230[0m     [38;5;28;01mif[39;00m out [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   1231[0m         [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mversion_aware [38;5;129;01mand[39;00m version_id [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   1232[0m             [38;5;66;03m# If cached info does not match requested version_id,[39;00m
+[1;32m   1233[0m             [38;5;66;03m# fallback to calling head_object[39;00m
+
+File [0;32m/home/conda/users/d4b2efd231667a8c29119860ea8c7a8a71e87eba91be688f428dced45bfcda53-20230724-112151-738794-223-pangeo/lib/python3.10/site-packages/fsspec/spec.py:367[0m, in [0;36mAbstractFileSystem._ls_from_cache[0;34m(self, path)[0m
+[1;32m    359[0m     files [38;5;241m=[39m [
+[1;32m    360[0m         f
+[1;32m    361[0m         [38;5;28;01mfor[39;00m f [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mdircache[parent]
+[1;32m    362[0m         [38;5;28;01mif[39;00m f[[38;5;124m"[39m[38;5;124mname[39m[38;5;124m"[39m] [38;5;241m==[39m path
+[1;32m    363[0m         [38;5;129;01mor[39;00m (f[[38;5;124m"[39m[38;5;124mname[39m[38;5;124m"[39m] [38;5;241m==[39m path[38;5;241m.[39mrstrip([38;5;124m"[39m[38;5;124m/[39m[38;5;124m"[39m) [38;5;129;01mand[39;00m f[[38;5;124m"[39m[38;5;124mtype[39m[38;5;124m"[39m] [38;5;241m==[39m [38;5;124m"[39m[38;5;124mdirectory[39m[38;5;124m"[39m)
+[1;32m    364[0m     ]
+[1;32m    365[0m     [38;5;28;01mif[39;00m [38;5;28mlen[39m(files) [38;5;241m==[39m [38;5;241m0[39m:
+[1;32m    366[0m         [38;5;66;03m# parent dir was listed but did not contain this file[39;00m
+[0;32m--> 367[0m         [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(path)
+[1;32m    368[0m     [38;5;28;01mreturn[39;00m files
+[1;32m    369[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
+
+[0;31mFileNotFoundError[0m: usgspod-testbucket/trends_and_drivers/daily_TSK_at_filtered_temperature_sites.nc
+

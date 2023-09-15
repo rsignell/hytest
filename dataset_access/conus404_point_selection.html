@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CONUS404 Site Data Selection &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="CONUS404 Regridding (Curvilinear =&gt; Rectilinear)" href="conus404_regrid.html" />
     <link rel="prev" title="CONUS404 Spatial Aggregation" href="conus404_spatial_aggregation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -425,7 +426,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conus404-site-data-selection">
-<h1>CONUS404 Site Data Selection<a class="headerlink" href="#conus404-site-data-selection" title="Permalink to this headline">#</a></h1>
+<h1>CONUS404 Site Data Selection<a class="headerlink" href="#conus404-site-data-selection" title="Permalink to this heading">#</a></h1>
 <p>Pull CONUS404 data at a set of lat/lon point locations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,7 +864,7 @@ if (window.Jupyter !== undefined) {
 </style></div></div>
 </div>
 <section id="open-dataset-from-intake-catalog">
-<h2>Open dataset from Intake Catalog<a class="headerlink" href="#open-dataset-from-intake-catalog" title="Permalink to this headline">#</a></h2>
+<h2>Open dataset from Intake Catalog<a class="headerlink" href="#open-dataset-from-intake-catalog" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">on-prem</span></code> dataset from /caldera if running on prem (Denali/Tallgrass)</p></li>
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">cloud</span></code>/<code class="docutils literal notranslate"><span class="pre">osn</span></code> object store data if running elsewhere</p></li>
@@ -956,7 +957,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </section>
 <section id="parallelize-with-dask">
-<h2>Parallelize with Dask<a class="headerlink" href="#parallelize-with-dask" title="Permalink to this headline">#</a></h2>
+<h2>Parallelize with Dask<a class="headerlink" href="#parallelize-with-dask" title="Permalink to this heading">#</a></h2>
 <p>Some of the steps we will take are aware of parallel clustered compute environments
 using <code class="docutils literal notranslate"><span class="pre">dask</span></code>. We’re going to start a cluster now so that future steps can take advantage
 of this ability.</p>
@@ -978,7 +979,7 @@ when accessing data from the cloud.</p>
 </div>
 </section>
 <section id="explore-the-dataset">
-<h2>Explore the dataset<a class="headerlink" href="#explore-the-dataset" title="Permalink to this headline">#</a></h2>
+<h2>Explore the dataset<a class="headerlink" href="#explore-the-dataset" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">dataset</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
@@ -6094,7 +6095,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="read-in-point-data-and-clean">
-<h2>Read in point data and clean<a class="headerlink" href="#read-in-point-data-and-clean" title="Permalink to this headline">#</a></h2>
+<h2>Read in point data and clean<a class="headerlink" href="#read-in-point-data-and-clean" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://usgs.osn.mghpcc.org/usgspod-testbucket/trends_and_drivers/filtered_temperature_sites.csv&#39;</span><span class="p">)</span>
@@ -6172,7 +6173,7 @@ Attributes: (12/80)
 </div></div></div>
 </div>
 <section id="drop-rows-will-null-lat-lon">
-<h3>Drop rows will null lat, lon<a class="headerlink" href="#drop-rows-will-null-lat-lon" title="Permalink to this headline">#</a></h3>
+<h3>Drop rows will null lat, lon<a class="headerlink" href="#drop-rows-will-null-lat-lon" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points_df</span><span class="p">[</span><span class="n">points_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
@@ -6225,7 +6226,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="set-site-id-as-index">
-<h3>Set site_id as index<a class="headerlink" href="#set-site-id-as-index" title="Permalink to this headline">#</a></h3>
+<h3>Set site_id as index<a class="headerlink" href="#set-site-id-as-index" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#points_df = points_df.set_index([&#39;site_id&#39;, &#39;longitude&#39;, &#39;latitude&#39;])</span>
@@ -6313,7 +6314,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="make-sure-no-site-ids-are-duplicated">
-<h3>Make sure no site ids are duplicated<a class="headerlink" href="#make-sure-no-site-ids-are-duplicated" title="Permalink to this headline">#</a></h3>
+<h3>Make sure no site ids are duplicated<a class="headerlink" href="#make-sure-no-site-ids-are-duplicated" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points_df</span><span class="p">[</span><span class="n">points_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
@@ -6357,7 +6358,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="transform-into-xarray-dataset">
-<h3>Transform into xarray dataset<a class="headerlink" href="#transform-into-xarray-dataset" title="Permalink to this headline">#</a></h3>
+<h3>Transform into xarray dataset<a class="headerlink" href="#transform-into-xarray-dataset" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">points_df</span><span class="p">)</span>
@@ -6758,7 +6759,7 @@ Data variables:
 </section>
 </section>
 <section id="find-data-values-at-point-locations">
-<h2>Find data values at point locations<a class="headerlink" href="#find-data-values-at-point-locations" title="Permalink to this headline">#</a></h2>
+<h2>Find data values at point locations<a class="headerlink" href="#find-data-values-at-point-locations" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_var</span><span class="o">.</span><span class="n">xoak</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">],</span> <span class="s1">&#39;sklearn_geo_balltree&#39;</span><span class="p">)</span>
@@ -7761,7 +7762,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="join-selected-data-back-to-gage-data-with-site-id-source-lat-lon">
-<h2>Join selected data back to gage data with site ID, source, lat, lon<a class="headerlink" href="#join-selected-data-back-to-gage-data-with-site-id-source-lat-lon" title="Permalink to this headline">#</a></h2>
+<h2>Join selected data back to gage data with site ID, source, lat, lon<a class="headerlink" href="#join-selected-data-back-to-gage-data-with-site-id-source-lat-lon" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_selection</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">points_ds</span><span class="p">,</span> <span class="n">ds_selection</span><span class="p">])</span>
@@ -7771,7 +7772,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="visualize-data-to-verify-results">
-<h2>Visualize data to verify results<a class="headerlink" href="#visualize-data-to-verify-results" title="Permalink to this headline">#</a></h2>
+<h2>Visualize data to verify results<a class="headerlink" href="#visualize-data-to-verify-results" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="mi">300</span>
@@ -7878,7 +7879,7 @@ Attributes: (12/80)
 </div>
 </section>
 <section id="clean-up-data-for-saving">
-<h2>Clean up data for saving<a class="headerlink" href="#clean-up-data-for-saving" title="Permalink to this headline">#</a></h2>
+<h2>Clean up data for saving<a class="headerlink" href="#clean-up-data-for-saving" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop CONUS404 grid cell lat/lon, x/y values that data were pulled from, keeping only site&#39;s lat/lon to reduce confusion</span>
@@ -8734,7 +8735,7 @@ Data variables:
 </div>
 </section>
 <section id="save-netcdf-to-osn-pod">
-<h2>Save netcdf to OSN pod<a class="headerlink" href="#save-netcdf-to-osn-pod" title="Permalink to this headline">#</a></h2>
+<h2>Save netcdf to OSN pod<a class="headerlink" href="#save-netcdf-to-osn-pod" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs_write</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span>
@@ -8801,7 +8802,7 @@ Data variables:
 </div>
 </div>
 <section id="read-back-in-the-nc-data-to-verify-it-saved-correctly">
-<h3>Read back in the nc data to verify it saved correctly<a class="headerlink" href="#read-back-in-the-nc-data-to-verify-it-saved-correctly" title="Permalink to this headline">#</a></h3>
+<h3>Read back in the nc data to verify it saved correctly<a class="headerlink" href="#read-back-in-the-nc-data-to-verify-it-saved-correctly" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fs_write</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -9217,7 +9218,7 @@ Data variables:
 </section>
 </section>
 <section id="shutdown-cluster">
-<h2>Shutdown cluster<a class="headerlink" href="#shutdown-cluster" title="Permalink to this headline">#</a></h2>
+<h2>Shutdown cluster<a class="headerlink" href="#shutdown-cluster" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#client.close(); cluster.shutdown()</span>

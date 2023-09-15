@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Data/Cloud Storage &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Parallelism with Dask" href="../Parallel_Dask.html" />
     <link rel="prev" title="Data/APIs" href="Data_APIs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -417,7 +418,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-cloud-storage">
-<h1>Data/Cloud Storage<a class="headerlink" href="#data-cloud-storage" title="Permalink to this headline">#</a></h1>
+<h1>Data/Cloud Storage<a class="headerlink" href="#data-cloud-storage" title="Permalink to this heading">#</a></h1>
 <p>One of the main storage locations for HyTest data is in ‘<em>The Cloud</em>’. This is sometimes referred to as <strong>‘Object Storage’</strong>.
 The data is kept in data centers operated by Amazon, Microsoft, or similar, which makes it easily available to network-connected devices.
 The main advantage of doing this is that if your compute engine is also in that same data center (or nearby, as is the case with many JupyterHub services), the data doesn’t have to go very far to get to the compute power. This brings the computation to the data, rather than shipping large datasets across the internet to get to the compute engine.</p>
@@ -430,7 +431,7 @@ We’ll look at generic workflows using an anonymous-access store, then finish o
 This is a layer of abstraction that lets us interact with arbitrary storage mechanisms as if
 they are conventional file systems. It makes this object storage ‘look’ like a conventional file system.</p>
 <section id="anonymous-reads-from-s3">
-<h2>Anonymous Reads from S3<a class="headerlink" href="#anonymous-reads-from-s3" title="Permalink to this headline">#</a></h2>
+<h2>Anonymous Reads from S3<a class="headerlink" href="#anonymous-reads-from-s3" title="Permalink to this heading">#</a></h2>
 <p>A lot of data is available for global read, which does not require credentials or a profile.
 In this case, we set <code class="docutils literal notranslate"><span class="pre">anon=True</span></code> when plumbing the <code class="docutils literal notranslate"><span class="pre">fsspec</span></code> object. Here we demonstrate how to list the contents of an AWS S3 bucket with global read access:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span>
@@ -527,7 +528,7 @@ always explicitly plumb <code class="docutils literal notranslate"><span class="
 that takes the shortcut if it is available.</p>
 </section>
 <section id="anonymous-reads-from-endpoints-outside-of-s3-that-use-the-s3-api">
-<h2>Anonymous Reads from Endpoints Outside of S3 (that use the S3 API)<a class="headerlink" href="#anonymous-reads-from-endpoints-outside-of-s3-that-use-the-s3-api" title="Permalink to this headline">#</a></h2>
+<h2>Anonymous Reads from Endpoints Outside of S3 (that use the S3 API)<a class="headerlink" href="#anonymous-reads-from-endpoints-outside-of-s3-that-use-the-s3-api" title="Permalink to this heading">#</a></h2>
 <p>For storage operations, the S3 API needs the web address of the access point, or <em>endpoint</em> where it should address filesystem operations. If your storage is completely within the Amazon ecosystem, you will likely not need to specify an endpoint. However, for 3rd-party storage (such as the OSN pod), you will need to explicitly declare the endpoint when the filesystem is first referenced using <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>. We can list the files stored in the <code class="docutils literal notranslate"><span class="pre">usgs-scratch</span></code> bucket of the OSN pod with the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs_osn</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">filesystem</span><span class="p">(</span>
     <span class="s1">&#39;s3&#39;</span><span class="p">,</span>
@@ -539,7 +540,7 @@ that takes the shortcut if it is available.</p>
 </div>
 </section>
 <section id="credentialed-access">
-<h2>Credentialed Access<a class="headerlink" href="#credentialed-access" title="Permalink to this headline">#</a></h2>
+<h2>Credentialed Access<a class="headerlink" href="#credentialed-access" title="Permalink to this heading">#</a></h2>
 <p>For some data storage within the HyTEST workflows, access will not be anonymous.
 Permissions are set by the owners of that data, and the rules governing your ability to read from or write to certain locations may be defined with a set of credentials assigned to an AWS ‘profile’.</p>
 <p>Profile credentials are usually stored outside of the Python program, typically in a file in your <code class="docutils literal notranslate"><span class="pre">HOME</span></code> folder on the compute/jupyter server. You need to have this credential file set up before you can work with data in buckets requiring credentialed access. This section will demonstrate how to configure your OSN pod credentials in the same way that we would configure an AWS account profile - with the <code class="docutils literal notranslate"><span class="pre">aws</span></code> <a class="reference external" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html">command line interface</a>.</p>
@@ -565,7 +566,7 @@ Your profile name and region may be different if you are setting up your credent
 </div>
 </section>
 <section id="read-only-access-with-requester-pays">
-<h2>Read-only access with “requester pays”<a class="headerlink" href="#read-only-access-with-requester-pays" title="Permalink to this headline">#</a></h2>
+<h2>Read-only access with “requester pays”<a class="headerlink" href="#read-only-access-with-requester-pays" title="Permalink to this heading">#</a></h2>
 <p>Some datasets, such as the first example above (anonymous reading), are offered with ‘egress fees’ paid by the data owner.
 This means that all access is free to anybody.
 The cost of the network bandwidth used to serve the data is covered by the data’s host.
@@ -586,17 +587,17 @@ you are willing to pay for).  File-system operations using that <code class="doc
 configuration.</p>
 </section>
 <section id="writing-data-to-s3">
-<h2>Writing Data to S3<a class="headerlink" href="#writing-data-to-s3" title="Permalink to this headline">#</a></h2>
+<h2>Writing Data to S3<a class="headerlink" href="#writing-data-to-s3" title="Permalink to this heading">#</a></h2>
 <p>From within your Python program, writes to object storage can be achieved a few different ways, which we will demonstrate below. Writing data will typically require credentials. If this is the case, you should use an <code class="docutils literal notranslate"><span class="pre">fsspec</span></code> filesystem with a profile defined, similar to the <code class="docutils literal notranslate"><span class="pre">fs_osn</span></code> object that we created in the Credentialed Access section above.</p>
 <section id="uploading-a-local-file-to-s3">
-<h3>Uploading a Local File to S3<a class="headerlink" href="#uploading-a-local-file-to-s3" title="Permalink to this headline">#</a></h3>
+<h3>Uploading a Local File to S3<a class="headerlink" href="#uploading-a-local-file-to-s3" title="Permalink to this heading">#</a></h3>
 <p>If you have a file saved on your local file system, and you would like to upload it directly to object storage, you can use the <code class="docutils literal notranslate"><span class="pre">upload</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs_osn</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="s1">&#39;outfile.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;usgs-scratch/testing/outfile.nc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="writing-a-pandas-dataframe-to-a-csv-file-on-s3">
-<h3>Writing a Pandas Dataframe to a CSV File on S3<a class="headerlink" href="#writing-a-pandas-dataframe-to-a-csv-file-on-s3" title="Permalink to this headline">#</a></h3>
+<h3>Writing a Pandas Dataframe to a CSV File on S3<a class="headerlink" href="#writing-a-pandas-dataframe-to-a-csv-file-on-s3" title="Permalink to this heading">#</a></h3>
 <p>If you would like to write a pandas dataframe object directly to a csv file on object storage, you can do something like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fs_osn</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;usgs-scratch/testing/outfile.csv&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">pandas_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -604,7 +605,7 @@ configuration.</p>
 </div>
 </section>
 <section id="writing-zarr-data-to-s3">
-<h3>Writing Zarr Data to S3<a class="headerlink" href="#writing-zarr-data-to-s3" title="Permalink to this headline">#</a></h3>
+<h3>Writing Zarr Data to S3<a class="headerlink" href="#writing-zarr-data-to-s3" title="Permalink to this heading">#</a></h3>
 <p>For zarr data, the most convenient way to write data to object storage is to use a <code class="docutils literal notranslate"><span class="pre">mapper</span></code> to connect a file-like python object to
 the object storage location:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span><span class="o">=</span><span class="s1">&#39;s3://usgs-scratch/testing/outfile.zarr&#39;</span>
@@ -616,7 +617,7 @@ the object storage location:</p>
 writing.</p>
 </section>
 <section id="additional-commands">
-<h3>Additional Commands<a class="headerlink" href="#additional-commands" title="Permalink to this headline">#</a></h3>
+<h3>Additional Commands<a class="headerlink" href="#additional-commands" title="Permalink to this heading">#</a></h3>
 <p>With adequate permissions, you may be able to do more destructive activities to objects in a bucket (overwriting, removing, etc).
 Examples:</p>
 <ul class="simple">

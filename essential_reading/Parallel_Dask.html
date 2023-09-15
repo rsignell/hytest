@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Parallelism with Dask &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="HyTEST Data Catalog (Intake)" href="../dataset_catalog/README.html" />
     <link rel="prev" title="Data/Cloud Storage" href="DataSources/Data_S3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -409,7 +410,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="parallelism-with-dask">
-<h1>Parallelism with Dask<a class="headerlink" href="#parallelism-with-dask" title="Permalink to this headline">#</a></h1>
+<h1>Parallelism with Dask<a class="headerlink" href="#parallelism-with-dask" title="Permalink to this heading">#</a></h1>
 <p>The dask folks have a very good introduction to dask data structures and parallelism in their
 <a class="reference external" href="https://tutorial.dask.org/">dask tutorial</a>.  In that tutorial, you’ll get exposure to
 the general dask architecture, as well as specific hands-on examples with two of the three
@@ -419,7 +420,7 @@ that we use to distribute parallel tasks in clustered environments.  Here’s a 
 a dask bag and how we use it. A bag is analagous to a standard Python <code class="docutils literal notranslate"><span class="pre">list</span></code>… let’s start there
 with some nomenclature:</p>
 <section id="lists-and-maps">
-<h2>Lists and Maps<a class="headerlink" href="#lists-and-maps" title="Permalink to this headline">#</a></h2>
+<h2>Lists and Maps<a class="headerlink" href="#lists-and-maps" title="Permalink to this heading">#</a></h2>
 <p>A common pattern in Python is a ‘list comprehension’ – a way of transforming a list of values into a new list of values using a transformation pattern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,7 +480,7 @@ Which is why it is almost never written that way.</p>
 </div>
 </section>
 <section id="dask-bag">
-<h2>Dask Bag<a class="headerlink" href="#dask-bag" title="Permalink to this headline">#</a></h2>
+<h2>Dask Bag<a class="headerlink" href="#dask-bag" title="Permalink to this heading">#</a></h2>
 <p>A dask bag datastructure is much like a list, but it has the <strong><code class="docutils literal notranslate"><span class="pre">map</span></code></strong> function built into it as
 an object method. The invocation is slightly different, but the concept is the same: it
 pairs up elements of a list with a function call to execute against those elements.  A dask
@@ -595,7 +596,7 @@ Wall time: 2.22 s
 </div>
 </section>
 <section id="dask-bags-in-hytest-workflows">
-<h2>Dask Bags in HyTEST Workflows<a class="headerlink" href="#dask-bags-in-hytest-workflows" title="Permalink to this headline">#</a></h2>
+<h2>Dask Bags in HyTEST Workflows<a class="headerlink" href="#dask-bags-in-hytest-workflows" title="Permalink to this heading">#</a></h2>
 <p>This pattern is used extensively in the benchmarking workflows.  A series of statistics are calculated for each streamgage in a list of 5000+ gages. With a dask bag (the contents of which is the list of gages), the stats package can be dispatched to workers operating independently and in parallel.</p>
 </section>
 </section>

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CONUS404 Spatial Aggregation &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="CONUS404 Site Data Selection" href="conus404_point_selection.html" />
     <link rel="prev" title="CONUS404 Temporal Aggregation" href="conus404_temporal_aggregation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -421,7 +422,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conus404-spatial-aggregation">
-<h1>CONUS404 Spatial Aggregation<a class="headerlink" href="#conus404-spatial-aggregation" title="Permalink to this headline">#</a></h1>
+<h1>CONUS404 Spatial Aggregation<a class="headerlink" href="#conus404-spatial-aggregation" title="Permalink to this heading">#</a></h1>
 <p>Using Xarray, GeoPandas and Sparse</p>
 <p><strong>Goal:</strong> Spatially aggregate a model data variable <em>conservatively</em>, i.e. by exactly partitioning each grid cell into the precise region boundaries.</p>
 <p><strong>Approach:</strong></p>
@@ -882,7 +883,7 @@ if (window.Jupyter !== undefined) {
 </style></div></div>
 </div>
 <section id="open-dataset-from-intake-catalog">
-<h2>Open dataset from Intake Catalog<a class="headerlink" href="#open-dataset-from-intake-catalog" title="Permalink to this headline">#</a></h2>
+<h2>Open dataset from Intake Catalog<a class="headerlink" href="#open-dataset-from-intake-catalog" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">on-prem</span></code> dataset from /caldera if running on prem (Denali/Tallgrass)</p></li>
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">cloud</span></code>/<code class="docutils literal notranslate"><span class="pre">osn</span></code> object store data if running elsewhere</p></li>
@@ -976,7 +977,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </section>
 <section id="set-up-aws-credentials-optional">
-<h2>2) Set Up AWS Credentials (Optional)<a class="headerlink" href="#set-up-aws-credentials-optional" title="Permalink to this headline">#</a></h2>
+<h2>2) Set Up AWS Credentials (Optional)<a class="headerlink" href="#set-up-aws-credentials-optional" title="Permalink to this heading">#</a></h2>
 <p>This notebook reads data from the OSN pod by default, which is object store data on a high speed internet connection that is free to access from any environment. If you change this notebook to use one of the CONUS404 datasets stored on S3 (options ending in <code class="docutils literal notranslate"><span class="pre">-cloud</span></code>), you will be pulling data from a <code class="docutils literal notranslate"><span class="pre">requester-pays</span></code> S3 bucket. This means you have to set up your AWS credentials, else we won’t be able to load the data. Please note that reading the <code class="docutils literal notranslate"><span class="pre">-cloud</span></code> data from S3 may incur charges if you are reading data outside of the us-west-2 region or running the notebook outside of the cloud altogether. If you would like to access one of the <code class="docutils literal notranslate"><span class="pre">-cloud</span></code> options, uncomment and run the following code snippet to set up your AWS credentials. You can find more info about this AWS helper function <a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html"><span class="doc std std-doc">here</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -989,7 +990,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </section>
 <section id="parallelize-with-dask">
-<h2>Parallelize with Dask<a class="headerlink" href="#parallelize-with-dask" title="Permalink to this headline">#</a></h2>
+<h2>Parallelize with Dask<a class="headerlink" href="#parallelize-with-dask" title="Permalink to this heading">#</a></h2>
 <p>Some of the steps we will take are aware of parallel clustered compute environments
 using <code class="docutils literal notranslate"><span class="pre">dask</span></code>. We’re going to start a cluster now so that future steps can take advantage
 of this ability.</p>
@@ -1026,7 +1027,7 @@ The link to view the client dashboard is:
 </div>
 </section>
 <section id="load-the-feature-polygons-e-g-here-catchment-basins">
-<h2>Load the feature polygons (e.g. here catchment basins)<a class="headerlink" href="#load-the-feature-polygons-e-g-here-catchment-basins" title="Permalink to this headline">#</a></h2>
+<h2>Load the feature polygons (e.g. here catchment basins)<a class="headerlink" href="#load-the-feature-polygons-e-g-here-catchment-basins" title="Permalink to this heading">#</a></h2>
 <p>Load with geopandas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1084,7 +1085,7 @@ Wall time: 6.22 s
 </div>
 </section>
 <section id="aggregate-conus404-to-feature-polygons">
-<h2>Aggregate CONUS404 to feature polygons<a class="headerlink" href="#aggregate-conus404-to-feature-polygons" title="Permalink to this headline">#</a></h2>
+<h2>Aggregate CONUS404 to feature polygons<a class="headerlink" href="#aggregate-conus404-to-feature-polygons" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span>  <span class="c1"># projected x coordinate name</span>
@@ -2517,7 +2518,7 @@ Datum: World Geodetic System 1984 ensemble
 </div>
 </div>
 <section id="key-step-overlay-the-two-geometries">
-<h3>Key Step: Overlay the two geometries<a class="headerlink" href="#key-step-overlay-the-two-geometries" title="Permalink to this headline">#</a></h3>
+<h3>Key Step: Overlay the two geometries<a class="headerlink" href="#key-step-overlay-the-two-geometries" title="Permalink to this heading">#</a></h3>
 <p>This is the magic of geopandas; it can calculate the overlap between the original grid and the regions.
 It is expensive because it has to compare 64800 grid boxes with 242 regions.</p>
 <p>In this dataframe, the <code class="docutils literal notranslate"><span class="pre">latitude</span></code> and <code class="docutils literal notranslate"><span class="pre">longitude</span></code> values are from the grid, while all the other columns are from the regions.</p>
@@ -2605,7 +2606,7 @@ dtype: float64
 </div>
 </section>
 <section id="calculate-the-area-fraction-for-each-region">
-<h3>Calculate the area fraction for each region<a class="headerlink" href="#calculate-the-area-fraction-for-each-region" title="Permalink to this headline">#</a></h3>
+<h3>Calculate the area fraction for each region<a class="headerlink" href="#calculate-the-area-fraction-for-each-region" title="Permalink to this heading">#</a></h3>
 <p>This is another key step. This transform tells us <em>how much of a country’s total area comes from each of the grid cells.</em>
 This is accurate because we used an area-preserving CRS.</p>
 <div class="cell docutils container">
@@ -2659,7 +2660,7 @@ Length: 451, dtype: float64
 </div>
 </section>
 <section id="turn-this-into-a-sparse-xarray-dataarray">
-<h3>Turn this into a sparse Xarray DataArray<a class="headerlink" href="#turn-this-into-a-sparse-xarray-dataarray" title="Permalink to this headline">#</a></h3>
+<h3>Turn this into a sparse Xarray DataArray<a class="headerlink" href="#turn-this-into-a-sparse-xarray-dataarray" title="Permalink to this heading">#</a></h3>
 <p>The first step is making a MultiIndex</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2783,7 +2784,7 @@ Length: 451, dtype: float64
 <p>Here we can clearly see that this is a sparse matrix, mapping the input space (lat, lon) to the output space (SOVEREIGNT).</p>
 </section>
 <section id="perform-matrix-multiplication">
-<h3>Perform Matrix Multiplication<a class="headerlink" href="#perform-matrix-multiplication" title="Permalink to this headline">#</a></h3>
+<h3>Perform Matrix Multiplication<a class="headerlink" href="#perform-matrix-multiplication" title="Permalink to this heading">#</a></h3>
 <p>To regrid the data, we just have to multiply the original precip dataset by this matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2833,7 +2834,7 @@ Length: 451, dtype: float64
 </div>
 </section>
 <section id="variables-at-the-same-location-on-the-grid-can-use-the-same-weights">
-<h3>Variables at the same location on the grid can use the same weights<a class="headerlink" href="#variables-at-the-same-location-on-the-grid-can-use-the-same-weights" title="Permalink to this headline">#</a></h3>
+<h3>Variables at the same location on the grid can use the same weights<a class="headerlink" href="#variables-at-the-same-location-on-the-grid-can-use-the-same-weights" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#var = &#39;T2&#39;  # 2m Temp, grid cell centers</span>
@@ -3285,7 +3286,7 @@ Coordinates:
 </div>
 </section>
 <section id="explore-timeseries-data-by-region">
-<h3>Explore timeseries data by region:<a class="headerlink" href="#explore-timeseries-data-by-region" title="Permalink to this headline">#</a></h3>
+<h3>Explore timeseries data by region:<a class="headerlink" href="#explore-timeseries-data-by-region" title="Permalink to this heading">#</a></h3>
 <p>Plot monthly-average time series for two selected HUC12s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3340,7 +3341,7 @@ Coordinates:
 </div>
 </section>
 <section id="explore-the-mean-var-by-region">
-<h3>Explore the mean var by region<a class="headerlink" href="#explore-the-mean-var-by-region" title="Permalink to this headline">#</a></h3>
+<h3>Explore the mean var by region<a class="headerlink" href="#explore-the-mean-var-by-region" title="Permalink to this heading">#</a></h3>
 <p>Calculate the average value over all time steps for every HU12</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3425,7 +3426,7 @@ Coordinates:
 </div>
 </section>
 <section id="be-a-good-citizen-and-shut-down-the-cluster">
-<h3>Be a good citizen and shut down the cluster<a class="headerlink" href="#be-a-good-citizen-and-shut-down-the-cluster" title="Permalink to this headline">#</a></h3>
+<h3>Be a good citizen and shut down the cluster<a class="headerlink" href="#be-a-good-citizen-and-shut-down-the-cluster" title="Permalink to this heading">#</a></h3>
 <p>… Even though it would shut down in 15 minutes with no activity</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

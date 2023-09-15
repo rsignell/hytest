@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Standard Suite (v1) Metrics – Usage Examples &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Streamflow Model Evaluation" href="../nwm_streamflow/00_Overview.html" />
     <link rel="prev" title="Standard Suite (v1) Metrics" href="../../Metrics_StdSuite_v1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -410,7 +411,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="standard-suite-v1-metrics-usage-examples">
-<h1>Standard Suite (v1) Metrics – Usage Examples<a class="headerlink" href="#standard-suite-v1-metrics-usage-examples" title="Permalink to this headline">#</a></h1>
+<h1>Standard Suite (v1) Metrics – Usage Examples<a class="headerlink" href="#standard-suite-v1-metrics-usage-examples" title="Permalink to this heading">#</a></h1>
 <p>This notebook will demonstrate how to call the specific functions defined in the
 <a class="reference internal" href="../../Metrics_StdSuite_v1.html"><span class="doc">Standard Suite (v1) Metrics</span></a>
 notebook, using a small demonstration dataset.</p>
@@ -423,7 +424,7 @@ notebook, using a small demonstration dataset.</p>
 </div>
 </div>
 <section id="sample-data">
-<h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this headline">#</a></h2>
+<h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampleData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../nwm_streamflow/NWM_Benchmark_SampleData.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -509,7 +510,7 @@ notebook, using a small demonstration dataset.</p>
 </div>
 </section>
 <section id="import-metric-functions">
-<h2>Import Metric Functions<a class="headerlink" href="#import-metric-functions" title="Permalink to this headline">#</a></h2>
+<h2>Import Metric Functions<a class="headerlink" href="#import-metric-functions" title="Permalink to this heading">#</a></h2>
 <p>The functions are defined in an
 <a class="reference internal" href="../../Metrics_StdSuite_v1.html"><span class="doc">Standard Suite (v1) Metrics</span></a>.<br />
 They are imported for use here by running that notebook from within the following cell:</p>
@@ -552,7 +553,7 @@ arguments: an array/series of observed values and an array/series of modeled/sim
 </div>
 </section>
 <section id="create-composite-benchmark">
-<h2>Create Composite Benchmark<a class="headerlink" href="#create-composite-benchmark" title="Permalink to this headline">#</a></h2>
+<h2>Create Composite Benchmark<a class="headerlink" href="#create-composite-benchmark" title="Permalink to this heading">#</a></h2>
 <p>It is useful to combine several of these metrics into a single benchmark routine, which returns a
 pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">Series</a> of
 the assembled metrics.</p>
@@ -606,7 +607,7 @@ Name: 1104200, dtype: float64
 </div>
 </section>
 <section id="streamflow-and-fdc-plots">
-<h2>Streamflow and FDC plots<a class="headerlink" href="#streamflow-and-fdc-plots" title="Permalink to this headline">#</a></h2>
+<h2>Streamflow and FDC plots<a class="headerlink" href="#streamflow-and-fdc-plots" title="Permalink to this heading">#</a></h2>
 <p>In the case of <code class="docutils literal notranslate"><span class="pre">streamflow</span></code>, the NWM standard suite offers a way to plot the Flow Duration Curve when calculating the pBias metrics per Yilmaz et al. This mechanism uses <a class="reference external" href="https://matplotlib.org/">matplotlib</a> to implement the figures.</p>
 <p>Some examples:</p>
 <div class="cell tag_full-width docutils container">

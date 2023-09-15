@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>HPC Server: Jupyter Forward Quick-Start &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="HPC Server: Start Script Quick-Start" href="StartScript.html" />
     <link rel="prev" title="HPC Server: Open OnDemand Quick-Start" href="OpenOnDemand.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -410,13 +411,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hpc-server-jupyter-forward-quick-start">
-<h1>HPC Server: Jupyter Forward Quick-Start<a class="headerlink" href="#hpc-server-jupyter-forward-quick-start" title="Permalink to this headline">#</a></h1>
+<h1>HPC Server: Jupyter Forward Quick-Start<a class="headerlink" href="#hpc-server-jupyter-forward-quick-start" title="Permalink to this heading">#</a></h1>
 <p>This option will configure your HPC account to access the correct Jupyter server software.  That server
 will be invoked by a command installed on your PC.  This option minimizes the configuration changes
 needed on the HPC host, but still permits relatively easy access to that hardware via a personal Jupyter
 Server.</p>
 <section id="configure-your-hpc-account-to-access-the-hytest-conda-environment">
-<h2>1) Configure your HPC account to access the HyTEST <a class="reference external" href="https://www.anaconda.org">conda</a> environment :<a class="headerlink" href="#configure-your-hpc-account-to-access-the-hytest-conda-environment" title="Permalink to this headline">#</a></h2>
+<h2>1) Configure your HPC account to access the HyTEST <a class="reference external" href="https://www.anaconda.org">conda</a> environment :<a class="headerlink" href="#configure-your-hpc-account-to-access-the-hytest-conda-environment" title="Permalink to this heading">#</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Open a terminal window and log in to your HPC host. If you do not know how to do this, you can consult the [HPC User Docs](https://hpcportal.cr.usgs.gov/hpc-user-docs/guides/connecting/ssh.html).
 * Edit your `.bashrc` file to include these two lines at the bottom:
   ```bash
@@ -429,7 +430,7 @@ Server.</p>
 </div>
 </section>
 <section id="install-jupyter-forward-on-your-pc">
-<h2>2) Install <code class="docutils literal notranslate"><span class="pre">jupyter-forward</span></code> on your PC<a class="headerlink" href="#install-jupyter-forward-on-your-pc" title="Permalink to this headline">#</a></h2>
+<h2>2) Install <code class="docutils literal notranslate"><span class="pre">jupyter-forward</span></code> on your PC<a class="headerlink" href="#install-jupyter-forward-on-your-pc" title="Permalink to this heading">#</a></h2>
 <p>This is a one-time operation to get the right software on your desktop.
 The <a class="reference external" href="https://pypi.org/project/jupyter-forward/">jupyter-forward</a> software will
 wrap up a series of commands necessary to to execute a jupyter server on the
@@ -452,7 +453,7 @@ matter which one is active when you install <code class="docutils literal notran
 just need to have that enviroment active when you attempt to launch the command later.</p>
 </section>
 <section id="launch-server">
-<h2>3) Launch Server<a class="headerlink" href="#launch-server" title="Permalink to this headline">#</a></h2>
+<h2>3) Launch Server<a class="headerlink" href="#launch-server" title="Permalink to this heading">#</a></h2>
 <p>With all of that set up, you are now ready to launch a session on the HPC using
 <code class="docutils literal notranslate"><span class="pre">jupyter-forward</span></code> on your PC. Do this every time you would like to run notebooks
 housed on the HPC host.</p>
@@ -469,7 +470,7 @@ housed on the HPC host.</p>
 </div>
 </section>
 <section id="shut-down-server-br">
-<h2>4) Shut Down Server<br><a class="headerlink" href="#shut-down-server-br" title="Permalink to this headline">#</a></h2>
+<h2>4) Shut Down Server<br><a class="headerlink" href="#shut-down-server-br" title="Permalink to this heading">#</a></h2>
 <p>After a daily session, you will need to shut down the jupyter server.
 In the terminal session where you started <code class="docutils literal notranslate"><span class="pre">jupyter-forward</span></code>, merely press Ctl-C
 to signal the server to shut down.</p>

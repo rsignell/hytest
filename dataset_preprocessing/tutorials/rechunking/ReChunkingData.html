@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Re-Chunking Data &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Re-Chunking Larger Datasets" href="ReChunkingData_Cloud.html" />
     <link rel="prev" title="Chunking Data" href="../../chunk.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -422,7 +423,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="re-chunking-data">
-<h1>Re-Chunking Data<a class="headerlink" href="#re-chunking-data" title="Permalink to this headline">#</a></h1>
+<h1>Re-Chunking Data<a class="headerlink" href="#re-chunking-data" title="Permalink to this heading">#</a></h1>
 <p>Re-organizing stored data such that it matches the analysis use-case.</p>
 <p>Inspiration from:
 <a class="github reference external" href="https://github.com/NCAR/rechunk_retro_nwm_v21/blob/main/notebooks/usage_example_rerechunk_chrtout.ipynb">NCAR/rechunk_retro_nwm_v21</a></p>
@@ -438,9 +439,9 @@ so may offer a smoother intro to the concepts using familiar data.</p></li>
 </ul>
 </div>
 <section id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">#</a></h2>
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this heading">#</a></h2>
 <section id="what-is-chunking-and-why-should-you-care">
-<h3>What is chunking and why should you care?<a class="headerlink" href="#what-is-chunking-and-why-should-you-care" title="Permalink to this headline">#</a></h3>
+<h3>What is chunking and why should you care?<a class="headerlink" href="#what-is-chunking-and-why-should-you-care" title="Permalink to this heading">#</a></h3>
 <p>The idea of data ‘<em>chunks</em>’ is closely aligned with the NetCDF and <a class="reference external" href="https://zarr.dev/">zarr</a> standards for storing N-dimensional arrays of typed data.</p>
 <p>Chunks become more important as the size of the array increases.  For very large arrays, it is helpful to organize the memory it occupies  into sub-units.  These sub-units are the chunks – note that this is not another dimension to the array, but merely a map to how the large array is partitioned into more palatable sized units for manipulation in memory. Array-handling libraries (numpy, xarray, pandas, and others) will handle all of the record-keeping to know which chunk holds a given unit of the array.</p>
 <p>A quick side-bar to illustrate two chunking patterns for a simple 2D array.  This is a simplified use-case.  Consider a square array of integer values. Just for exposition, let’s use a small array 10x10.</p>
@@ -457,12 +458,12 @@ so may offer a smoother intro to the concepts using familiar data.</p></li>
 <p>Array size is important to the chunking plan… it could be that an entire row of data in a large 2D array won’t fit into memory (or it can’t fit into a contiguous block of memory).  This would require chunking each row of data, in addition to chunking rows over columns (for a row-major plan) As dimensions are added to the array, this chunk-mapping becomes more complex and it becomes much more relevant to chunk the data to match the analysis.</p>
 </section>
 <section id="pros-cons">
-<h3>Pros &amp; Cons<a class="headerlink" href="#pros-cons" title="Permalink to this headline">#</a></h3>
+<h3>Pros &amp; Cons<a class="headerlink" href="#pros-cons" title="Permalink to this heading">#</a></h3>
 <p>Data that is well-organized to optimize one kind of analysis may not suit another kind of analysis on the same data. Re-chunking is time-consuming, and it produces a separate copy of the dataset, increasing storage requirements. The initial time commitment is a one-time operation so that future analyses can run quickly. The space commitment can be substantial if a complex dataset needs to be organized for many different analyses.</p>
 </section>
 </section>
 <section id="examining-a-small-dataset">
-<h2>Examining a Small Dataset<a class="headerlink" href="#examining-a-small-dataset" title="Permalink to this headline">#</a></h2>
+<h2>Examining a Small Dataset<a class="headerlink" href="#examining-a-small-dataset" title="Permalink to this heading">#</a></h2>
 <p>Let’s read a sample dataset and examine how it is chunked.</p>
 <p>As a test datasaet, we’ve taken a random sampling of 400 stream gages for
 the month of July, 2000 from the National Water Model Reanalysis Version 2.1.
@@ -2781,7 +2782,7 @@ Attributes:
 re-chunk the data to optimize for our read pattern.</p>
 </section>
 <section id="re-chunking-the-sample-data">
-<h2>Re-Chunking the Sample Data<a class="headerlink" href="#re-chunking-the-sample-data" title="Permalink to this headline">#</a></h2>
+<h2>Re-Chunking the Sample Data<a class="headerlink" href="#re-chunking-the-sample-data" title="Permalink to this heading">#</a></h2>
 <p>This is a trivial example, due to the small size of the dataset – It all fits in memory easily. But it is worth doing, as concepts will apply when we take this to the full-sized data.</p>
 <p>First thing we need is a chunk plan to describe the chunk layout we want. This can be generated using various methods.  For this dataset, it’s easy enough to write it manually:</p>
 <div class="cell docutils container">
@@ -2834,7 +2835,7 @@ data is read back in.</p>
 </div>
 </section>
 <section id="results">
-<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h2>
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
 <p>Let’s read in the resulting re-chunked dataset to see how it looks:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3670,10 +3671,10 @@ Attributes:
 </div>
 <p>Note here that for both <code class="docutils literal notranslate"><span class="pre">streamflow</span></code> and <code class="docutils literal notranslate"><span class="pre">velocity</span></code>, the chunksize in the <code class="docutils literal notranslate"><span class="pre">time</span></code> dimension is 744 (the total number of time steps). Analyses which favor fetching all time-step values for a given <code class="docutils literal notranslate"><span class="pre">facility_id</span></code> will prefer this chunking strategy.</p>
 <section id="comparison">
-<h3>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">#</a></h3>
+<h3>Comparison<a class="headerlink" href="#comparison" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="before-re-chunking">
-<h3>Before Re-Chunking:<a class="headerlink" href="#before-re-chunking" title="Permalink to this headline">#</a></h3>
+<h3>Before Re-Chunking:<a class="headerlink" href="#before-re-chunking" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampleData</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">feature_id</span><span class="o">=</span><span class="mi">1343034</span><span class="p">)</span>
@@ -4328,7 +4329,7 @@ Attributes:
 </div>
 </section>
 <section id="after-re-chunking">
-<h3>After re-chunking:<a class="headerlink" href="#after-re-chunking" title="Permalink to this headline">#</a></h3>
+<h3>After re-chunking:<a class="headerlink" href="#after-re-chunking" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reChunkedData</span><span class="p">[</span><span class="s1">&#39;streamflow&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">feature_id</span><span class="o">=</span><span class="mi">1343034</span><span class="p">)</span> 
@@ -4982,7 +4983,7 @@ Attributes:
 </section>
 </section>
 <section id="cleaning-up">
-<h2>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Permalink to this headline">#</a></h2>
+<h2>Cleaning Up<a class="headerlink" href="#cleaning-up" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">shutil</span>

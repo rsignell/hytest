@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>D-Score Suite (v1) Benchmark – Usage Examples &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Standard Suite (v1) Metrics" href="../../Metrics_StdSuite_v1.html" />
     <link rel="prev" title="D-Score Suite (v1) Benchmark" href="../../Metrics_DScore_Suite_v1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -410,7 +411,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="d-score-suite-v1-benchmark-usage-examples">
-<h1>D-Score Suite (v1) Benchmark – Usage Examples<a class="headerlink" href="#d-score-suite-v1-benchmark-usage-examples" title="Permalink to this headline">#</a></h1>
+<h1>D-Score Suite (v1) Benchmark – Usage Examples<a class="headerlink" href="#d-score-suite-v1-benchmark-usage-examples" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>This notebook adapted from originals by Timothy Hodson and Rich Signell. See that upstream work at:</em></p>
@@ -430,7 +431,7 @@ notebook, using a small demonstration dataset.</p>
 </div>
 </div>
 <section id="sample-data">
-<h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this headline">#</a></h2>
+<h2>Sample Data<a class="headerlink" href="#sample-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampleData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;../nwm_streamflow/NWM_Benchmark_SampleData.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -527,7 +528,7 @@ dataset limits to a single gage (“<code class="docutils literal notranslate"><
 </div>
 </section>
 <section id="import-benchmark-functions">
-<h2>Import Benchmark Functions<a class="headerlink" href="#import-benchmark-functions" title="Permalink to this headline">#</a></h2>
+<h2>Import Benchmark Functions<a class="headerlink" href="#import-benchmark-functions" title="Permalink to this heading">#</a></h2>
 <p>The metric functions are defined and described in
 <a class="reference internal" href="../../Metrics_DScore_Suite_v1.html"><span class="doc">D-Score Suite (v1) Benchmark</span></a>.
 They are imported here by running that notebook from within the following cell:</p>
@@ -571,7 +572,7 @@ dtype: float64
 </div>
 </section>
 <section id="create-composite-benchmark">
-<h2>Create Composite Benchmark<a class="headerlink" href="#create-composite-benchmark" title="Permalink to this headline">#</a></h2>
+<h2>Create Composite Benchmark<a class="headerlink" href="#create-composite-benchmark" title="Permalink to this heading">#</a></h2>
 <p>It is useful to combine several of these metrics into a single benchmark routine, which returns a pandas Series of the assembled metrics.</p>
 <p>This ‘wrapper’ composite benchmark also handles any transforms of the data before calling the metric functions. In this case, we will log transform the data.</p>
 <div class="cell docutils container">
@@ -627,7 +628,7 @@ dtype: float64
 </div>
 </section>
 <section id="score-cards">
-<h2>Score-Cards<a class="headerlink" href="#score-cards" title="Permalink to this headline">#</a></h2>
+<h2>Score-Cards<a class="headerlink" href="#score-cards" title="Permalink to this heading">#</a></h2>
 <p>The DScore functions include an ILAMB-style scorecard function to produce a graphic scorecard from these metrics.
 Note that a scorecard such as this is typically applied to a composite of DScore metrics computed for many gages.
 This demos the scorecard for a single gage <strong>as if</strong> it were the mean of all gages in an evaluation analysis.</p>

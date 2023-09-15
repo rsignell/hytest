@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Data/APIs &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Data/Cloud Storage" href="Data_S3.html" />
     <link rel="prev" title="Data Sources" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -413,7 +414,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-apis">
-<h1>Data/APIs<a class="headerlink" href="#data-apis" title="Permalink to this headline">#</a></h1>
+<h1>Data/APIs<a class="headerlink" href="#data-apis" title="Permalink to this heading">#</a></h1>
 <p>Application Programming Interfaces (API) are a common way of accessing and processing
 data over the internet between a distant application and the application (or script)
 you are working on. Another method is File Transfer Protocol calls (FTP), which are
@@ -422,10 +423,10 @@ between applications but just simple data tranfers with no processing capabiliti
 are being used less and less over time, though some data is still only available over
 the internet in this fashion.</p>
 <section id="api">
-<h2><strong>API</strong><a class="headerlink" href="#api" title="Permalink to this headline">#</a></h2>
+<h2><strong>API</strong><a class="headerlink" href="#api" title="Permalink to this heading">#</a></h2>
 <p>In Python, there are different ways of getting data with APIs and we will examine two of the more common: using a library such as <code class="docutils literal notranslate"><span class="pre">requests</span></code> to query the API or use a library a developer has created to make interacting with an API easier, such as <code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code>, through different helper functions or improved documentation.</p>
 <section id="requests">
-<h3><code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#requests" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#requests" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">requests</span></code> library is a <a class="reference external" href="https://requests.readthedocs.io/en/latest/">well documented library</a> for issuing <em>get</em> requests.</p>
 <p>A common example in geospatial work is getting data from ArcGIS Feature Service layers and
 creating a <code class="docutils literal notranslate"><span class="pre">geopandas</span> <span class="pre">GeoDataFrame</span></code> from it. The typical process for accomplishing this is
@@ -478,7 +479,7 @@ This can be read directly into a GeoDataFrame.</p>
 </div>
 </section>
 <section id="pygeohydro">
-<h3><code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code><a class="headerlink" href="#pygeohydro" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code><a class="headerlink" href="#pygeohydro" title="Permalink to this heading">#</a></h3>
 <p>Libraries like <a class="reference external" href="https://docs.hyriver.io/autoapi/pygeohydro/index.html">pygeohydro</a> provide
 easy ways to format data calls to data services via a customize API.  Libraries such as this
 format the URL behind the scenes.
@@ -508,7 +509,7 @@ single quotes, which SQL uses in this instance.  It will not work with double qu
 </div>
 </section>
 <section id="nwis">
-<h3><code class="docutils literal notranslate"><span class="pre">NWIS</span></code><a class="headerlink" href="#nwis" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">NWIS</span></code><a class="headerlink" href="#nwis" title="Permalink to this heading">#</a></h3>
 <p>This API is a member of the <code class="docutils literal notranslate"><span class="pre">hyriver</span></code> suite (as is <code class="docutils literal notranslate"><span class="pre">pygeohydro</span></code>, above).  It facilitates
 queries to the NWIS service to obtain historical readings for stream gages.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygeohydro</span> <span class="kn">import</span> <span class="n">NWIS</span>
@@ -525,7 +526,7 @@ queries to the NWIS service to obtain historical readings for stream gages.</p>
 </section>
 </section>
 <section id="ftp">
-<h2><strong>FTP</strong><a class="headerlink" href="#ftp" title="Permalink to this headline">#</a></h2>
+<h2><strong>FTP</strong><a class="headerlink" href="#ftp" title="Permalink to this heading">#</a></h2>
 <p>FTP is often the access method for many legacy datasets. An example is bringing in
 data from NOAA’s
 <a class="reference external" href="https://www.ncei.noaa.gov/access/crn/qcdatasets.html">Global Climate Reference Network FTP Server</a>.

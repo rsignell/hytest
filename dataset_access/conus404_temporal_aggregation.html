@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>CONUS404 Temporal Aggregation &#8212; HyTEST Project</title>
   
@@ -44,6 +44,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="CONUS404 Spatial Aggregation" href="conus404_spatial_aggregation.html" />
     <link rel="prev" title="Explore CONUS404 Dataset" href="conus404_explore.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -415,7 +416,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conus404-temporal-aggregation">
-<h1>CONUS404 Temporal Aggregation<a class="headerlink" href="#conus404-temporal-aggregation" title="Permalink to this headline">#</a></h1>
+<h1>CONUS404 Temporal Aggregation<a class="headerlink" href="#conus404-temporal-aggregation" title="Permalink to this heading">#</a></h1>
 <p>Create daily averages from hourly data, write to a zarr dataset</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,7 +847,7 @@ if (window.Jupyter !== undefined) {
 </style></div></div>
 </div>
 <section id="open-dataset-from-intake-catalog">
-<h2>Open dataset from Intake Catalog<a class="headerlink" href="#open-dataset-from-intake-catalog" title="Permalink to this headline">#</a></h2>
+<h2>Open dataset from Intake Catalog<a class="headerlink" href="#open-dataset-from-intake-catalog" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">on-prem</span></code> dataset from /caldera if running on prem (Denali/Tallgrass)</p></li>
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">cloud</span></code>/<code class="docutils literal notranslate"><span class="pre">osn</span></code> object store data if running elsewhere</p></li>
@@ -934,7 +935,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </section>
 <section id="set-up-aws-credentials-optional">
-<h2>2) Set Up AWS Credentials (Optional)<a class="headerlink" href="#set-up-aws-credentials-optional" title="Permalink to this headline">#</a></h2>
+<h2>2) Set Up AWS Credentials (Optional)<a class="headerlink" href="#set-up-aws-credentials-optional" title="Permalink to this heading">#</a></h2>
 <p>This notebook reads data from the OSN pod by default, which is object store data on a high speed internet connection that is free to access from any environment. If you change this notebook to use one of the CONUS404 datasets stored on S3 (options ending in <code class="docutils literal notranslate"><span class="pre">-cloud</span></code>), you will be pulling data from a <code class="docutils literal notranslate"><span class="pre">requester-pays</span></code> S3 bucket. This means you have to set up your AWS credentials, else we won’t be able to load the data. Please note that reading the <code class="docutils literal notranslate"><span class="pre">-cloud</span></code> data from S3 may incur charges if you are reading data outside of the us-west-2 region or running the notebook outside of the cloud altogether. If you would like to access one of the <code class="docutils literal notranslate"><span class="pre">-cloud</span></code> options, uncomment and run the following code snippet to set up your AWS credentials. You can find more info about this AWS helper function <a class="reference internal" href="../environment_set_up/Help_AWS_Credentials.html"><span class="doc std std-doc">here</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,7 +948,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </section>
 <section id="parallelize-with-dask">
-<h2>Parallelize with Dask<a class="headerlink" href="#parallelize-with-dask" title="Permalink to this headline">#</a></h2>
+<h2>Parallelize with Dask<a class="headerlink" href="#parallelize-with-dask" title="Permalink to this heading">#</a></h2>
 <p>Some of the steps we will take are aware of parallel clustered compute environments
 using <code class="docutils literal notranslate"><span class="pre">dask</span></code>. We’re going to start a cluster now so that future steps can take advantage
 of this ability.</p>
@@ -977,7 +978,7 @@ The link to view the client dashboard is:
 </div>
 </section>
 <section id="explore-the-dataset">
-<h2>Explore the dataset<a class="headerlink" href="#explore-the-dataset" title="Permalink to this headline">#</a></h2>
+<h2>Explore the dataset<a class="headerlink" href="#explore-the-dataset" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">dataset</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
@@ -18071,7 +18072,7 @@ Attributes:
 </div>
 </section>
 <section id="daily-averages">
-<h2>Daily averages<a class="headerlink" href="#daily-averages" title="Permalink to this headline">#</a></h2>
+<h2>Daily averages<a class="headerlink" href="#daily-averages" title="Permalink to this heading">#</a></h2>
 <p>Time averages of any type are easy to do with xarray.   Here we do 24 hour averages, and set the time offset to 12 hours, so that the time values are in the middle of the averaging period.</p>
 <p>Digital Earth Africa has a great <a class="reference external" href="https://docs.digitalearthafrica.org/fr/latest/sandbox/notebooks/Frequently_used_code/Working_with_time.html">Working with Time in Xarray</a> tutorial.</p>
 <p>In the example below we just do a few days with a few variables as a quick demo.</p>
@@ -18915,12 +18916,12 @@ Tue Mar 29 16:35:21 2022: Appended file /glade/scratch/kyoko/USGS/conus404_produ
 })(window);</script></div></div>
 </div>
 <section id="write-daily-values-as-a-zarr-dataset-to-onprem-or-cloud">
-<h3>Write daily values as a Zarr dataset (to onprem or cloud)<a class="headerlink" href="#write-daily-values-as-a-zarr-dataset-to-onprem-or-cloud" title="Permalink to this headline">#</a></h3>
+<h3>Write daily values as a Zarr dataset (to onprem or cloud)<a class="headerlink" href="#write-daily-values-as-a-zarr-dataset-to-onprem-or-cloud" title="Permalink to this heading">#</a></h3>
 <p>You will need to to turn the following cell from <code class="docutils literal notranslate"><span class="pre">raw</span></code> to <code class="docutils literal notranslate"><span class="pre">code</span></code> and update the filepaths in order to save out your data.</p>
 </section>
 </section>
 <section id="shutdown-cluster">
-<h2>Shutdown cluster<a class="headerlink" href="#shutdown-cluster" title="Permalink to this headline">#</a></h2>
+<h2>Shutdown cluster<a class="headerlink" href="#shutdown-cluster" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">();</span> <span class="n">cluster</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Streamflow Model Evaluation &#8212; HyTEST Project</title>
   
@@ -19,52 +18,48 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'evaluation/tutorials/nwm_streamflow/00_Overview';</script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Streamflow Eval :: Data Preparation" href="01_Data_Prep.html" />
@@ -78,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -128,11 +122,14 @@ const thebe_selector_output = ".output, .cell_output"
   </div>
 
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -166,7 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Environment Set-Up</span></p>
 <ul class="nav bd-sidenav">
@@ -424,12 +432,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="streamflow-model-evaluation">
-<h1>Streamflow Model Evaluation<a class="headerlink" href="#streamflow-model-evaluation" title="Permalink to this heading">#</a></h1>
+<h1>Streamflow Model Evaluation<a class="headerlink" href="#streamflow-model-evaluation" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>In broad strokes, the evaluation workflow contains these components:</p>
 <a class="reference internal image-reference" href="../../../_images/Eval_Overview.svg"><img alt="../../../_images/Eval_Overview.svg" src="../../../_images/Eval_Overview.svg" width="600" /></a>
 <p>This can be broken down per variable, as there are different reference
@@ -440,7 +448,7 @@ NWM streamflow predictions for those gages.</p>
 which that bit of processing takes place.</p>
 </section>
 <section id="source-data">
-<h2>Source Data<a class="headerlink" href="#source-data" title="Permalink to this heading">#</a></h2>
+<h2>Source Data<a class="headerlink" href="#source-data" title="Link to this heading">#</a></h2>
 <p>Source datasets include modeled data
 ( <em><a class="reference external" href="https://registry.opendata.aws/nwm-archive/">NWM</a></em> or <em>NHM</em>, for example)
 and a reference dataset representing the ‘<em>observed</em>’ values covering the
@@ -451,8 +459,8 @@ datasets representing the reference against which the model will be compared.</p
 need to be able to accomodate are:</p>
 <ul class="simple">
 <li><p>‘<em>on-prem</em>’ data stored on <code class="docutils literal notranslate"><span class="pre">/caldera</span></code>, accessible by one of the HPC hosts.</p></li>
-<li><p>Object storage in the ‘<em>cloud</em>’ – typically an <a class="reference internal" href="../../../essential_reading/DataSources/Data_S3.html"><span class="doc std std-doc">S3 bucket</span></a> in the AWS cloud computing ecosystem.</p></li>
-<li><p><a class="reference internal" href="../../../essential_reading/DataSources/Data_APIs.html"><span class="doc std std-doc">API request</span></a> – Data is offered by a provider as a network service.  An <strong>A</strong>plication
+<li><p>Object storage in the ‘<em>cloud</em>’ – typically an <a class="reference internal" href="../../../essential_reading/DataSources/Data_S3.html"><span class="std std-doc">S3 bucket</span></a> in the AWS cloud computing ecosystem.</p></li>
+<li><p><a class="reference internal" href="../../../essential_reading/DataSources/Data_APIs.html"><span class="std std-doc">API request</span></a> – Data is offered by a provider as a network service.  An <strong>A</strong>plication
 <strong>P</strong>rogramming <strong>I</strong>nterface call is made from within a python
 program to fetch the data from the network provider. This is typically via
 <em>http</em> or <em>ftp</em> transfer protocols.</p></li>
@@ -466,7 +474,7 @@ use may depend on where the processing takes place (i.e. if running a notebook o
 S3 is preferred.)</p>
 </section>
 <section id="data-preparation-notebook">
-<h2><a class="reference internal" href="01_Data_Prep.html"><span class="doc std std-doc">Data Preparation Notebook</span></a><a class="headerlink" href="#data-preparation-notebook" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference internal" href="01_Data_Prep.html"><span class="std std-doc">Data Preparation Notebook</span></a><a class="headerlink" href="#data-preparation-notebook" title="Link to this heading">#</a></h2>
 <p>This pre-processing step is needed in order to rectify the data and organize it in preparation
 for analysis.  Rectifying the data includes measures such as:</p>
 <ul class="simple">
@@ -477,7 +485,7 @@ for analysis.  Rectifying the data includes measures such as:</p>
 </ul>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>See <a class="reference internal" href="../../../dataset_preprocessing/tutorials/rechunking/ReChunkingData.html"><span class="doc std std-doc">here</span></a> for a primer on re-chunking data, and why we choose to do it before analysis.</p>
+<p>See <a class="reference internal" href="../../../dataset_preprocessing/tutorials/rechunking/ReChunkingData.html"><span class="std std-doc">here</span></a> for a primer on re-chunking data, and why we choose to do it before analysis.</p>
 </aside>
 <p>At this stage, a given variable should be represented as a pair of 2D array of values (one
 for <em>simulated</em>, one for <em>observed</em>).
@@ -485,7 +493,7 @@ One dimension of the array is indexed by some nominal key (‘<em>gage_id</em>�
 etc), while the other dimension is indexed by time step.</p>
 </section>
 <section id="analysis-notebook">
-<h2><a class="reference internal" href="02_Analysis_StdSuite.html"><span class="doc std std-doc">Analysis Notebook</span></a><a class="headerlink" href="#analysis-notebook" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference internal" href="02_Analysis_StdSuite.html"><span class="std std-doc">Analysis Notebook</span></a><a class="headerlink" href="#analysis-notebook" title="Link to this heading">#</a></h2>
 <p>The above data organization steps will allow us to extract a time series for a given station
 from each of the <em>simulated</em> and <em>observed</em> datasets, and run a series of statistical metrics
 against these values to evaluate Goodness Of Fit (GOF).  Benchmarking proceeds
@@ -516,7 +524,7 @@ dimension being the metrics comparing observed vs simulated for that gage.
 It is this table of values we send to the visualization step.</p>
 </section>
 <section id="vizualization-notebook">
-<h2><a class="reference internal" href="03_Vizualization.html"><span class="doc std std-doc">Vizualization Notebook</span></a><a class="headerlink" href="#vizualization-notebook" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference internal" href="03_Vizualization.html"><span class="std std-doc">Vizualization Notebook</span></a><a class="headerlink" href="#vizualization-notebook" title="Link to this heading">#</a></h2>
 <p>Visualization steps offer different views of the metrics, plotted in various
 ways to allow for exploration.  In addition to these interactive visualizations,
 a score card is offered as a way of summarizing how well the
@@ -583,6 +591,7 @@ model compares against the reference dataset.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -642,8 +651,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
